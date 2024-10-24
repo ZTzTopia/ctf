@@ -1,11 +1,11 @@
-# ENIGMA M3
-
 ---
 category: Cryptography
 tags: 
   - enigma
   - enigma-m3
 ---
+
+# ENIGMA M3
 
 ## Scenario
 
