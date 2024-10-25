@@ -29,4 +29,4 @@ The above command will overlay the two images and create a new image named `outp
 
 ## Flag
 
-`FLAG{CRYPT70N}`
+`QUESTCON{CRYPT70N}`
