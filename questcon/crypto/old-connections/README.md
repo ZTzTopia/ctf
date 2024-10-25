@@ -1,5 +1,5 @@
 ---
-category: Crypto 
+category: Cryptography 
 tags: 
   - vigenere
 ---
