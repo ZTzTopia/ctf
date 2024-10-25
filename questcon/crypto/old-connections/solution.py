@@ -17,4 +17,4 @@ ciphertext = "UFJKXQZQUNB"
 key = "SOLVECRYPTO"
 decrypted_message = vigenere_decrypt(ciphertext, key)
 
-print("Flags: QUESTCON{" + decrypted_message + "}")
+print("Decrypted message:", decrypted_message)
