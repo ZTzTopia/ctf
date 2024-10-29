@@ -22,3 +22,5 @@ The flag is hidden in the spectrogram of the audio file. You can view the flag b
 ```sh
 ffmpeg -i evidence.mp3 -lavfi showspectrumpic=s=1024x512:legend=disabled output.png
 ```
+
+![output.png](output.png)
