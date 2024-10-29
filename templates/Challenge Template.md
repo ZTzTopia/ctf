@@ -3,7 +3,8 @@ title: "Title"
 category: 
 tags: 
 draft: true
-solve: true
+completedDuringEvent: true
+submitted: true
 flag: FLAG{0xdeadbeef}
 ---
 ## Scenario

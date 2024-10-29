@@ -3,7 +3,8 @@ title: Tartarus
 category: Reverse Engineering
 tags: 
 draft: false
-solve: true
+completedDuringEvent: true
+submitted: false
 flag: HOLOGY7{m455_d3struction_10MAR2O1O}
 ---
 ## Scenario
