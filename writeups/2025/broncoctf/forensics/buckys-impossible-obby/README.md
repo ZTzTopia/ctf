@@ -31,7 +31,7 @@ But when you get to the finish line, there's only a placeholder that says **{fla
 
 ![alt text](image-3.png)
 
-Dan ada dev notes yang dimana bertuliskan: (dev note #878: still deciding on the flag, **testing**ing some options before i ship it to this **place**) if you look closely there are the words **test** and **place** in bold. So let's just look for **test place** in the inventory of the game maker.
+And there are dev notes which say: (dev note #878: still deciding on the flag, **test**ing some options before i ship it to this **place**) if you look closely there are the words **test** and **place** in bold. So let's just look for **test place** in the inventory of the game maker.
 
 ![alt text](image-4.png)
 

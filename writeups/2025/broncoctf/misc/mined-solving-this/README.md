@@ -13,6 +13,8 @@ flag: bronco{m1n3d}
 
 By shwhale
 
+---
+
 So this challenge is a **Minecraft** map. Downloaded the map and opened it in **Minecraft**. Open the map in **Minecraft** and we will be spawned in a far place.
 
 At the beginning we will be at coordinates `1000 ~ 1000`, so we can teleporte to coordinates `0 ~ 0` with the command `/tp 0 0 0`. After that looked around and found a structure. Because there were no more clues, I tried to open the inventory and see if there were any clues there. And it turned out there were clues there.

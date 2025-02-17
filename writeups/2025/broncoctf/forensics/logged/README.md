@@ -92,6 +92,6 @@ But first, let me take some steps in case ￢I am being keylogged...<Esc>oasonet
 ￫
 ```
 
-Peretas mencoba menulis tanda di `flag.txt` tetapi dia mencoba menghindari keylogger dengan menulis tanda dengan cara yang berbeda. Perhatikan bahwa beberapa perintah yang dijalankan adalah `:e flag.txt` yang berarti membuka file `flag.txt` dan `:s/m//g` yang berarti menghapus semua karakter `m` dari file tersebut. Jadi kemungkinan besar hacker terbesar ini sedang menggunakan `vim` untuk menulis flag tersebut. Kita bisa membaca kembali flag tersebut dengan cara yang sama seperti yang dilakukan hacker tersebut.
+The hacker tried to write flags in `flag.txt` but he tried to avoid keylogger by writing flags in a different way. Notice that some of the commands executed are `:e flag.txt` which means open the `flag.txt` file and `:s/m//g` which means delete all `m` characters from the file. So most likely this biggest hacker is using `vim` to write the flags. We can read the flags back in the same way as the hacker did.
 
 ![alt text](image.png)

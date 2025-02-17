@@ -21,6 +21,8 @@ flag: bronco{n0th1ng_1s_2oo_h4rd_4_m3!}
 
 By yoshie878
 
+---
+
 The game is a **Roblox** game. The objective is to get the flag. There are two paths to get the flag. The first path is to go through old levels and the second path is to go through new levels. The flag is located at the end of the old or new levels.
 
 ![alt text](image-2.png)
