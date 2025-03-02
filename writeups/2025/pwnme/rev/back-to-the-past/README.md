@@ -2,7 +2,7 @@
 title: "Back to the past"
 category: Reverse Engineering
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 flag: PWNME{4baf3723f62a15f22e86d57130bc40c3}
@@ -16,6 +16,8 @@ flag: PWNME{4baf3723f62a15f22e86d57130bc40c3}
 by Fayred
 
 ---
+
+The binary uses the current time as a seed for the random number generator. The random number generator is used to generate a key to xor the content of the file `flag.enc`. The key can be recovered by using the same seed as the binary.
 
 ```c
 int __fastcall main(int argc, const char **argv, const char **envp)
@@ -81,6 +83,15 @@ int __fastcall main(int argc, const char **argv, const char **envp)
 }
 ```
 
+By examining the binary, we can see that it encrypts a file using the following process:
+
+1. It retrieves the current time (`time(0LL)`) and uses it as a seed for the random number generator (`srand(time)`).
+2. It opens the specified file and reads its contents byte by byte.
+3. Each byte is XOR-ed with a random number generated using `rand() % 127`.
+4. The modified file is saved with the `.enc` extension.
+
+The binary uses a custom implementation of `rand()`:
+
 ```c
 __int64 __fastcall srand(int a1)
 {
@@ -90,9 +101,7 @@ __int64 __fastcall srand(int a1)
   seed = result;
   return result;
 }
-```
 
-```c
 unsigned __int64 rand()
 {
   seed = 0x5851F42D4C957F2DLL * seed + 1;
@@ -100,6 +109,11 @@ unsigned __int64 rand()
 }
 ```
 
+This is a linear congruential generator (LCG). Since the only input to this function is the seed (derived from time).
+
+Since the encryption key is derived from `time(0LL)`, we can determine the exact seed by checking the file's modification time (`os.path.getmtime`). This allows us to reproduce the same random sequence and decrypt the file.
+
+We can implement the decryption process as follows:
 
 ```py
 import os

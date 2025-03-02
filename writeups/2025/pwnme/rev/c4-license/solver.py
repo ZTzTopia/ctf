@@ -8,10 +8,6 @@ import json
 libc = ctypes.CDLL('libc.so.6')
 libc.srand(libc.time(0))
 
-context.log_level = 'debug'
-
-r = remote('c4license-3a7a8c81137937c1.deploy.phreaks.fr', 443, ssl=True)
-
 class RC4:
     def __init__(self, key: bytes):
         # Initialize the array with values 0-255
@@ -58,9 +54,19 @@ class RC4:
     def encrypt(self, data: bytes):
         return self.decrypt(data)
 
-    
-def checker(data, encrypted_data):
-    crc32_value = binascii.crc32(data)
+def decrypt(key, data):
+    crc32_value = binascii.crc32(key)
+    libc.srand(crc32_value)
+
+    v6 = libc.rand()
+    random_key = libc.rand() % 0xFFFF * (v6 % 0xFFFF)
+    random_key = random_key.to_bytes(4, 'big')
+
+    rc4 = RC4(random_key)
+    return rc4.decrypt(binascii.unhexlify(data))
+
+def encrypt(key, data):
+    crc32_value = binascii.crc32(bytearray(key))
     libc.srand(crc32_value)
 
     v6 = libc.rand()
@@ -69,31 +75,23 @@ def checker(data, encrypted_data):
 
     rc4 = RC4(random_key)
 
-    encrypted_data = bytes.fromhex(encrypted_data)
-    decrypted_data = rc4.decrypt(encrypted_data)
+    encrypted_data = rc4.encrypt(data)
+    return encrypted_data.hex()
 
-    sha1_hash = hashlib.sha1(decrypted_data).hexdigest()
+def checker(key, data):
+    sha1_hash = hashlib.sha1(decrypt(key, data)).hexdigest()
 
     expected_hash = "b039d6daea04c40874f80459bff40142bd25b995"
     return sha1_hash == expected_hash
 
-def make_data(data):
-    data = bytearray(data)
+data = decrypt(b'Noa',b'e3bfbdf16314ebed7bd2c608ae530692724cc3a5')
+print(f'Decrypted data: {data}')
+print(f'Encrypted data: {encrypt(b"Noa", data)}')
+print(f'Checker: {checker(b"Noa", b"e3bfbdf16314ebed7bd2c608ae530692724cc3a5")}')
 
-    crc32_value = binascii.crc32(data)
-    libc.srand(crc32_value)
+context.log_level = 'debug'
 
-    v6 = libc.rand()
-    random_key = libc.rand() % 0xFFFF * (v6 % 0xFFFF)
-    random_key = random_key.to_bytes(4, 'big')
-
-    rc4 = RC4(random_key)
-
-    encrypted_data = rc4.encrypt(b'PwNmE_c4_message!137')
-    return encrypted_data.hex()
-
-print(checker(b'Noa', 'e3bfbdf16314ebed7bd2c608ae530692724cc3a5'))
-print(make_data(b'Noa'))
+r = remote('c4license-3a7a8c81137937c1.deploy.phreaks.fr', 443, ssl=True)
 
 current = 0
 while True:
@@ -103,7 +101,7 @@ while True:
 
     json_data = {
         'user': user.decode(),
-        'serial': make_data(user)
+        'serial': encrypt(user, data)
     }
     base64_json = base64.b64encode(json.dumps(json_data).encode()).decode()
     r.sendline(base64_json)

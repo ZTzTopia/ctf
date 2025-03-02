@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flag: PWNME{SuCh_4_M3t4_R3veRS3r}
+flag: PWNME{Crypt0_&_B4ndwidth_m4k3s_m3_f33l_UN83474813!!!}
 ---
 > The target is hiding hisself in a small hotel of the town. One of our agents managed to capture the communications from the parking lot... Unfortunately, the target seems to use software on his phone to protect himself, reading the data exchanged with the server is impossible ! You have the captured trace and the recovered software. It's up to you.
 >
@@ -16,6 +16,197 @@ flag: PWNME{SuCh_4_M3t4_R3veRS3r}
 by Prince2lu
 
 ---
+
+The provided software contains an initialization function, `init_module`, which appears to set up a secure communication mechanism using **Diffie-Hellman key exchange** and **AES encryption**. Below is the relevant portion of the code:
+
+```c
+__int64 __fastcall init_module(__int64 a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, __int64 a6)
+{
+  _QWORD v7[3]; // [rsp+0h] [rbp-58h] BYREF
+  __int64 v8; // [rsp+18h] [rbp-40h]
+  __int64 v9; // [rsp+20h] [rbp-38h]
+  __int64 v10; // [rsp+28h] [rbp-30h] BYREF
+  __int64 v11; // [rsp+30h] [rbp-28h] BYREF
+  int v12; // [rsp+3Ch] [rbp-1Ch]
+  __int64 v13; // [rsp+40h] [rbp-18h]
+  __int64 v14; // [rsp+48h] [rbp-10h]
+  unsigned int v15; // [rsp+54h] [rbp-4h]
+
+  v15 = 0;
+  v14 = 0LL;
+  l1111l11l11l111l = l111lll11l1ll11l(60LL, a2, a3, a4, a5, a6, 0LL, 0LL, 0LL, 0x800000000LL, 0LL, 0LL);
+  get_random_bytes(&lll1ll1l111l111l, 8LL);
+  v10 = 2LL;
+  LODWORD(v9) = 1;
+  v7[1] = &l1111l11l11l111l;
+  v7[2] = &v10;
+  v11 = lll1l11l1l1l1111(2LL, lll1ll1l111l111l, l1111l11l11l111l);// pow
+  v7[0] = &v11;
+  LODWORD(v8) = 8;
+  v15 = crypto_dh_key_len(v7);
+  if ( v15 )
+  {
+    v13 = (int)v15;
+    v12 = 17301536;
+    v14 = _kmalloc((int)v15, 17301536LL);
+    if ( v14 )
+    {
+      if ( !(unsigned int)crypto_dh_encode_key(v14, v15, v7) && (int)lll1llll111ll1l1(3232235836LL, 3333LL) >= 0 )
+      {
+        qword_B5C0 = (__int64)sub_E0A;
+        byte_B5D8 = 2;
+        dword_B5DC = 0;
+        dword_B5E0 = 0x80000000;
+        qword_B600 = (__int64)sub_104E;
+        byte_B618 = 2;
+        dword_B61C = 4;
+        dword_B620 = 0x80000000;
+        if ( !(unsigned int)nf_register_net_hook(&init_net, &qword_B5C0)
+          && !(unsigned int)nf_register_net_hook(&init_net, &qword_B600) )
+        {
+          llll1l1ll1lll1l1(l1ll111lll11lll1, v14, v15);
+        }
+      }
+    }
+  }
+  return 0LL;
+}
+```
+
+The function `init_module` initializes the module and sets up the network hooks. The **Diffie-Hellman** key exchange is performed using the `crypto_dh_encode_key` function. `nf_register_net_hook` registers the network hooks for the functions `sub_E0A` and `sub_104E` where `sub_E0A` is `recv` and `sub_104E` is `send`.
+
+The function `sub_E0A` checks for specific magic numbers to determine the next steps:
+
+```c
+if ( v2 == 0x86E35DE5 )
+      {
+        l11lll1l1l1ll1l1(v6);
+      }
+      else if ( v2 == 0x89E35DE5 )
+      {
+        if ( lll1ll1111l111ll )
+        {
+          v11 -= 4;
+          ll1lll11ll1ll11l(v6, v11 - 16, v6 + v11 - 16LL);
+          v11 -= 16;
+          v10 = sub_D4(v11 + 96, 17301536LL);
+          if ( v10 )
+          {
+            sub_123(v10, 96LL);
+            v3 = skb_put(v10, v11);
+            csum_partial_copy_from_user(v6, v3, v11, 0LL, &v5);
+            *(_WORD *)(v10 + 184) = 8;
+            *(_WORD *)(v10 + 186) = 0;
+            *(_WORD *)(v10 + 190) = 0;
+            sub_1C5(v10);
+            *(_QWORD *)(v10 + 16) = *(_QWORD *)(a2 + 16);
+            v9 = sub_1FC(v10);
+            if ( v9 )
+              netif_rx(v10);
+          }
+        }
+      }
+```
+
+If the magic number is `0x86E35DE5`, the function `l11lll1l1l1ll1l1` is called. If the magic number is `0x89E35DE5`, encrypted data is processed using `ll1lll11ll1ll11l`.
+
+When `0x86E35DE5` is received, `l11lll1l1l1ll1l1` is invoked:
+
+```c
+void *__fastcall l11lll1l1l1ll1l1(__int64 *a1)
+{
+  __int64 v1; // rcx
+  __int64 v2; // r8
+  __int64 v3; // r9
+  void *result; // rax
+  __int64 v5; // [rsp+8h] [rbp-30h] BYREF
+  _QWORD s[4]; // [rsp+10h] [rbp-28h] BYREF
+  __int64 v7; // [rsp+30h] [rbp-8h]
+
+  memset(s, 0, sizeof(s));
+  v5 = 0LL;
+  v7 = *a1;
+  v5 = lll1l11l1l1l1111(v7, lll1ll1l111l111l, l1111l11l11l111l);// sha256
+  result = (void *)((__int64 (__fastcall *)(__int64 *, __int64, _QWORD *, __int64, __int64, __int64, __int64 *))l1l1l1l11111111l)(
+                     &v5,
+                     8LL,
+                     s,
+                     v1,
+                     v2,
+                     v3,
+                     a1);
+  if ( !(_DWORD)result )
+  {
+    l1l1llll1l1ll11l = sub_23F("aes", 4LL, 128LL);
+    sub_2AE(l1l1llll1l1ll11l, s, 32LL);
+    result = memset(s, 0, sizeof(s));
+    lll1ll1111l111ll = 1;
+  }
+  return result;
+}
+```
+
+This function calculates the SHA-256 hash of the exchanged key and initializes the AES encryption context and `l1l1llll1l1ll11l` becomes the AES encryption object.
+
+When `0x89E35DE5` is received, `ll1lll11ll1ll11l` is called:
+
+```c
+__int64 __fastcall sub_104E(__int64 a1, __int64 a2)
+{
+  char *dest; // [rsp+28h] [rbp-28h]
+  void *src; // [rsp+30h] [rbp-20h]
+  unsigned int n; // [rsp+3Ch] [rbp-14h]
+  __int64 v6; // [rsp+48h] [rbp-8h]
+
+  if ( !a2 )
+    return 1LL;
+  if ( !sub_1FC(a2) )
+    return 1LL;
+  v6 = sub_215(a2);
+  if ( !v6 )
+    return 1LL;
+  if ( __ROL2__(*(_WORD *)(v6 + 2), 8) == 3333 )
+    return 1LL;
+  if ( !lll1ll1111l111ll )
+    return 1LL;
+  n = *(_DWORD *)(a2 + 120);
+  src = (void *)sub_19C(a2);
+  dest = (char *)_kmalloc(n + 20, 17301536LL);
+  if ( !dest )
+    return 1LL;
+  memcpy(dest, src, n);
+  get_random_bytes(&dest[n], 16LL);
+  ll1lll11ll1ll11l(dest, n, &dest[n]);
+  *(_DWORD *)&dest[n + 16] = -1981588507;
+  if ( !(unsigned int)llll1l1ll1lll1l1(l1ll111lll11lll1, dest, n + 20) )
+    return 1LL;
+  kfree(dest);
+  kfree_skb(a2);
+  return 2LL;
+}
+```
+
+`ll1lll11ll1ll11l` is the function that encrypts the data using AES-CTR. And `l1l1llll1l1ll11l` variable is the aes object. from `l11lll1l1l1ll1l1` called after server sends the public key with `0x86E35DE5` magic number.
+
+## The Communication
+
+Because we have `pcpapng` file, we can extract the data from it and reconstruct the communication between the client and the server.
+
+First, client send dh key, public key, and modulus to the server. Where we can extract the base, public key, and modulus from the `pcapng` file. 
+Second, server sends the public key to the client.
+Third, client sends the encrypted data to the server and server decrypts it or vice versa.
+
+The encrypted packets are encrypted using AES-CTR. Packet structure is as follows:
+
+| Field | Size | Description |
+| --- | --- | --- |
+| Encrypted Data | Variable | Encrypted data using AES-CTR |
+| Nonce | 16 bytes | Random nonce used for AES-CTR |
+| Magic Number | 4 bytes | Magic number to determine the next steps |
+
+## Solution
+
+So here is the python code to reconstruct the communication between the client and the server:
 
 ```py
 import binascii
@@ -33,39 +224,6 @@ def derive_dh_key(server_pubkey, client_privkey, prime):
     sha256_hash = hashlib.sha256(key_bytes).digest()
     print("SHA256 Hash:", sha256_hash.hex())
     return sha256_hash
-
-# We can use AES-CTR mode to decrypt the data
-def custom_aes(aes_context, encrypted_data, iv):
-    ciphertext = encrypted_data
-    result = bytearray(len(ciphertext))
-    
-    # Initialize counter using IV
-    counter = bytearray(16)
-    counter[:len(iv)] = iv
-    
-    # Process data in 16-byte blocks
-    i = 0
-    while i < len(ciphertext):
-        # Generate keystream by encrypting counter
-        keystream = aes_context.encrypt(bytes(counter))
-        
-        # XOR ciphertext with keystream
-        for j in range(min(16, len(ciphertext) - i)):
-            result[i + j] = ciphertext[i + j] ^ keystream[j]
-        
-        # Increment counter with carry propagation
-        j = 15
-        while True:
-            counter[j] = (counter[j] + 1) & 0xFF
-            if counter[j] != 0:
-                break
-            if j == 0:
-                break
-            j -= 1
-        
-        i += 16
-    
-    return bytes(result)
 
 # https://www.alpertron.com.ar/DILOG.HTM
 aes_context = None

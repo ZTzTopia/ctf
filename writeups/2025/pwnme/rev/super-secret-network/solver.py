@@ -14,39 +14,6 @@ def derive_dh_key(server_pubkey, client_privkey, prime):
     print("SHA256 Hash:", sha256_hash.hex())
     return sha256_hash
 
-# We can use AES-CTR mode to decrypt the data
-def custom_aes(aes_context, encrypted_data, iv):
-    ciphertext = encrypted_data
-    result = bytearray(len(ciphertext))
-    
-    # Initialize counter using IV
-    counter = bytearray(16)
-    counter[:len(iv)] = iv
-    
-    # Process data in 16-byte blocks
-    i = 0
-    while i < len(ciphertext):
-        # Generate keystream by encrypting counter
-        keystream = aes_context.encrypt(bytes(counter))
-        
-        # XOR ciphertext with keystream
-        for j in range(min(16, len(ciphertext) - i)):
-            result[i + j] = ciphertext[i + j] ^ keystream[j]
-        
-        # Increment counter with carry propagation
-        j = 15
-        while True:
-            counter[j] = (counter[j] + 1) & 0xFF
-            if counter[j] != 0:
-                break
-            if j == 0:
-                break
-            j -= 1
-        
-        i += 16
-    
-    return bytes(result)
-
 # https://www.alpertron.com.ar/DILOG.HTM
 aes_context = None
 aes_key = None
