@@ -17,7 +17,7 @@ flag: CIT{18a7fbedb4f3548f}
 
 ---
 
-Upon accessing the page, we are asked to enter a name to join the chat. Requesting a `POST` to http://23.179.17.40:58005/ with the `name` parameter:
+Upon accessing the page, we are asked to enter a name to join the chat.
 
 ![alt text](image.png)
 
@@ -40,9 +40,7 @@ Decoding the first part (`Base64`) reveals:
 {"admin":"0","name":"ztz"}
 ```
 
-This suggested that the server stores the `name` and `admin` parameters in the cookie.
-
-Since the `POST` request accepts a `name`, I attempted to submit additional parameters.
+Because when joining the chat, we will request to http://23.179.17.40:58005/ `POST` request with the `name` parameter. This suggested that the server stores the `name` and `admin` parameters in the cookie. Since the `POST` request accepts a `name`, I attempted to submit additional parameters.
 
 **The idea**: forcefully set `admin=1` and inject a server-side payload.
 
