@@ -1,3 +1,8 @@
+/.vscode
+/archives
 /dump
 /playground
 mise.toml
+
+# Distribution / packaging
+.venv*
