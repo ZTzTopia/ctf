@@ -36,7 +36,7 @@ for i,c in enumerate(flag):
 print(bytes(output).hex())
 ```
 
-The script takes the flag as input, and encrypts it using a key and a carry value. The carry value is updated after each character is encrypted. The encrypted flag is then printed as a hex string.
+So here the flag is added to the carry where at the beginning the carry is 0 after that there will be a check if the flag is outside the ascii then the modulus is 256 after adding the carry then it will be continued with the XOR operation with the Awesome key! after that it will be added to the output array variable after that the variable will be added with the ascii of the current character if the carry is outside the ascii range then it will be modulated by 256.
 
 To decrypt the flag, we can reverse the encryption process. We can start by converting the ciphertext to bytes, and then decrypting each character in reverse order. The decryption process is as follows:
 

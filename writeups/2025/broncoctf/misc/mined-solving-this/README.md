@@ -1,6 +1,6 @@
 ---
 title: "Mined Solving This?"
-category: Miscllaneous
+category: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true
