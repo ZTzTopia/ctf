@@ -1,0 +1,51 @@
+May 09 14:30:01 dhcpserver dhcpd: DHCPDISCOVER from 00:0c:29:1a:2b:3c via eth0
+May 09 14:30:02 dhcpserver dhcpd: DHCPOFFER on 192.168.1.150 to 00:0c:29:1a:2b:3c (CLIENT-A) via eth0
+May 09 14:30:02 dhcpserver dhcpd: DHCPREQUEST for 192.168.1.150 (192.168.1.1) from 00:0c:29:1a:2b:3c (CLIENT-A) via eth0
+May 09 14:30:02 dhcpserver dhcpd: DHCPACK on 192.168.1.150 to 00:0c:29:1a:2b:3c (CLIENT-A) via eth0
+May 09 14:30:05 dhcpserver dhcpd: DHCPINFORM from 192.168.1.50 via eth0
+May 09 14:30:05 dhcpserver dhcpd: DHCPACK to 192.168.1.50 (EXISTING-CLIENT) via eth0
+May 09 14:30:10 dhcpserver dhcpd: DHCPRELEASE of 192.168.1.120 from 00:1a:2b:3c:4d:5e (CLIENT-B) via eth0 (found)
+May 09 14:30:15 dhcpserver dhcpd: DHCPDISCOVER from 00:50:56:aa:bb:cc via eth0
+May 09 14:30:16 dhcpserver dhcpd: DHCPOFFER on 192.168.1.151 to 00:50:56:aa:bb:cc (CLIENT-C) via eth0
+May 09 14:30:16 dhcpserver dhcpd: DHCPREQUEST for 192.168.1.151 (192.168.1.1) from 00:50:56:aa:bb:cc (CLIENT-C) via eth0
+May 09 14:30:16 dhcpserver dhcpd: DHCPACK on 192.168.1.151 to 00:50:56:aa:bb:cc (CLIENT-C) via eth0
+May 09 14:30:20 dhcpserver dhcpd: DHCPDECLINE of 192.168.1.140 from 00:0c:29:de:ad:bf (CONFLICT-CLIENT) via eth0: network 192.168.1.0/24: no free leases
+May 09 14:30:22 dhcpserver dhcpd: uid lease 192.168.1.130 for client 00:0c:29:11:22:33 is duplicate on 192.168.1.0/24
+May 09 14:30:25 dhcpserver dhcpd: DHCPNAK on 192.168.1.200 to 00:aa:bb:cc:dd:ee (UNKNOWN-CLIENT) via eth0
+May 09 14:30:28 dhcpserver dhcpd: Server starting up.
+May 09 14:30:30 dhcpserver dhcpd: Wrote 5 leases to leases file.
+May 09 14:30:35 dhcpserver dhcpd: For info, please visit https://www.isc.org/software/dhcp/
+May 09 14:30:40 dhcpserver dhcpd: Listening on LPF/eth0/00:0c:29:xx:yy:zz/192.168.1.0/24
+May 09 14:30:41 dhcpserver dhcpd: Sending on   LPF/eth0/00:0c:29:xx:yy:zz/192.168.1.0/24
+May 09 14:30:42 dhcpserver dhcpd: Sending on   Socket/fallback/fallback-net
+May 09 14:30:45 dhcpserver dhcpd: DHCPDISCOVER from 08:00:27:fe:dc:ba via eth0
+May 09 14:30:46 dhcpserver dhcpd: DHCPOFFER on 192.168.1.152 to 08:00:27:fe:dc:ba (CLIENT-D) via eth0
+May 09 14:30:48 dhcpserver dhcpd: lease 192.168.1.150 active
+May 09 14:30:50 dhcpserver dhcpd: lease 192.168.1.151 abandoned
+May 09 14:30:52 dhcpserver dhcpd: DHCPREQUEST for 192.168.1.152 from 08:00:27:fe:dc:ba (CLIENT-D) via eth0
+May 09 14:30:52 dhcpserver dhcpd: DHCPACK on 192.168.1.152 to 08:00:27:fe:dc:ba (CLIENT-D) via eth0
+May 09 14:30:55 dhcpserver dhcpd: Pool 192.168.1.0/24: leased 3 of 100
+May 09 14:30:58 dhcpserver dhcpd: Added new class "LegacyClients"
+May 09 14:31:00 dhcpserver dhcpd: Subnet 192.168.1.0 mask 255.255.255.0
+May 09 14:31:01 dhcpserver dhcpd:   Range 192.168.1.100 192.168.1.199
+May 09 14:31:02 dhcpserver dhcpd:   Option routers 192.168.1.1
+May 09 14:31:03 dhcpserver dhcpd:   Option domain-name-servers 8.8.8.8, 8.8.4.4
+May 09 14:31:05 dhcpserver dhcpd: Balancing pool 192.168.1.0/24: free: 97, total: 100, min-balance: 20, max-balance: 80
+May 09 14:31:10 dhcpserver dhcpd: Client 00:0c:29:aa:bb:dd requests 192.168.1.250 (not available)
+May 09 14:31:12 dhcpserver dhcpd: Sending NAK to 192.168.1.1 (Client has incorrect network address)
+May 09 14:31:15 dhcpserver dhcpd: DHCPDISCOVER from 00:11:22:33:44:55 (PRINTER-XYZ) via eth0
+May 09 14:31:16 dhcpserver dhcpd: DHCPOFFER on 192.168.1.153 to 00:11:22:33:44:55 (PRINTER-XYZ) via eth0
+May 09 14:31:18 dhcpserver dhcpd: Renewing lease for 192.168.1.150 by 00:0c:29:1a:2b:3c
+May 09 14:31:18 dhcpserver dhcpd: DHCPREQUEST for 192.168.1.150 from 00:0c:29:1a:2b:3c via eth0
+May 09 14:31:18 dhcpserver dhcpd: DHCPACK on 192.168.1.150 to 00:0c:29:1a:2b:3c via eth0
+May 09 14:31:20 dhcpserver dhcpd: Reclaiming abandoned lease 192.168.1.151
+May 09 14:31:22 dhcpserver dhcpd: DHCPDISCOVER from 00:22:44:66:88:aa via eth0 (no available addresses)
+May 09 14:31:25 dhcpserver dhcpd: Expiry timer for 192.168.1.152 (CLIENT-D) set for 3600 seconds
+May 09 14:31:28 dhcpserver dhcpd: load_leases: all 3 leases successfully loaded
+May 09 14:31:30 dhcpserver dhcpd: Bootp for 00:33:55:77:99:bb from 192.168.1.60
+May 09 14:31:31 dhcpserver dhcpd: BOOTREPLY for 192.168.1.60 to 00:33:55:77:99:bb (DEVICE-BOOTP) via eth0
+May 09 14:31:35 dhcpserver dhcpd: Peer holds all free leases
+May 09 14:31:38 dhcpserver dhcpd: max-lease-time 7200, default-lease-time 600
+May 09 14:31:40 dhcpserver dhcpd: Option 123 (undecoded): 01:02:03:04
+May 09 14:31:42 dhcpserver dhcpd: site-option-space definition: MySite (1 options)
+May 09 14:31:45 dhcpserver dhcpd: execute_statement filename /etc/dhcp/dhcpd.conf line 23: invalid command

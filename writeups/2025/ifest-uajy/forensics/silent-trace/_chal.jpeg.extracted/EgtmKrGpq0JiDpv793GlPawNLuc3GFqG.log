@@ -1,0 +1,132 @@
+{
+    "Records": [
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "IAMUser",
+                "principalId": "AIDAEXAMPLEUSERID",
+                "arn": "arn:aws:iam::123456789012:user/Alice",
+                "accountId": "123456789012",
+                "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+                "userName": "Alice"
+            },
+            "eventTime": "2025-05-09T07:25:01Z",
+            "eventSource": "ec2.amazonaws.com",
+            "eventName": "RunInstances",
+            "awsRegion": "us-west-2",
+            "sourceIPAddress": "203.0.113.25",
+            "userAgent": "aws-sdk-js/2.1000.0 callback",
+            "requestParameters": {"instanceType": "t2.micro", "imageId": "ami-0abcdef1234567890"},
+            "responseElements": {"instancesSet": {"items": [{"instanceId": "i-0123456789abcdef0"}]}},
+            "requestID": "12345678-abcd-1234-abcd-123456789abc",
+            "eventID": "abcdef12-3456-7890-abcd-ef1234567890",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789012",
+            "eventCategory": "Management"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "AssumedRole",
+                "principalId": "AROAEXAMPLE ROLEID:Bob",
+                "arn": "arn:aws:sts::123456789012:assumed-role/EngineeringRole/Bob",
+                "accountId": "123456789012",
+                "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
+                "sessionContext": {
+                    "sessionIssuer": {"type": "Role", "principalId": "AROAEXAMPLE ROLEID", "arn": "arn:aws:iam::123456789012:role/EngineeringRole", "accountId": "123456789012", "userName": "EngineeringRole"},
+                    "webIdFederationData": {},
+                    "attributes": {"mfaAuthenticated": "false", "creationDate": "2025-05-09T07:26:00Z"}
+                }
+            },
+            "eventTime": "2025-05-09T07:26:15Z",
+            "eventSource": "s3.amazonaws.com",
+            "eventName": "CreateBucket",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "198.51.100.10",
+            "userAgent": "AWSCLI/1.19.0 Python/3.8.2 Linux/4.14.133-113.105.amzn2.x86_64 botocore/1.20.0",
+            "requestParameters": {"bucketName": "my-new-ctf-bucket", "Host": "s3.us-east-1.amazonaws.com"},
+            "responseElements": null,
+            "requestID": "ABCDEF0123456789",
+            "eventID": "01234567-89ab-cdef-0123-456789abcdef",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789012",
+            "eventCategory": "Management"
+        },
+        {
+            "eventVersion": "1.05",
+            "userIdentity": {
+                "type": "AWSService",
+                "invokedBy": "cloudtrail.amazonaws.com"
+            },
+            "eventTime": "2025-05-09T07:27:30Z",
+            "eventSource": "cloudtrail.amazonaws.com",
+            "eventName": "StartLogging",
+            "awsRegion": "us-west-2",
+            "sourceIPAddress": "cloudtrail.amazonaws.com",
+            "userAgent": "cloudtrail.amazonaws.com",
+            "requestParameters": {"name": "MyCTFLogTrail"},
+            "responseElements": {"name": "MyCTFLogTrail", "s3BucketName": "aws-cloudtrail-logs-123456789012-abcdefg", "includeGlobalServiceEvents": true, "isMultiRegionTrail": true, "trailARN": "arn:aws:cloudtrail:us-west-2:123456789012:trail/MyCTFLogTrail", "logFileValidationEnabled": true, "isOrganizationTrail": false},
+            "requestID": "aaaaabbb-cccc-dddd-eeee-ffff00001111",
+            "eventID": "bbbbcccc-dddd-eeee-ffff-000011112222",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789012",
+            "eventCategory": "Management"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "IAMUser",
+                "principalId": "AIDAEXAMPLEUSERID2",
+                "arn": "arn:aws:iam::123456789012:user/Charlie",
+                "accountId": "123456789012",
+                "accessKeyId": "AKIAJFKLDSFEXAMPLE",
+                "userName": "Charlie"
+            },
+            "eventTime": "2025-05-09T07:28:45Z",
+            "eventSource": "iam.amazonaws.com",
+            "eventName": "CreateUser",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "203.0.113.50",
+            "userAgent": "console.amazonaws.com",
+            "requestParameters": {"userName": "TempUserCTF"},
+            "responseElements": {"user": {"path": "/", "userName": "TempUserCTF", "userId": "AIDAEXAMPLETEMPUSER", "arn": "arn:aws:iam::123456789012:user/TempUserCTF", "createDate": "May 9, 2025 7:28:45 AM"}},
+            "requestID": "11223344-aabb-ccdd-eeff-001122334455",
+            "eventID": "22334455-bbcc-ddee-ff00-112233445566",
+            "readOnly": false,
+            "eventType": "AwsApiCall",
+            "managementEvent": true,
+            "recipientAccountId": "123456789012",
+            "eventCategory": "Management"
+        },
+        {
+            "eventVersion": "1.08",
+            "userIdentity": {
+                "type": "Root",
+                "principalId": "123456789012",
+                "arn": "arn:aws:iam::123456789012:root",
+                "accountId": "123456789012"
+            },
+            "eventTime": "2025-05-09T07:30:00Z",
+            "eventSource": "signin.amazonaws.com",
+            "eventName": "ConsoleLogin",
+            "awsRegion": "us-east-1",
+            "sourceIPAddress": "192.0.2.100",
+            "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
+            "requestParameters": null,
+            "responseElements": {"ConsoleLogin": "Success"},
+            "additionalEventData": {"LoginTo": "https://console.aws.amazon.com/console/home?state=hashArgs%23&isauthcode=true", "MobileVersion": "No", "MFAUsed": "No"},
+            "eventID": "33445566-ccdd-eedd-ff11-223344556677",
+            "readOnly": false,
+            "eventType": "AwsConsoleSignIn",
+            "managementEvent": true,
+            "recipientAccountId": "123456789012",
+            "eventCategory": "Management"
+        }
+    ]
+}

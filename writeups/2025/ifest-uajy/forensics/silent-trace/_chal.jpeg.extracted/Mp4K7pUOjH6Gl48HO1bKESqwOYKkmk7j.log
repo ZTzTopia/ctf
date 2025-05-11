@@ -1,0 +1,50 @@
+05/09-14:23:01.123456  [**] [1:1000001:0] ET SCAN Nmap Scripting Engine User-Agent Detected (Nmap Scripting Engine) [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.100:54321 -> 10.0.0.5:80
+05/09-14:23:02.234567  [**] [1:2000002:3] ET POLICY SMB Command Used - net share (Informational) [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.1.101:139 -> 10.0.0.6:445
+05/09-14:23:03.345678  [**] [1:3000003:1] ET MALWARE Known Malicious CNC Server Connection (Trojan.GenericKD) [**] [Classification: A Network Trojan was Detected] [Priority: 1] {TCP} 10.0.0.7:1025 -> 203.0.113.50:443
+05/09-14:23:04.456789  [**] [1:2100004:5] GPL ICMP_INFO PING BSDtype [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.1.102 -> 10.0.0.8
+05/09-14:23:05.567890  [**] [1:2018959:4] ET POLICY curl User-Agent Outbound [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.9:8080 -> 198.51.100.70:80
+05/09-14:23:06.678901  [**] [1:2210051:2] SURICATA STREAM FIN recv but no session [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.0.10:12345 -> 172.16.5.5:443
+05/09-14:23:07.789012  [**] [1:2403000:3586] ET POLICY Suspicious inbound to MSSQL port 1433 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 203.0.113.80:55555 -> 10.0.0.11:1433
+05/09-14:23:08.890123  [**] [1:2003068:7] ET POLICY Executable and Linking Format (ELF) file download [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.0.12:80 -> 192.168.1.103:33333
+05/09-14:23:09.901234  [**] [1:2010935:4] ET POLICY DNS Update From External Source [**] [Classification: Potentially Bad Traffic] [Priority: 2] {UDP} 198.51.100.90:53 -> 10.0.0.13:5353
+05/09-14:23:10.012345  [**] [1:2012087:3] ET POLICY Outdated Windows OS User-Agent (Windows NT 5.1) [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.0.14:8000 -> 203.0.113.100:80
+05/09-14:23:11.123456  [**] [1:2520000:1] FTP anonymous login attempt [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.104:21 -> 10.0.0.15:49152
+05/09-14:23:12.234567  [**] [1:2013028:3] ET POLICY Powershell User-Agent Outbound [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.0.16:443 -> 198.51.100.110:443
+05/09-14:23:13.345678  [**] [1:2027874:1] ET POLICY Possible Tor Server IP Detected (Inbound) [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 96.90.175.33:1234 -> 10.0.0.17:80
+05/09-14:23:14.456789  [**] [1:2200074:1] SURICATA Applayer Mismatch protocol both ways [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.0.18:8080 -> 172.16.6.6:22
+05/09-14:23:15.567890  [**] [1:2001582:7] ET POLICY PE EXE or DLL Windows file download HTTP [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 203.0.113.120:80 -> 10.0.0.19:55555
+05/09-14:23:16.678901  [**] [1:1000007:0] ET SCAN Nmap OS Detection Probe [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.105:11111 -> 10.0.0.20:80
+05/09-14:23:17.789012  [**] [1:2100498:6] GPL NETBIOS SMB-DS Session Setup NTMLSSP unicode [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.21:139 -> 192.168.1.106:445
+05/09-14:23:18.890123  [**] [1:3000010:1] ET MALWARE Generic CoinMiner Stratum Traffic (TCP) [**] [Classification: A Network Trojan was Detected] [Priority: 1] {TCP} 10.0.0.22:3333 -> 198.51.100.130:3333
+05/09-14:23:19.901234  [**] [1:2002878:4] ET POLICY FTP Login BruteForce Attempt [**] [Classification: Attempted Denial of Service] [Priority: 2] {TCP} 192.168.1.107:21 -> 10.0.0.23:49153
+05/09-14:23:20.012345  [**] [1:2016158:3] ET POLICY TeamViewer Dyngate User-Agent [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.24:5938 -> 203.0.113.140:5938
+05/09-14:23:21.123456  [**] [1:2220001:1] SURICATA SMTP invalid reply [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.0.25:25 -> 172.16.7.7:587
+05/09-14:23:22.234567  [**] [1:2404001:2685] ET POLICY Suspicious RDP anomoly (RDP anomoly) [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 198.51.100.150:3389 -> 10.0.0.26:3389
+05/09-14:23:23.345678  [**] [1:2008589:3] ET POLICY OpenVPN User-Agent Inbound [**] [Classification: Potentially Bad Traffic] [Priority: 3] {UDP} 203.0.113.160:1194 -> 10.0.0.27:1194
+05/09-14:23:24.456789  [**] [1:2014746:3] ET POLICY HTTP Request on Unusual Port (8088) [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.28:8088 -> 192.168.1.108:80
+05/09-14:23:25.567890  [**] [1:2500003:2] VNC Authentication Attempt [**] [Classification: Attempted User Privilege Gain] [Priority: 2] {TCP} 192.168.1.109:5900 -> 10.0.0.29:5901
+05/09-14:23:26.678901  [**] [1:2022974:2] ET POLICY HTTP Request to a .tk domain [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 10.0.0.30:80 -> bad.domain.tk:80
+05/09-14:23:27.789012  [**] [1:2012887:4] ET POLICY Dropbox Client User-Agent [**] [Classification: Information Leak] [Priority: 3] {TCP} 10.0.0.31:443 -> d.dropbox.com:443
+05/09-14:23:28.890123  [**] [1:2210033:2] SURICATA STREAM CLOSEWAIT FIN out of window [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 172.16.8.8:1026 -> 10.0.0.32:8080
+05/09-14:23:29.901234  [**] [1:2402000:4021] ET POLICY DNS Query for .onion domain [**] [Classification: Potentially Bad Traffic] [Priority: 2] {UDP} 10.0.0.33:5353 -> 8.8.8.8:53
+05/09-14:23:30.012345  [**] [1:2009000:5] ET POLICY Wget User-Agent [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.34:80 -> example.com:80
+05/09-14:23:31.123456  [**] [1:2029001:1] ET MALWARE Cobalt Strike Beacon User-Agent (generic) [**] [Classification: A Network Trojan was Detected] [Priority: 1] {TCP} 10.0.0.35:80 -> 203.0.113.170:8080
+05/09-14:23:32.234567  [**] [1:2101519:5] GPL SNMP public access udp [**] [Classification: Attempted Information Leak] [Priority: 2] {UDP} 192.168.1.110:161 -> 10.0.0.36:161
+05/09-14:23:33.345678  [**] [1:2018400:3] ET POLICY Python requests User-Agent Outbound [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.37:443 -> api.service.com:443
+05/09-14:23:34.456789  [**] [1:2200010:1] SURICATA ICMPv6 unknown type [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {ICMPV6} fe80::1 -> ff02::1
+05/09-14:23:35.567890  [**] [1:2001219:11] ET POLICY Binary Download  HTTP (Content-Type octet-stream) [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} download.server.com:80 -> 10.0.0.38:49154
+05/09-14:23:36.678901  [**] [1:1000012:0] ET SCAN Nessus User-Agent Detected [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.1.111:1241 -> 10.0.0.39:8834
+05/09-14:23:37.789012  [**] [1:2100887:5] GPL NETBIOS SMB-DS IPC$ share access [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.0.40:139 -> 192.168.1.112:445
+05/09-14:23:38.890123  [**] [1:3000015:1] ET MALWARE Meterpreter Reverse HTTPS (Beacon) [**] [Classification: A Network Trojan was Detected] [Priority: 1] {TCP} 10.0.0.41:443 -> 198.51.100.180:443
+05/09-14:23:39.901234  [**] [1:2010493:4] ET POLICY Suspicious inbound to Oracle SQL port 1521 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 203.0.113.190:60000 -> 10.0.0.42:1521
+05/09-14:23:40.012345  [**] [1:2024011:1] ET POLICY Possible SSH Scan [**] [Classification: Attempted Reconnaissance] [Priority: 2] {TCP} scanner.evil.com:2222 -> 10.0.0.43:22
+05/09-14:23:41.123456  [**] [1:2220005:1] SURICATA TLS invalid record type [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 10.0.0.44:443 -> attacker.site:8443
+05/09-14:23:42.234567  [**] [1:2405000:1] ET POLICY RAdmin Remote Control Software In Use [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.1.113:4899 -> 10.0.0.45:4899
+05/09-14:23:43.345678  [**] [1:2002903:8] ET POLICY Outbound Basic Auth Base64 HTTP [**] [Classification: Information Leak] [Priority: 2] {TCP} 10.0.0.46:8080 -> internal.service.com:80
+05/09-14:23:44.456789  [**] [1:2012080:4] ET POLICY Java JAR file download HTTP [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} files.example.org:80 -> 10.0.0.47:51234
+05/09-14:23:45.567890  [**] [1:2500007:1] Telnet login attempt [**] [Classification: Attempted User Privilege Gain] [Priority: 2] {TCP} 192.168.1.114:23 -> 10.0.0.48:49155
+05/09-14:23:46.678901  [**] [1:2027400:2] ET POLICY HTTP POST to a .php page with no Referer [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.49:80 -> webserver.com:80
+05/09-14:23:47.789012  [**] [1:2015746:2] ET POLICY Potential TOR SSL command detected [**] [Classification: Misc activity] [Priority: 3] {TCP} 10.0.0.50:9001 -> tor-exit.node.com:443
+05/09-14:23:48.890123  [**] [1:2210040:2] SURICATA STREAM ESTABLISHED retransmission packet before last ack [**] [Classification: Generic Protocol Command Decode] [Priority: 3] {TCP} 172.16.9.9:1027 -> 10.0.0.51:80
+05/09-14:23:49.901234  [**] [1:2400000:1] ET EXPLOIT Apache Struts OGNL Invocation (CVE-2017-5638) [**] [Classification: Web Application Attack] [Priority: 1] {TCP} 203.0.113.200:8080 -> 10.0.0.52:8080
+05/09-14:23:50.012345  [**] [1:2003269:3] ET POLICY Bittorrent uTorrent User-Agent [**] [Classification: Potentially Bad Traffic] [Priority: 3] {TCP} 10.0.0.53:6881 -> tracker.torrent.com:6969

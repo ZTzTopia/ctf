@@ -1,0 +1,51 @@
+May 09 14:15:01 server1 vsftpd[3001]: CONNECT: Client "192.168.1.50", "anonymous"
+May 09 14:15:02 server1 vsftpd[3001]: FTP session opened.
+May 09 14:15:03 server1 vsftpd[3001]: [anonymous] USER anonymous
+May 09 14:15:03 server1 vsftpd[3001]: [anonymous] PASS (hidden)
+May 09 14:15:04 server1 vsftpd[3001]: [anonymous] CWD /pub
+May 09 14:15:05 server1 vsftpd[3001]: [anonymous] RETR welcome.msg
+May 09 14:15:05 server1 vsftpd[3001]: [anonymous] OK DOWNLOAD: Client "192.168.1.50", "/pub/welcome.msg", 1024 bytes, 0.50Kbyte/sec
+May 09 14:15:06 server1 vsftpd[3001]: FTP session closed.
+May 09 14:15:10 server1 proftpd[3010]: 10.0.1.100 - USER ftpuser1: Login successful.
+May 09 14:15:11 server1 proftpd[3010]: 10.0.1.100 - MKD /uploads/new_folder: Directory successfully created.
+May 09 14:15:12 server1 proftpd[3010]: 10.0.1.100 - STOR /uploads/new_folder/document.pdf: Upload successful, 2048000 bytes transferred.
+May 09 14:15:13 server1 proftpd[3010]: 10.0.1.100 - DELE /old_files/backup.zip: File successfully deleted.
+May 09 14:15:14 server1 proftpd[3010]: 10.0.1.100 - QUIT: Session ended
+May 09 14:15:15 server1 vsftpd[3020]: CONNECT: Client "172.16.10.20", "user_x"
+May 09 14:15:16 server1 vsftpd[3020]: FTP session opened.
+May 09 14:15:17 server1 vsftpd[3020]: [user_x] FAIL LOGIN: Client "172.16.10.20"
+May 09 14:15:18 server1 vsftpd[3020]: FTP session closed.
+May 09 14:15:20 server1 vsftpd[3030]: CONNECT: Client "192.168.1.51", "uploader"
+May 09 14:15:21 server1 vsftpd[3030]: FTP session opened.
+May 09 14:15:22 server1 vsftpd[3030]: [uploader] USER uploader
+May 09 14:15:22 server1 vsftpd[3030]: [uploader] PASS (hidden)
+May 09 14:15:23 server1 vsftpd[3030]: [uploader] MKD /private_data
+May 09 14:15:23 server1 vsftpd[3030]: [uploader] FAIL MKDIR: Client "192.168.1.51", "/private_data", Permission denied
+May 09 14:15:24 server1 vsftpd[3030]: [uploader] CWD /shared_uploads
+May 09 14:15:25 server1 vsftpd[3030]: [uploader] STOR image.jpg
+May 09 14:15:26 server1 vsftpd[3030]: [uploader] OK UPLOAD: Client "192.168.1.51", "/shared_uploads/image.jpg", 512000 bytes, 120.00Kbyte/sec
+May 09 14:15:27 server1 vsftpd[3030]: [uploader] RNFR oldname.txt
+May 09 14:15:28 server1 vsftpd[3030]: [uploader] RNTO newname.txt
+May 09 14:15:29 server1 vsftpd[3030]: [uploader] DELE tempfile.tmp
+May 09 14:15:30 server1 vsftpd[3030]: FTP session closed.
+May 09 14:15:35 server1 proftpd[3040]: 10.0.1.101 - USER restricted_user: Login successful.
+May 09 14:15:36 server1 proftpd[3040]: 10.0.1.101 - GET /downloads/manual.pdf: Download successful, 102400 bytes transferred.
+May 09 14:15:37 server1 proftpd[3040]: 10.0.1.101 - APPE /logs/activity.log: Append successful, 128 bytes transferred.
+May 09 14:15:38 server1 proftpd[3040]: 10.0.1.101 - SITE CHMOD 755 /public_html/index.php: Command successful.
+May 09 14:15:39 server1 proftpd[3040]: 10.0.1.101 - QUIT: Session ended, an idle timeout occurred (300 seconds)
+May 09 14:15:40 server1 vsftpd[3050]: CONNECT: Client "172.16.10.21" (Abusive host)
+May 09 14:15:40 server1 vsftpd[3050]: FTP session closed (kill)
+May 09 14:15:41 server1 vsftpd[3051]: CONNECT: Client "192.168.1.52", "data_user"
+May 09 14:15:42 server1 vsftpd[3051]: FTP session opened.
+May 09 14:15:43 server1 vsftpd[3051]: [data_user] USER data_user
+May 09 14:15:43 server1 vsftpd[3051]: [data_user] PASS (hidden)
+May 09 14:15:44 server1 vsftpd[3051]: [data_user] LIST /data_files
+May 09 14:15:45 server1 vsftpd[3051]: [data_user] SIZE /data_files/archive.zip
+May 09 14:15:45 server1 vsftpd[3051]: [data_user] OK SIZE: Client "192.168.1.52", "/data_files/archive.zip", 104857600 bytes
+May 09 14:15:46 server1 vsftpd[3051]: [data_user] MDTM /data_files/report.docx
+May 09 14:15:47 server1 vsftpd[3051]: [data_user] TYPE I
+May 09 14:15:48 server1 vsftpd[3051]: [data_user] PASV
+May 09 14:15:49 server1 vsftpd[3051]: [data_user] RETR /data_files/report.docx
+May 09 14:15:50 server1 vsftpd[3051]: [data_user] OK DOWNLOAD: Client "192.168.1.52", "/data_files/report.docx", 350000 bytes, 500.00Kbyte/sec
+May 09 14:15:51 server1 vsftpd[3051]: [data_user] NOOP
+May 09 14:15:52 server1 vsftpd[3051]: FTP session closed.

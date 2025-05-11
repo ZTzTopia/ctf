@@ -1,0 +1,50 @@
+09-May-2025 14:12:01.123 client 192.168.1.10#54321 (example.com): query: example.com IN A + (10.0.0.1)
+09-May-2025 14:12:02.456 client 10.0.2.20#12345 (api.example.com): query: api.example.com IN A + (10.0.0.2)
+09-May-2025 14:12:03.789 client 172.16.0.30#55555 (www.another-domain.org): query: www.another-domain.org IN A + (203.0.113.45)
+09-May-2025 14:12:04.012 client 192.168.1.11#11223 (nonexistent-domain.xyz): query: nonexistent-domain.xyz IN A - NXDOMAIN (10.0.0.1)
+09-May-2025 14:12:05.345 client 10.0.2.21#22334 (mail.example.com): query: mail.example.com IN MX + (10.0.0.3)
+09-May-2025 14:12:06.678 client 172.16.0.31#33445 (cdn.example.net): query: cdn.example.net IN CNAME + (cdn-provider.com)
+09-May-2025 14:12:07.901 client 192.168.1.12#44556 (ipv6.example.com): query: ipv6.example.com IN AAAA + (2001:db8::1)
+09-May-2025 14:12:08.234 client 10.0.2.22#55667 (ftp.example.com): query: ftp.example.com IN A + (10.0.0.4)
+09-May-2025 14:12:09.567 client 172.16.0.32#66778 (blocked-domain.com): query: blocked-domain.com IN A R (10.0.0.1) ; response policy zone
+09-May-2025 14:12:10.890 client 192.168.1.13#12121 (internal.corp.local): query: internal.corp.local IN A + (192.168.100.10)
+09-May-2025 14:12:11.123 client 10.0.2.23#23232 (resource.azure.com): query: resource.azure.com IN A + (52.100.20.30)
+09-May-2025 14:12:12.456 client 172.16.0.33#34343 (badquerytype.example.com): query: badquerytype.example.com IN TXT - SERVFAIL (10.0.0.1)
+09-May-2025 14:12:13.789 client 192.168.1.14#45454 (example.com): query: example.com IN SOA + (ns1.example.com)
+09-May-2025 14:12:14.012 client 10.0.2.24#56565 (database.private.net): query: database.private.net IN SRV + (_mysql._tcp.database.private.net)
+09-May-2025 14:12:15.345 client 172.16.0.34#10101 (example.com): query: example.com IN NS + (ns1.example.com ns2.example.com)
+09-May-2025 14:12:16.678 client 192.168.1.15#20202 (cache-test.example.com): query: cache-test.example.com IN A +S (10.0.0.5) ; from cache
+09-May-2025 14:12:17.901 client 10.0.2.25#30303 (external-api.thirdparty.io): query: external-api.thirdparty.io IN A + (198.51.100.80)
+09-May-2025 14:12:18.234 client 172.16.0.35#40404 (test-recursion.example.com): query: test-recursion.example.com IN A + (1.2.3.4) ; recursion allowed
+09-May-2025 14:12:19.567 client 192.168.1.16#50505 (rate-limited-client.com): query: frequent-query.com IN A T (10.0.0.1) ; rate limited
+09-May-2025 14:12:20.890 client 10.0.2.26#60606 (referral.example.com): query: sub.referral.example.com IN A -> referral-ns.com (10.0.0.1)
+09-May-2025 14:12:21.123 client 172.16.0.36#13579 (wildcard.example.com): query: randomsub.wildcard.example.com IN A + (*.example.com -> 10.0.0.6)
+09-May-2025 14:12:22.456 client 192.168.1.17#24680 (dnssec-signed.com): query: dnssec-signed.com IN A +AD (10.0.0.7) ; DNSSEC validated
+09-May-2025 14:12:23.789 client 10.0.2.27#35791 (longquery.verylongsubdomainnameexample.example.com): query: ... IN A + (10.0.0.8)
+09-May-2025 14:12:24.012 client 172.16.0.37#46802 (srv-record.example.com): query: _ldap._tcp.srv-record.example.com IN SRV + (server1.example.com:389)
+09-May-2025 14:12:25.345 client 192.168.1.18#57913 (ptr-record.com): query: 1.0.0.10.in-addr.arpa IN PTR + (server.example.com)
+09-May-2025 14:12:26.678 client 10.0.2.28#11100 (any-query.example.com): query: any-query.example.com IN ANY - (10.0.0.1) ; ANY query deprecated/refused
+09-May-2025 14:12:27.901 client 172.16.0.38#22200 (caa-record.example.com): query: caa-record.example.com IN CAA + (0 issue "letsencrypt.org")
+09-May-2025 14:12:28.234 client 192.168.1.19#33300 (tlsa-record.example.com): query: _443._tcp.tlsa-record.example.com IN TLSA + (3 1 1 ...)
+09-May-2025 14:12:29.567 client 10.0.2.29#44400 (naptr-record.example.com): query: naptr-record.example.com IN NAPTR + (100 10 "S" "SIP+D2U" "" _sip._udp.example.com.)
+09-May-2025 14:12:30.890 client 172.16.0.39#55500 (sshfp-record.example.com): query: host.sshfp-record.example.com IN SSHFP + (2 1 ...)
+09-May-2025 14:12:31.123 client 192.168.1.20#12321 (expired-cache.example.com): query: expired-cache.example.com IN A + (10.0.0.9) ; cache expired, refetching
+09-May-2025 14:12:32.456 client 10.0.2.30#23432 (negative-cache.example.com): query: negative-cache.example.com IN A -S NXDOMAIN (10.0.0.1) ; from negative cache
+09-May-2025 14:12:33.789 client 172.16.0.40#34543 (dns-over-tls.example.com): query: dns-over-tls.example.com IN A +E (10.0.0.10) ; encrypted (DoT)
+09-May-2025 14:12:34.012 client 192.168.1.21#45654 (dns-over-https.example.com): query: dns-over-https.example.com IN A +H (10.0.0.11) ; encrypted (DoH)
+09-May-2025 14:12:35.345 client 10.0.2.31#56765 (subnet-client.example.com): query: subnet-client.example.com IN A + (10.0.0.12) ; EDNS client subnet 192.0.2.0/24
+09-May-2025 14:12:36.678 client 172.16.0.41#10001 (ecs-disabled.example.com): query: ecs-disabled.example.com IN A + (10.0.0.13) ; EDNS client subnet ommitted
+09-May-2025 14:12:37.901 client 192.168.1.22#20002 (large-response.example.com): query: large-response.example.com IN TXT +T (10.0.0.1) ; response truncated, retry with TCP
+09-May-2025 14:12:38.234 client 10.0.2.32#30003 (tcp-retry.example.com): query: tcp-retry.example.com IN TXT + (10.0.0.1) ; (TCP)
+09-May-2025 14:12:39.567 client 172.16.0.42#40004 (forwarded-query.example.com): query: forwarded-query.example.com IN A + FWD(8.8.8.8) (10.0.0.14)
+09-May-2025 14:12:40.890 client 192.168.1.23#50005 (auth-server-error.example.com): query: auth-server-error.example.com IN A SFAIL (10.0.0.1) ; from authoritative server
+09-May-2025 14:12:41.123 client 10.0.2.33#60006 (local-resolver-override.example.com): query: local-resolver-override.example.com IN A + (127.0.0.53)
+09-May-2025 14:12:42.456 client 172.16.0.43#11011 (malware-phishing.bad-domain.com): query: malware-phishing.bad-domain.com IN A B (10.0.0.1) ; RPZ blocked (malware)
+09-May-2025 14:12:43.789 client 192.168.1.24#22022 (cname-loop.example.com): query: cname-loop.example.com IN A L ServFail (10.0.0.1) ; CNAME loop detected
+09-May-2025 14:12:44.012 client 10.0.2.34#33033 (view-based-dns.example.com): query: view-based-dns.example.com IN A + (192.168.50.10) ; view internal
+09-May-2025 14:12:45.345 client 203.0.113.200#44044 (external-view.example.com): query: view-based-dns.example.com IN A + (203.0.113.50) ; view external
+09-May-2025 14:12:46.678 client 192.168.1.25#55055 (ddns-update.example.com): query: ddns-update.example.com IN A + (10.0.0.15) ; Dynamic DNS update
+09-May-2025 14:12:47.901 client 10.0.2.35#10203 (zone-transfer-req.example.com): query: example.com IN AXFR - REFUSED (10.0.0.1) ; Zone transfer denied
+09-May-2025 14:12:48.234 client 172.16.0.44#20304 (stealth-query.example.com): query: example.com IN HINFO ? (10.0.0.1) ; unusual query type
+09-May-2025 14:12:49.567 client 192.168.1.26#30405 (health-check.resolver.internal): query: health-check.resolver.internal IN A + (127.0.0.1)
+09-May-2025 14:12:50.890 client 10.0.2.36#40506 (blackhole-route.example.com): query: blackhole-route.example.com IN A + (192.0.2.1) ; Blackholed by policy

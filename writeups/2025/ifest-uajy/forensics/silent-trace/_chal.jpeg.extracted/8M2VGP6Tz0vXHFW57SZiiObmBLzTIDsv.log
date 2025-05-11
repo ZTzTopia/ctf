@@ -1,0 +1,50 @@
+May 09 14:22:01 kdc krb5kdc[1201](info): AS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.10: NEEDED_PREAUTH: user1@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Additional pre-authentication required
+May 09 14:22:02 kdc krb5kdc[1201](info): AS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.10: PREAUTH_FAILED: user1@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Pre-authentication failed
+May 09 14:22:03 kdc krb5kdc[1201](info): AS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.10: ISSUE: authtime 1652100123, etypes {rep=18 tkt=18 ses=18}, user1@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM
+May 09 14:22:04 appserver kadmind[1301](info): TGS_REQ (5 etypes {18 17 16 23 24}) 10.0.1.10: ISSUE: authtime 1652100123, etypes {rep=18 tkt=18 ses=18}, user1@EXAMPLE.COM for host/appserver.example.com@EXAMPLE.COM
+May 09 14:22:05 fileserver java[1401]: GSSAPI Error: Defective token detected (Mechanism level: GSSHeader did not find the right tag)
+May 09 14:22:06 kdc krb5kdc[1202](info): TGS_REQ (6 etypes {18 17 20 19 23 24}) 10.0.1.11: UNKNOWN_SERVER: authtime 0, HTTP/nonexistent.example.com@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Server not found in Kerberos database
+May 09 14:22:07 appserver sshd[1501]: Accepted GSSAPI for user2 from 10.0.1.12 port 12345 ssh2
+May 09 14:22:08 kdc krb5kdc[1201](info): AS_REQ (1 etype {23}) 10.0.1.13: CLIENT_NOT_FOUND: administrator@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Client not found in Kerberos database
+May 09 14:22:09 fileserver smbd[1601]: Kerberos: Principal host/fileserver.example.com@EXAMPLE.COM not found in keytab (filename: /etc/krb5.keytab)
+May 09 14:22:10 kdc krb5kdc[1202](info): TGS_REQ (4 etypes {18 17 23 24}) 10.0.1.14: POLICY: authtime 1652100100, etypes {rep=17 tkt=17 ses=17}, old_user@EXAMPLE.COM for ldap/kdc.example.com@EXAMPLE.COM, Ticket expired
+May 09 14:22:11 appserver httpd[1701]: [krb_auth_gssapi:error] [pid 1701:tid 123] [client 10.0.1.15:8080] gss_accept_sec_context() failed: An unsupported mechanism was requested (, Unknown error)
+May 09 14:22:12 kdc krb5kdc[1201](info): TGS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.16: ISSUE: authtime 1652100130, etypes {rep=18 tkt=18 ses=18}, service_account@EXAMPLE.COM for cifs/winserver.example.com@EXAMPLE.COM
+May 09 14:22:13 winserver krbcc[1801]: Kerberos: cc_creds_validate: Expired credentials for user3@AD.EXAMPLE.COM to service krbtgt/AD.EXAMPLE.COM@AD.EXAMPLE.COM
+May 09 14:22:14 kdc krb5kdc[1202](info): AS_REQ (6 etypes {18 17 16 23 24 20}) 10.0.1.17: PREAUTH_REQUIRED: user4_nopreauth@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Pre-authentication required but not supported by client
+May 09 14:22:15 appserver sudo[1901]: PAM-KRB5 (sudo): user user1@EXAMPLE.COM authenticated for 'sudo' command
+May 09 14:22:16 kdc krb5kdc[1201](info): TGS_REQ (1 etype {18}) 10.0.1.18: BAD_ENCRYPTION_TYPE: authtime 1652100135, user5@EXAMPLE.COM for HTTP/webservice.example.com@EXAMPLE.COM, KDC cannot accommodate requested encryption type
+May 09 14:22:17 fileserver nfsd[2001]: gssd_refresh_krb5_machine_credential: no usable keytab entry found for nfs/fileserver.example.com
+May 09 14:22:18 kdc krb5kdc[1202](info): AS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.19: LOCKED_OUT: disabled_user@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Client's entry in database has expired
+May 09 14:22:19 appserver vsftpd[2101]: PAM-KRB5: user user_ftp@EXAMPLE.COM authenticated for vsftpd session
+May 09 14:22:20 kdc krb5kdc[1201](info): TGS_REQ (5 etypes {18 17 16 23 24}) 10.0.1.20: SKEY_REQUIRED: authtime 1652100140, delegated_user@EXAMPLE.COM for host/restricted_server.example.com@EXAMPLE.COM, Server principal requires session key from TGT
+May 09 14:22:21 dbserver postgres[2201]: GSSAPI authentication succeeded for user "db_user@EXAMPLE.COM"
+May 09 14:22:22 kdc krb5kdc[1202](info): AS_REQ (8 etypes {18 17 20 19 16 23 24 25}) 10.0.1.21: BAD_PVNO: user_unknown_version@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, KRB5_BAD_PVNO (60) verifying pre-authentication data
+May 09 14:22:23 appserver login[2301]: pam_krb5[2301]: authentication succeeds for `user_login` (user_login@EXAMPLE.COM)
+May 09 14:22:24 kdc krb5kdc[1201](info): TGS_REQ (6 etypes {18 17 20 19 23 24}) 10.0.1.22: RENEW_TGT: authtime 1652090000, etypes {rep=18 tkt=18 ses=18}, user_longsession@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM
+May 09 14:22:25 client kinit[2401]: kinit: Client's credentials have been revoked while getting initial credentials
+May 09 14:22:26 kdc krb5kdc[1202](info): AS_REQ (4 etypes {18 17 16 23}) 10.0.1.23: KDC_ERR_POLICY: temp_user@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Requested options not allowed
+May 09 14:22:27 appserver kadmin.local[2501]: Authenticated user: admin/admin@EXAMPLE.COM
+May 09 14:22:28 kdc krb5kdc[1201](info): TGS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.24: BAD_ADDRESS: authtime 1652100145, user_from_wrong_ip@EXAMPLE.COM for host/server.example.com@EXAMPLE.COM, Incorrect network address
+May 09 14:22:29 fileserver ganesha.nfsd[2601]: GSS DUMP: gss_accept_sec_context failed [mech OID: 1.2.840.113554.1.2.2, maj_stat: 0x1, min_stat: 0x96c73a8f]
+May 09 14:22:30 kdc krb5kdc[1202](info): AS_REQ (5 etypes {18 17 16 23 24}) 10.0.1.25: PASSWORD_EXPIRED: expired_pw_user@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Password has expired
+May 09 14:22:31 appserver ceph-mon[2701]: Keyring: couldn't find key for mon.appserver@EXAMPLE.COM
+May 09 14:22:32 kdc krb5kdc[1201](info): TGS_REQ (1 etype {17}) 10.0.1.26: S4U2PROXY: authtime 1652100150, user_app@EXAMPLE.COM for service/backend.example.com@EXAMPLE.COM S4U2Self to user_app@EXAMPLE.COM
+May 09 14:22:33 winserver lsass[2801]: Kerberos: Failed to find credentials for user 'missing_user@AD.EXAMPLE.COM' in LSA cache
+May 09 14:22:34 kdc krb5kdc[1202](info): AS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.27: PREAUTH_TYPE_NOTSUPP: user_otp@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, KDC policy does not authorize this preauthentication type
+May 09 14:22:35 appserver openconnect[2901]: GSSAPI: server credentials for host/vpn.example.com@EXAMPLE.COM not found in default keytab
+May 09 14:22:36 kdc krb5kdc[1201](info): TGS_REQ (6 etypes {18 17 20 19 23 24}) 10.0.1.28: NO_TGT: authtime 0, anonymous@EXAMPLE.COM for host/public_server.example.com@EXAMPLE.COM, TGT expired or revoked
+May 09 14:22:37 client klist[3001]: klist: No credentials cache found (filename: /tmp/krb5cc_1000)
+May 09 14:22:38 kdc krb5kdc[1202](info): AS_REQ (5 etypes {18 17 16 23 24}) 10.0.1.29: SERVICE_NOT_FOUND: user_dev@EXAMPLE.COM for test/service@DEV.EXAMPLE.COM, Service not found in Kerberos database
+May 09 14:22:39 appserver mongod[3101]: GSSAPI Failure: gss_acquire_cred failed: Unspecified GSS failure. Minor code may provide more information (Keytab FILE:/etc/mongodb.keytab is nonexistent or empty)
+May 09 14:22:40 kdc krb5kdc[1201](info): TGS_REQ (1 etype {18}) 10.0.1.30: BAD_KEYTAB: authtime 1652100155, host/appserver_test.example.com@EXAMPLE.COM for host/appserver_test.example.com@EXAMPLE.COM, Failed to find service principal in keytab
+May 09 14:22:41 fileserver winbindd[3201]: [2025/05/09 14:22:41.123456, 0] ../source3/winbindd/winbindd_pam.c:1895(winbindd_dual_pam_auth_crap)   KDC returned error KDC_ERR_C_PRINCIPAL_UNKNOWN
+May 09 14:22:42 kdc krb5kdc[1202](info): AS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.31: FAST_REQUIRED: user_fast@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, FAST an Etype is required
+May 09 14:22:43 appserver chronyd[3301]: Could not get GSSAPI server credentials for keytab /etc/chrony.keytab, principal chrony/appserver.example.com@EXAMPLE.COM
+May 09 14:22:44 kdc krb5kdc[1201](info): TGS_REQ (6 etypes {18 17 20 19 23 24}) 10.0.1.32: REALM_UNKNOWN: authtime 1652100160, user_xrealm@OTHER_REALM.COM for host/server.example.com@EXAMPLE.COM, Server not found in Kerberos database (cross-realm)
+May 09 14:22:45 client krb5_child[3401]: Kerberos clock skew too great
+May 09 14:22:46 kdc krb5kdc[1202](info): AS_REQ (4 etypes {18 17 16 23}) 10.0.1.33: CLOCK_SKEW_TOO_GREAT: user_badsync@EXAMPLE.COM for krbtgt/EXAMPLE.COM@EXAMPLE.COM, Clock skew too great
+May 09 14:22:47 appserver slapd[3501]: GSSAPI Error: Unspecified GSS failure. Minor code may provide more information (Server not found in Kerberos database)
+May 09 14:22:48 kdc krb5kdc[1201](info): TGS_REQ (7 etypes {18 17 20 19 16 23 24}) 10.0.1.34: GSS_CHECKSUM_FAILED: authtime 1652100165, user_checksum@EXAMPLE.COM for nfs/storage.example.com@EXAMPLE.COM, Checksum failed
+May 09 14:22:49 fileserver rpc.gssd[3601]: ERROR: GSS-API: error in gss_acquire_cred(): GSS_S_FAILURE (Unspecified GSS failure. Minor code may provide more information) - No key table entry found for nfs/fileserver.example.com@EXAMPLE.COM in /etc/krb5.keytab
+May 09 14:22:50 kdc krb5kdc[1202](info): AS_REQ (5 etypes {18 17 16 23 24}) 10.0.1.35: KDC_ERR_WRONG_REALM: user_wrong_realm@LOCAL for krbtgt/LOCAL@LOCAL, Incorrect realm in principal name

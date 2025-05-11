@@ -1,0 +1,50 @@
+May 09 14:00:01 server1 sshd[2001]: Accepted publickey for user_x from 10.0.2.100 port 12345 ssh2: ED25519 SHA256:abcxyz123
+May 09 14:00:02 server1 sudo:    lenn : TTY=pts/0 ; PWD=/home/lenn ; USER=root ; COMMAND=/usr/bin/apt update
+May 09 14:00:02 server1 sudo: pam_unix(sudo:session): session opened for user root by lenn(uid=0)
+May 09 14:00:03 server1 login[2010]: PAM logging environment variables previously on RHOST=hostname
+May 09 14:00:04 server1 sshd[2001]: Received disconnect from 10.0.2.100 port 12345:11: disconnected by user
+May 09 14:00:04 server1 sshd[2001]: Disconnected from user user_x 10.0.2.100 port 12345
+May 09 14:00:05 server1 sudo: pam_unix(sudo:session): session closed for user root
+May 09 14:00:06 server1 sshd[2025]: Invalid user nonexist from 192.168.1.200 port 55555
+May 09 14:00:06 server1 sshd[2025]: input_userauth_request: invalid user nonexist [preauth]
+May 09 14:00:07 server1 sshd[2025]: pam_unix(sshd:auth): check pass; user unknown
+May 09 14:00:07 server1 sshd[2025]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=192.168.1.200
+May 09 14:00:08 server1 sshd[2025]: Failed password for invalid user nonexist from 192.168.1.200 port 55555 ssh2
+May 09 14:00:09 server1 sshd[2025]: Connection closed by invalid user nonexist 192.168.1.200 port 55555 [preauth]
+May 09 14:00:10 server1 CRON[2050]: pam_unix(cron:session): session opened for user root by (uid=0)
+May 09 14:00:10 server1 CRON[2050]: pam_unix(cron:session): session closed for user root
+May 09 14:00:11 server1 su[2060]: (to root) lenn on pts/1
+May 09 14:00:11 server1 su[2060]: pam_unix(su:session): session opened for user root by lenn(uid=0)
+May 09 14:00:12 server1 systemd-logind[1002]: Session c2 logged out. Waiting for processes to exit.
+May 09 14:00:13 server1 sshd[2080]: Accepted password for user_y from 10.0.3.150 port 22222 ssh2
+May 09 14:00:13 server1 sshd[2080]: pam_unix(sshd:session): session opened for user user_y by (uid=0)
+May 09 14:00:14 server1polkitd(authority=local)[1005]: Operator of unix-session:c3 successfully authenticated to gain ONE-SHOT authorization for action org.freedesktop.packagekit.package-install for unix-process:2100:54321 (owned by unix-user:lenn)
+May 09 14:00:15 server1 sshd[2120]: User user_z from 192.168.5.10 not allowed because not listed in AllowUsers
+May 09 14:00:15 server1 sshd[2120]: input_userauth_request: invalid user user_z [preauth]
+May 09 14:00:16 server1 sshd[2120]: Connection closed by authenticating user user_z 192.168.5.10 port 12345 [preauth]
+May 09 14:00:17 server1 login[2130]: pam_unix(login:session): session opened for user testuser by LOGIN(uid=0)
+May 09 14:00:17 server1 systemd-logind[1002]: New session 5 of user testuser.
+May 09 14:00:18 server1 login[2130]: System Access Granted (testuser)
+May 09 14:00:19 server1 sshd[2080]: Received disconnect from 10.0.3.150 port 22222:11: FlowSshClient: All channels closed
+May 09 14:00:19 server1 sshd[2080]: Disconnected from user user_y 10.0.3.150 port 22222
+May 09 14:00:19 server1 sshd[2080]: pam_unix(sshd:session): session closed for user user_y
+May 09 14:00:20 server1 sudo:  another_user : TTY=unknown ; PWD=/home/another_user ; USER=root ; COMMAND=/sbin/reboot
+May 09 14:00:20 server1 sudo: pam_unix(sudo:session): session opened for user root by (uid=1001)
+May 09 14:00:21 server1 sshd[2200]: reverse mapping checking getaddrinfo for host-10-0-4-10.example.com [10.0.4.10] failed - POSSIBLE BREAK-IN ATTEMPT!
+May 09 14:00:22 server1 sshd[2200]: pam_unix(sshd:auth): authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.4.10 user=some_user
+May 09 14:00:23 server1 sshd[2200]: Failed password for some_user from 10.0.4.10 port 33333 ssh2
+May 09 14:00:24 server1 sshd[2250]: Disconnecting authenticating user bad_user 203.0.113.80 port 44444: Too many authentication failures [preauth]
+May 09 14:00:25 server1 gdm-password][2300]: pam_unix(gdm-password:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty1 ruser= rhost= user=unknown_gui_user
+May 09 14:00:26 server1 lightdm: pam_succeed_if(lightdm:auth): requirement "user ingroup autologin" not met by user "guest"
+May 09 14:00:27 server1 sshd[2310]: User dev_user from 172.16.10.5 not allowed because their group dev_group is not listed in AllowGroups
+May 09 14:00:28 server1 login[2130]: pam_unix(login:session): session closed for user testuser
+May 09 14:00:29 server1 sudo: pam_unix(sudo:auth): Couldn't open /etc/securetty: No such file or directory
+May 09 14:00:30 server1 sshd[2350]: Connection reset by authenticating user hackattempt 198.51.100.200 port 12345 [preauth]
+May 09 14:00:31 server1 unix_chkpwd[2360]: password check failed for user (another_user)
+May 09 14:00:32 server1 sshd[2370]: pam_access(sshd:account): access denied for user 'restricted_user' from 'other.network.example.com'
+May 09 14:00:33 server1 vsftpd: PAM_USERPASS: pam_sm_authenticate() failed: Authentication failure
+May 09 14:00:34 server1 console-kit-daemon[1300]: GLib-CRITICAL: Source ID 123 was not found when attempting to remove it
+May 09 14:00:35 server1 sshd[2400]: error: kex_exchange_identification: Connection closed by remote host
+May 09 14:00:36 server1 sudo:  testuser : problem with defaults entries ; TTY=pts/2 ; PWD=/tmp ; USER=root ; 
+May 09 14:00:37 server1 sshd[2410]: PAM 2 more authentication failures; logname= uid=0 euid=0 tty=ssh ruser= rhost=10.0.5.60 user=service_account
+May 09 14:00:38 server1 login[2420]: FAILED LOGIN (1) on '/dev/ttyS0' FOR 'root', Authentication failure

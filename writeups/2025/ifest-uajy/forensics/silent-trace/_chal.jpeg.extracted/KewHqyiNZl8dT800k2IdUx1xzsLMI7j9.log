@@ -1,0 +1,78 @@
+2025-05-09T14:07:01Z ERROR [UserService] Failed to retrieve user profile for user_id=12345: Database connection timeout
+2025-05-09T14:07:02Z WARN  [PaymentService] Payment gateway returned slow response for transaction_id=tx_abc123. Retrying...
+2025-05-09T14:07:03Z INFO  [MainApp] Application startup complete. Version: 2.5.1
+2025-05-09T14:07:04Z ERROR [OrderProcessor] NullPointerException occurred while processing order_id=ord_xyz789
+  java.lang.NullPointerException: Attempt to invoke method 'java.lang.String java.lang.Object.toString()' on a null object reference
+  at com.example.OrderProcessor.process(OrderProcessor.java:42)
+  at com.example.MainWorker.run(MainWorker.java:101)
+2025-05-09T14:07:05Z DEBUG [CacheManager] Cache miss for key: 'product_list_featured'
+2025-05-09T14:07:06Z ERROR [NotificationService] Failed to send email notification to user@example.com: SMTP server unavailable - Connection refused
+2025-05-09T14:07:07Z INFO  [APIGateway] Received request: GET /api/v1/products?category=electronics
+2025-05-09T14:07:08Z WARN  [ExternalAPIClient] External API call to weather.service.com returned HTTP 503. Will retry in 60s.
+2025-05-09T14:07:09Z ERROR [DataPipeline] UnparseableDateException: Failed to parse date string: '2025/13/01' from input_source=manual_entry, record_id=rec_001
+  java.text.ParseException: Unparseable date: "2025/13/01"
+  at java.base/java.text.DateFormat.parse(DateFormat.java:399)
+  at com.example.DataConverter.parseDate(DataConverter.java:77)
+2025-05-09T14:07:10Z FATAL [CoreSystem] Critical component 'MessageQueueConsumer' failed to initialize. Shutting down. Reason: Missing configuration file: queue.properties
+2025-05-09T14:07:11Z INFO  [ScheduledTaskRunner] Executing scheduled task: CleanupOldLogsTask
+2025-05-09T14:07:12Z ERROR [ImageProcessor] OutOfMemoryError: Not enough heap space to process image_id=img_large_001.jpg (Dimensions: 8000x6000)
+  java.lang.OutOfMemoryError: Java heap space
+2025-05-09T14:07:13Z DEBUG [SecurityModule] Attempt to access restricted resource /admin/config by user_role=GUEST from IP=10.0.2.200 was denied.
+2025-05-09T14:07:14Z WARN  [InventoryService] Product_id=prod_soldout is out of stock. Requested quantity: 5, Available: 0.
+2025-05-09T14:07:15Z ERROR [ReportGenerator] TimeoutException while generating report 'monthly_sales_summary'. Query execution exceeded 300 seconds.
+  java.util.concurrent.TimeoutException
+  at com.example.DBQueryExecutor.execute(DBQueryExecutor.java:150)
+2025-05-09T14:07:16Z INFO  [UserSession] Session_id=sess_jkl456 created for user_id=67890.
+2025-05-09T14:07:17Z ERROR [FileParser] IOException: File not found at path: /mnt/data/uploads/input_data_20250509.csv
+  java.io.FileNotFoundException: /mnt/data/uploads/input_data_20250509.csv (No such file or directory)
+2025-05-09T14:07:18Z DEBUG [RequestTracer] Trace ID: trace_def456, Span ID: span_789, Request: POST /api/v1/submit_form
+2025-05-09T14:07:19Z WARN  [ThirdPartyAuth] OAuth token for provider 'google' is about to expire in 5 minutes. Attempting refresh.
+2025-05-09T14:07:20Z ERROR [AsyncProcessor] Task rejected, queue is full. Task: UpdateRecommendations, QueueCapacity: 1000
+  java.util.concurrent.RejectedExecutionException: Task com.example.tasks.UpdateRecommendations@1f32e575 rejected from java.util.concurrent.ThreadPoolExecutor@2f9ee1ac[Running, pool size = 10, active threads = 10, queued tasks = 1000, completed tasks = 12345]
+2025-05-09T14:07:21Z INFO  [WebSocketHandler] New WebSocket connection established from client_ip=192.168.3.10.
+2025-05-09T14:07:22Z ERROR [ConfigLoader] InvalidFormatException: Could not parse JSON configuration file: app_config.json - Unexpected character ('-' (code 45)) in numeric value: expected digit (0-9) to follow minus sign, for valid numeric value
+ at [Source: (FileInputStream); line: 10, column: 15]
+2025-05-09T14:07:23Z DEBUG [DatabasePool] Connection [conn_pool_007] acquired from pool. Active connections: 5/20.
+2025-05-09T14:07:24Z WARN  [FeatureFlagService] Feature flag 'new_dashboard_ui' evaluated to false for user_id=555. User sees old UI.
+2025-05-09T14:07:25Z ERROR [ShippingCalculator] IllegalArgumentException: Weight must be positive, got -2.5 for item_sku=ITEM006
+  java.lang.IllegalArgumentException: Weight must be positive, got -2.5
+  at com.example.validation.InputValidator.checkWeight(InputValidator.java:33)
+2025-05-09T14:07:26Z INFO  [MetricsCollector] Pushing metrics to Prometheus. Batch size: 150 metrics.
+2025-05-09T14:07:27Z ERROR [SearchIndexer] ElasticsearchConnectionException: Connection refused: localhost/127.0.0.1:9200. Failed to index document_id=doc_qrs321.
+2025-05-09T14:07:28Z DEBUG [EventHandler] Event received: {"event_type": "USER_LOGOUT", "user_id": "user_alpha", "timestamp": "2025-05-09T14:07:28Z"}
+2025-05-09T14:07:29Z WARN  [ResourceManager] Resource leak detected: Unclosed file stream for /tmp/temp_report_abcdef.pdf
+2025-05-09T14:07:30Z ERROR [BackgroundJob] Job 'DailyBackupJob' failed after 3 retries. Last error: S3AccessDeniedException: Access Denied when trying to upload to bucket 'my-backup-bucket'
+  com.amazonaws.services.s3.model.AmazonS3Exception: Access Denied (Service: Amazon S3; Status Code: 403; Error Code: AccessDenied; Request ID: XYZ...)
+2025-05-09T14:07:31Z INFO  [HealthCheck] Health check passed for component: DatabaseConnectivity
+2025-05-09T14:07:32Z ERROR [PDFGenerator] com.lowagie.text.DocumentException: The document has no pages.
+  at com.lowagie.text.pdf.PdfPages.writePageTree(Unknown Source)
+  at com.lowagie.text.pdf.PdfWriter.close(Unknown Source)
+  at com.lowagie.text.Document.close(Unknown Source)
+  at com.example.PDFGenerator.createInvoice(PDFGenerator.java:112)
+2025-05-09T14:07:33Z DEBUG [RateLimiter] Request for user_id=api_user_007 exceeded rate limit of 100 req/min. Path: /api/v2/data
+2025-05-09T14:07:34Z WARN  [DataSyncService] Data conflict detected for record_id=sync_777. Local version: 5, Remote version: 4. Using local version.
+2025-05-09T14:07:35Z ERROR [PluginManager] ClassNotFoundException: Plugin 'com.example.plugins.CustomAnalyticsPlugin' not found. Plugin will not be loaded.
+  java.lang.ClassNotFoundException: com.example.plugins.CustomAnalyticsPlugin
+2025-05-09T14:07:36Z INFO  [CronScheduler] Next execution of 'HourlyDataRollup' scheduled for 2025-05-09T15:00:00Z.
+2025-05-09T14:07:37Z ERROR [AuthenticationService] Invalid JWT token received. Signature verification failed. Token: eyJhbGciOi... (truncated)
+2025-05-09T14:07:38Z DEBUG [Localization] Loaded language pack for locale: 'fr-FR'.
+2025-05-09T14:07:39Z WARN  [StreamProcessor] High latency detected in processing Kafka message. Partition: 3, Offset: 1234567, Lag: 5000ms.
+2025-05-09T14:07:40Z ERROR [EmailValidator] AddressException: Illegal character in domain for email 'test@exa_mple.com'
+  javax.mail.internet.AddressException: Illegal character in domain in string ``test@exa_mple.com''
+  at javax.mail.internet.InternetAddress.checkAddress(InternetAddress.java:1283)
+2025-05-09T14:07:41Z INFO  [Deployment] Successfully deployed new version 2.5.2 to staging environment.
+2025-05-09T14:07:42Z ERROR [VideoConverter] FFMPEG process exited with error code 1. Command: ffmpeg -i input.mp4 -o output.webm. Error: Conversion failed.
+2025-05-09T14:07:43Z DEBUG [ObjectStorage] File 'archive_2024.zip' downloaded successfully from S3 bucket 'company-archives'. Size: 2.5GB.
+2025-05-09T14:07:44Z WARN  [APILogger] Sensitive data (credit_card_number) found in request body for POST /api/v1/checkout. Masking applied.
+2025-05-09T14:07:45Z ERROR [SSOIntegration] SAMLAssertionInvalidException: Assertion expired or not yet valid. Current time: 2025-05-09T14:07:45Z, AssertionNotBefore: 2025-05-09T13:00:00Z, AssertionNotOnOrAfter: 2025-05-09T14:00:00Z
+2025-05-09T14:07:46Z INFO  [BackupManager] Incremental backup completed for database 'analytics_db'.
+2025-05-09T14:07:47Z ERROR [BillingService] StripeSignatureVerificationError: No signatures found matching the expected signature for webhook event id: evt_1Lxxxxxx
+2025-05-09T14:07:48Z DEBUG [PerformanceMonitor] Method `calculateComplexMetrics` took 1578ms to execute.
+2025-05-09T14:07:49Z WARN  [RetryLogic] Operation 'fetchExternalResource' failed. Attempt 2/3. Retrying in 10 seconds. Error: java.net.ConnectException: Connection timed out
+2025-05-09T14:07:50Z ERROR [MainThread] UncaughtExceptionHandler caught an unhandled exception in thread 'worker-pool-3'.
+  java.lang.ArithmeticException: / by zero
+  at com.example.utils.Calculator.divide(Calculator.java:50)
+  at com.example.jobs.NightlyCalculation.run(NightlyCalculation.java:25)
+  at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+  at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+  at java.base/java.lang.Thread.run(Thread.java:829)

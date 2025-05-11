@@ -1,0 +1,52 @@
+May 09 13:57:01 server1 kernel: [   0.000000] Linux version 5.15.0-107-generic (buildd@lcy02-amd64-111) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #117-Ubuntu SMP Fri Apr 26 12:30:05 UTC 2024
+May 09 13:57:01 server1 systemd[1]: Starting System Logging Service...
+May 09 13:57:01 server1 systemd[1]: Started System Logging Service.
+May 09 13:57:02 server1 CRON[1501]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+May 09 13:57:02 server1 kernel: [   2.345678] usb 1-1: new high-speed USB device number 2 using xhci_hcd
+May 09 13:57:03 server1 systemd-logind[1002]: New session c1 of user lenn.
+May 09 13:57:03 server1 sshd[1520]: Accepted publickey for lenn from 192.168.1.10 port 54321 ssh2: RSA SHA256:xxxxxxxxxxxx
+May 09 13:57:04 server1 systemd[1]: NetworkManager-dispatcher.service: Succeeded.
+May 09 13:57:05 server1 kernel: [   5.123456] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+May 09 13:57:06 server1 udisksd[1234]: Acquired the name org.freedesktop.UDisks2
+May 09 13:57:07 server1 dbus-daemon[999]: [system] Successfully activated service 'org.freedesktop.hostname1'
+May 09 13:57:08 server1 systemd[1]: Started Hostname Service.
+May 09 13:57:09 server1 kernel: [   9.987654] Bluetooth: Core ver 2.22
+May 09 13:57:10 server1 systemd[1]: Starting User Runtime Directory /run/user/1000...
+May 09 13:57:10 server1 systemd[1]: Finished User Runtime Directory /run/user/1000.
+May 09 13:57:11 server1 rtkit-daemon[1600]: Successfully made thread 1599 of process 1599 (user lenn) owned by 'lenn' high priority.
+May 09 13:57:12 server1 kernel: [  12.345123] audit: type=1400 audit(1715234232.123:45): apparmor="DENIED" operation="open" profile="/usr/sbin/cups-browsed" name="/etc/timezone" pid=1100 comm="cups-browsed" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
+May 09 13:57:13 server1 systemd[1]: Started CUPS Scheduler.
+May 09 13:57:14 server1 NetworkManager[1010]: <info>  [1715234234.222] manager: NetworkManager state is now CONNECTED_GLOBAL
+May 09 13:57:15 server1 kernel: [  15.678901] ata1.00:ید ATA-9: WDC WD10EZEX-00BN5A0, 01.01A01, max UDMA/133
+May 09 13:57:16 server1 systemd[1]: Finished Clean up any mess left by 0dns-up.
+May 09 13:57:17 server1 wpa_supplicant[1020]: wlp2s0: CTRL-EVENT-SIGNAL-CHANGE above=0 signal=-55 noise=-95 txrate=130000
+May 09 13:57:18 server1 kernel: [  18.112233] IPv6: ADDRCONF(NETDEV_CHANGE): wlp2s0: link becomes ready
+May 09 13:57:19 server1 systemd-timesyncd[800]: Initial synchronization to time server 91.189.94.4:123 (ntp.ubuntu.com).
+May 09 13:57:20 server1 acpid: client connected from 1650[0:0]
+May 09 13:57:21 server1 kernel: [  21.998877] rfkill: input handler enabled
+May 09 13:57:22 server1 systemd[1]: Started Make remote CUPS printers available locally.
+May 09 13:57:23 server1 PackageKit: daemon start
+May 09 13:57:24 server1 kernel: [  24.543210] Generic FE-GE Realtek PHY r8169-2100:00: Downshift occurred from 1000baseT/Full to 100baseT/Full
+May 09 13:57:25 server1 anacron[1700]: Job `cron.daily' started
+May 09 13:57:26 server1 anacron[1700]: Job `cron.daily' terminated
+May 09 13:57:27 server1 kernel: [  27.001122] pcieport 0000:00:1c.5: AER: Corrected error received: 0000:00:1c.5
+May 09 13:57:28 server1 systemd[1]: systemd-hostnamed.service: Succeeded.
+May 09 13:57:29 server1 polkitd(authority=local)[1005]: Registered Authentication Agent for unix-process:1750:12345 (system notation)
+May 09 13:57:30 server1 kernel: [  30.123456] nf_conntrack: default automatic helper assignment has been turned off for security reasons and CT-based  helpers are not supported. Consider using nf_conntrack.helper=1 to turns it on.
+May 09 13:57:31 server1 gvfsd[1800]: Supervisor 1234567.0 started
+May 09 13:57:32 server1 systemd[1]: Starting Daily apt download activities...
+May 09 13:57:33 server1 kernel: [  33.777888] input: Dell KB216 Wired Keyboard as /devices/pci0000:00/0000:00:14.0/usb1/1-4/1-4:1.0/0003:413C:2113.000A/input/input26
+May 09 13:57:34 server1 systemd[1]: Started Daily apt download activities.
+May 09 13:57:35 server1 pulseaudio[1599]: Failed to find a working profile.
+May 09 13:57:36 server1 kernel: [  36.121212] Adding 8191996k swap on /dev/sda2.  Priority:-2 extents:1 across:8191996k SSFS
+May 09 13:57:37 server1 systemd[1]: Reached target Sound Card.
+May 09 13:57:38 server1 ModemManager[1111]: <info>  ModemManager (version 1.18.6) starting in system bus...
+May 09 13:57:39 server1 kernel: [  39.900000] cgroup: cgroup: disabling cgroup subsys cpuset
+May 09 13:57:40 server1 systemd[1]: Started Regular background program processing daemon.
+May 09 13:57:41 server1 PackageKit: uid 1000 is trying to obtain org.freedesktop.packagekit.system-sources-refresh auth (only_trusted:0)
+May 09 13:57:42 server1 kernel: [  42.000123] Loopback device init
+May 09 13:57:43 server1 systemd[1]: Started Manage Sound Card State (restore and store).
+May 09 13:57:44 server1 thermald[1007]: TRP: No TRIP points defined
+May 09 13:57:45 server1 kernel: [  45.111111] checking genericSignatures: 
+May 09 13:57:46 server1 systemd[1]: Started User Manager for UID 1000.
+May 09 13:57:47 server1 dbus-daemon[999]: [system] Activating via systemd: service name='org.freedesktop.UPower' unit='upower.service' requested by ':1.50' (uid=1000 pid=1800 comm="/usr/lib/gvfs/gvfsd ")

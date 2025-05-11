@@ -1,0 +1,50 @@
+May 09 14:18:01 server1 postfix/smtpd[4001]: connect from mail-gw.example.com[192.0.2.100]
+May 09 14:18:02 server1 postfix/smtpd[4001]: NOQUEUE: reject: RCPT from mail-gw.example.com[192.0.2.100]: 550 5.1.1 <unknown_user@example.org>: Recipient address rejected: User unknown in local recipient table; from=<sender@example.com> to=<unknown_user@example.org> proto=ESMTP helo=<mail-gw.example.com>
+May 09 14:18:03 server1 postfix/smtpd[4001]: disconnect from mail-gw.example.com[192.0.2.100] ehlo=1 mail=1 rcpt=0/1 data=0/1 quit=1 commands=3/5
+May 09 14:18:05 server1 postfix/qmgr[1020]: ABC123XYZ: from=<legit_sender@example.com>, size=5120, nrcpt=1 (queue active)
+May 09 14:18:06 server1 exim[4005]: 2025-05-09 14:18:06 1pExample-0001AB-CD <= notification@another-domain.net H=localhost (server.example.org) [127.0.0.1] P=esmtp S=1024 id=E1pExample-0001AB-CD@server.example.org
+May 09 14:18:07 server1 postfix/smtp[4002]: ABC123XYZ: to=<recipient@external-domain.com>, relay=mx.external-domain.com[203.0.113.50]:25, delay=2, delays=0.5/0/1/0.5, dsn=2.0.0, status=sent (250 2.0.0 OK: queued as XYZ789)
+May 09 14:18:08 server1 postfix/qmgr[1020]: ABC123XYZ: removed
+May 09 14:18:09 server1 sendmail[4010]: f49EIA2j004010: from=cron_job@server.example.org, size=300, class=0, nrcpts=1, msgid=<202505091418.f49EIA2j004010@server.example.org>, relay=root@localhost
+May 09 14:18:10 server1 exim[4005]: 2025-05-09 14:18:10 1pExample-0001AB-CD => local_user <local_user@server.example.org> R=localuser T=local_delivery
+May 09 14:18:11 server1 exim[4005]: 2025-05-09 14:18:11 1pExample-0001AB-CD Completed
+May 09 14:18:12 server1 postfix/anvil[4003]: statistics: max connection rate 1/60s for (smtp:198.51.100.20) at May  9 14:17:55
+May 09 14:18:13 server1 sendmail[4011]: f49EIA2j004010: to=admin_user@server.example.org, ctladdr=cron_job@server.example.org (0/0), delay=00:00:04, xdelay=00:00:01, mailer=relay, pri=30300, relay=[127.0.0.1] [127.0.0.1], dsn=2.0.0, stat=Sent (ok)
+May 09 14:18:14 server1 postfix/smtpd[4004]: connect from unknown[10.10.10.10]
+May 09 14:18:15 server1 postfix/smtpd[4004]: lost connection after AUTH from unknown[10.10.10.10]
+May 09 14:18:15 server1 postfix/smtpd[4004]: disconnect from unknown[10.10.10.10] ehlo=1 auth=0/1 commands=1/2
+May 09 14:18:16 server1 exim[4006]: 2025-05-09 14:18:16 SMTP connection from [172.16.5.50]:12345 lost
+May 09 14:18:17 server1 postfix/cleanup[4007]: DEF456GHI: message-id=<unique-id@sender-app.com>
+May 09 14:18:18 server1 sendmail[4012]: f49EICdK004012: ruleset=check_rcpt, arg1=<spammer@bad-domain.ru>, relay=mx.bad-domain.ru [192.0.2.222], reject=553 5.3.0 <spammer@bad-domain.ru>... Domain of sender address spammer@bad-domain.ru does not exist
+May 09 14:18:19 server1 postfix/qmgr[1020]: DEF456GHI: from=<valid_user@trusted-sender.com>, size=2048, nrcpt=2 (queue active)
+May 09 14:18:20 server1 exim[4008]: 2025-05-09 14:18:20 H=phishing.example.net [10.20.30.40]:54321 F=<fake_bank@phishing.example.net> rejected RCPT <victim@example.org>: SPF check failed.
+May 09 14:18:21 server1 postfix/smtp[4009]: DEF456GHI: to=<employee1@example.org>, relay=internal-mail.example.org[192.168.1.20]:25, delay=1, delays=0.2/0/0.5/0.3, dsn=2.0.0, status=sent (250 Ok)
+May 09 14:18:22 server1 postfix/smtp[4013]: DEF456GHI: to=<employee2@example.org>, relay=internal-mail.example.org[192.168.1.20]:25, delay=1.5, delays=0.2/0/0.5/0.8, dsn=2.0.0, status=sent (250 Ok)
+May 09 14:18:23 server1 sendmail[4014]: f49EIDlM004014: Milter: data, reject=451 4.7.1 Please try again later
+May 09 14:18:24 server1 postfix/qmgr[1020]: DEF456GHI: removed
+May 09 14:18:25 server1 exim[4015]: 2025-05-09 14:18:25 1pExampLe-0001EF-GH <= bounces@example.com H=other.server.com [203.0.113.75] P=esmtps X=TLS1.2:ECDHE-RSA-AES128-GCM-SHA256:128 S=5000 id=bounce-id@other.server.com
+May 09 14:18:26 server1 postfix/pipe[4016]: JKL789MNO: to=<processed_by_script@example.org>, relay=custom_filter, delay=5, delays=4/0/0/1, dsn=2.0.0, status=sent (delivered via custom_filter service)
+May 09 14:18:27 server1 sendmail[4017]: f49EIFoN004017: from=<monitor@server.example.org>, size=1000, class=0, nrcpts=1, msgid=<alert-id@server.example.org>, relay=alert_user@localhost
+May 09 14:18:28 server1 exim[4015]: 2025-05-09 14:18:28 1pExampLe-0001EF-GH ** some_user@failed-domain.com <some_user@failed-domain.com> R=dnslookup T=remote_smtp: SMTP error from remote mail server after RCPT TO:<some_user@failed-domain.com>: host mx.failed-domain.com [10.30.40.50]: 550 No such user here
+May 09 14:18:29 server1 postfix/smtpd[4018]: warning: VigilantMode: Untrusted client [192.0.2.123] attempted to use an open relay feature without authentication
+May 09 14:18:30 server1 sendmail[4019]: f49EIGpP004019: to=<service_account@example.org>, delay=00:00:00, xdelay=00:00:00, mailer=local, pri=30000, dsn=2.0.0, stat=Sent
+May 09 14:18:31 server1 postfix/bounce[4020]: PQR012STU: sender non-delivery notification: VWX345YZA
+May 09 14:18:32 server1 exim[4021]: 2025-05-09 14:18:32 1pExampLe-0001EF-GH Frozen (delivery error message)
+May 09 14:18:33 server1 postfix/smtpd[4018]: SSL_accept error from client.example.net[198.51.100.90]: -1
+May 09 14:18:34 server1 sendmail[4022]: STARTTLS=client, relay=mail.isp.com., version=TLSv1/SSLv3, verify=FAIL, cipher=DES-CBC3-SHA, bits=168/168
+May 09 14:18:35 server1 postfix/lmtp[4023]: BCD234EFG: to=<user@localdomain.test>, relay=unix:/var/spool/cyrus/socket/lmtp, delay=0.5, delays=0.1/0/0.1/0.3, dsn=2.0.0, status=sent (250 2.0.0 Ok)
+May 09 14:18:36 server1 exim[4024]: 2025-05-09 14:18:36 Message 1pExampLe-0001IJ-KL is not frozen
+May 09 14:18:37 server1 postfix/error[4025]: HIJ567KLM: to=<user@unreachable-mx.com>, relay=none, delay=3600, delays=3500/100/0/0, dsn=4.4.1, status=deferred (connect to mx.unreachable-mx.com[10.40.50.60]:25: Connection timed out)
+May 09 14:18:38 server1 sendmail[4026]: f49EIHiR004026: SYSERR(root): opendaemonsocket: daemon MTA: server socket setup failed (No such file or directory)
+May 09 14:18:39 server1 postfix/policyd-spf[4027]: Pass: Recipient=postmaster@example.org, Sender=spf-test@openspf.org, Client_ip=203.0.113.100, Helo=helo.openspf.org, Mfrom_domain=openspf.org
+May 09 14:18:40 server1 exim[4028]: 2025-05-09 14:18:40 1pExampLf-0001MN-OP DKIM: d=example.net s=selector1 c=relaxed/simple h=From:To:Subject:Date (verification succeeded)
+May 09 14:18:41 server1 postfix/virtual[4029]: NOP890QRS: to=<alias@virtual-domain.com>, relay=virtual, delay=0.2, delays=0.1/0/0/0.1, dsn=2.0.0, status=sent (delivered to maildir)
+May 09 14:18:42 server1 sendmail[4030]: AUTH=client, relay=smtp.gmail.com., authid=user@gmail.com, mech=PLAIN, bits=0
+May 09 14:18:43 server1 postfix/smtps/smtpd[4031]: connect from host-via-smtps.example.com[192.0.2.150]
+May 09 14:18:44 server1 exim[4032]: 2025-05-09 14:18:44 Greylisted: <sender@new-domain.biz> => <receiver@example.org> H=[10.50.60.70]
+May 09 14:18:45 server1 postfix/smtps/smtpd[4031]: RST012UVW: client=host-via-smtps.example.com[192.0.2.150], sasl_method=PLAIN, sasl_username=auth_user
+May 09 14:18:46 server1 sendmail[4033]: f49EIJkV004033: Milter: connect, reject=550 5.7.1 Connection refused from [10.60.70.80]
+May 09 14:18:47 server1 postfix/pickup[1019]: VWX345YZA: uid=1001 from=<app_user>
+May 09 14:18:48 server1 exim[4034]: 2025-05-09 14:18:48 1pExampLg-0001QR-ST DMARC: REJECT - From "evil_sender@company.com" (domain: company.com) to "target@example.org"
+May 09 14:18:49 server1 postfix/cleanup[4035]: VWX345YZA: header From: App Notification <app_user@server.example.org> from local; from=<app_user@server.example.org> to=<admin_group@example.org>
+May 09 14:18:50 server1 sendmail[4036]: f49EIKmW004036: DSN: Service unavailable
