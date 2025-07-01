@@ -3,7 +3,8 @@ name: Sync to Site
 on:
   push:
     paths:
-      - '**.md'
+      - 'writeups/**'
+  workflow_dispatch:
 
 jobs:
   sync:
