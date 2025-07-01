@@ -1,8 +1,26 @@
-/.vscode
-/archives
-/dump
-/playground
-mise.toml
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
 
-# Distribution / packaging
-.venv*
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE/editor
+# .vscode/
+# .idea/
+# *.code-workspace
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Project specific files
+challenges/
+.gdb_history
