@@ -1,0 +1,26 @@
+name: Sync to Site
+
+on:
+  push:
+    paths:
+      - '**.md'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Copy to Astro Repo
+        run: |
+          git clone https://github.com/ZTzTopia/site.git
+
+          rsync -av --delete ./writeups/ site/src/data/events/
+          cd site
+
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+
+          git add .
+          git commit -m "feat(content): sync blog content" || exit 0
+          git push https://ZTzTopia:${{ secrets.TOKEN }}@github.com/ZTzTopia/site.git
+  
