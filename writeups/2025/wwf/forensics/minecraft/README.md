@@ -205,95 +205,7 @@ import subprocess
 import zlib
 # from scapy.all import PcapReader, TCP
 
-SEGMENT_BITS = 0x7F
-CONTINUE_BIT = 0x80
-
-class PartialReadError(Exception):
-    pass
-
-def read_varint(data: bytes, offset: int = 0):
-    value = 0
-    position = 0
-    index = offset
-
-    while True:
-        if index >= len(data):
-            raise PartialReadError('Not enough bytes to read VarInt')
-
-        current_byte = data[index]
-        index += 1
-
-        value |= (current_byte & SEGMENT_BITS) << position
-
-        if (current_byte & CONTINUE_BIT) == 0:
-            break
-
-        position += 7
-        if position >= 32:
-            raise RuntimeError('VarInt is too big')
-
-    return value, index - offset
-
-
-def read_varlong(data: bytes, offset: int = 0):
-    value = 0
-    position = 0
-    index = offset
-
-    while True:
-        if index >= len(data):
-            raise PartialReadError('Not enough bytes to read VarLong')
-
-        current_byte = data[index]
-        index += 1
-
-        value |= (current_byte & SEGMENT_BITS) << position
-
-        if (current_byte & CONTINUE_BIT) == 0:
-            break
-
-        position += 7
-        if position >= 64:
-            raise RuntimeError('VarLong is too big')
-
-    return value, index - offset
-
-class EventEmitter:
-    def __init__(self):
-        self._events = {}
-
-    def on(self, event, handler):
-        self._events.setdefault(event, []).append(handler)
-
-    def emit(self, event, *args, **kwargs):
-        for handler in self._events.get(event, []):
-            handler(*args, **kwargs)
-
-class Splitter(EventEmitter):
-    def __init__(self):
-        super().__init__()
-        self.buffer = bytearray()
-
-    def feed(self, chunk: bytes):
-        self.buffer.extend(chunk)
-
-        offset = 0
-        try:
-            value, size = read_varint(self.buffer, offset)
-        except PartialReadError:
-            return
-
-        while len(self.buffer) >= offset + size + value:
-            packet = bytes(self.buffer[offset + size: offset + size + value])
-            self.emit('packet', packet)
-            offset += size + value
-
-            try:
-                value, size = read_varint(self.buffer, offset)
-            except PartialReadError:
-                break
-
-        self.buffer = self.buffer[offset:]
+...
 
 class Decompressor(EventEmitter):
     def __init__(self, compression_threshold=-1):
@@ -337,19 +249,7 @@ decompressor = Decompressor()
 splitter.on('packet', lambda pkt: decompressor.feed(pkt))
 decompressor.on('packet', lambda pkt: parse_packet(pkt))
 
-# scapy make server packet will incorrectly feed to the splitter, dont know why.
-# with PcapReader('challenge.pcap') as pcap_reader:
-#     for pkt in pcap_reader:
-#         if pkt.haslayer(TCP) and pkt[TCP].payload:
-#             data = bytes(pkt[TCP].payload)
-#             splitter.feed(data)
-
-proc = subprocess.Popen(
-    ['tshark', '-r', 'challenge.pcap', '-Y', 'tcp.srcport == 25565',
-     '-T', 'fields', '-e', 'tcp.payload'],
-    stdout=subprocess.PIPE,
-    text=True,
-)
+...
 
 for line in proc.stdout:
     data = bytes.fromhex(line.strip())
@@ -396,16 +296,23 @@ def parse_packet(packet: bytes):
 
     if packet_id == 0x01:  # add_entity
         entity_id, offset = read_varint(data, 0)
-        entity_uuid = data[offset:offset + 16]  # UUID is 16 bytes
-        offset += 16
-        entity_type, offset = read_varint(data, offset)
         
+        entity_uuid = data[offset:offset + 16]
+        offset += 16
+
+        data = data[offset:]
+        offset = 0
+
+        entity_type, offset = read_varint(data, 0)
+
         if entity_type == 134:  # minecraft:villager
             x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
-            pitch = data[offset]
-            yaw = data[offset + 1]
-            head_yaw = data[offset + 2]
-            data_length, offset = read_varint(data, offset + 3)
+            pitch, yaw, head_yaw = struct.unpack('bbb', data[offset + 24:offset + 24 + 3])
+
+            data = data[offset + 24 + 3:]
+            offset = 0
+
+            data_length, offset = read_varint(data, 0)
             velocity_x, velocity_y, velocity_z = struct.unpack('>hhh', data[offset:offset + 6])
             
             print(f'Found villager entity: ID={entity_id}, UUID={entity_uuid.hex()}, Position=({x}, {y}, {z}), '
@@ -415,46 +322,46 @@ def parse_packet(packet: bytes):
 The output will be like this:
 
 ```
-Found villager entity: ID=1637, UUID=69f564f0fe5346c6a4ee897acaa6ec19, Position=(105, 12, 12), Rotation=(12, 105, 245), Velocity=(3177, -2716, -3842)
-Found villager entity: ID=1638, UUID=7e68a42acbf14c318f124225c90c5f40, Position=(126, 12, 12), Rotation=(12, 126, 104), Velocity=(32360, -23510, -13327)
-Found villager entity: ID=1639, UUID=66614587aab14760a8f70ad7cf4219b7, Position=(102, 12, 12), Rotation=(12, 102, 97), Velocity=(3174, 24901, -30806)
-Found villager entity: ID=1640, UUID=6c5a50aa29354ae4bf22a3b24b513934, Position=(108, 12, 12), Rotation=(12, 108, 90), Velocity=(3180, 23120, -21975)
-Found villager entity: ID=1641, UUID=cc0995314ccd4946b9f1ebcbdb330c91, Position=(1228, 1228, 1228), Rotation=(204, 9, 149), Velocity=(3276, 2453, 12620)
-Found villager entity: ID=1642, UUID=57d75f45955b4776aa2f1a279bf4df77, Position=(87, 12, 12), Rotation=(12, 87, 215), Velocity=(3159, -10401, 17813)
-Found villager entity: ID=1643, UUID=de1cbae6a00c46ccbecf26be504a926b, Position=(3678, 3678, 3678), Rotation=(222, 28, 186), Velocity=(7354, -6496, 3142)
-Found villager entity: ID=1644, UUID=faff95bd97a44f639de1632ec2cb6077, Position=(348688927260666, 10148, 348688927260666), Rotation=(164, 79, 99), Velocity=(-107, -17001, -23473)
-Found villager entity: ID=1645, UUID=7e749328741241b0a6cefdc554a54dd9, Position=(126, 12, 12), Rotation=(12, 126, 116), Velocity=(32372, -27864, 29714)
-Found villager entity: ID=1646, UUID=fbcdbb73a1fe4b22a1612faa9c228c07, Position=(242149115, 14779, 242149115), Rotation=(187, 115, 161), Velocity=(-1075, -17549, -24066)
-Found villager entity: ID=1647, UUID=12f98dd4001344aea136927e11a8168b, Position=(18, 12, 12), Rotation=(12, 18, 249), Velocity=(-1651, -11264, 4932)
-Found villager entity: ID=1648, UUID=abcfcf8393c040f7ae6cfe3777696e07, Position=(283679107835819, 8256, 283679107835819), Rotation=(192, 64, 247), Velocity=(-21553, -12413, -27712)
-Found villager entity: ID=1649, UUID=af326bfe16bf4f0694636aefe89e0573, Position=(6447, 6447, 6447), Rotation=(175, 50, 107), Velocity=(-20686, 27646, 5823)
-Found villager entity: ID=1650, UUID=f05eabf11c8749bfa3e67817301539a4, Position=(12144, 12144, 12144), Rotation=(240, 94, 171), Velocity=(-4002, -21519, 7303)
-Found villager entity: ID=2000, UUID=6ca44b92b6d146c68060bd177016a563, Position=(108, 15, 15), Rotation=(15, 108, 164), Velocity=(3948, -23477, -27978)
-Found villager entity: ID=2001, UUID=5df42e2d2aa54cb09b6dd37955a9e377, Position=(93, 15, 15), Rotation=(15, 93, 244), Velocity=(3933, -3026, 11562)
-Found villager entity: ID=2002, UUID=73e35ea6e0b044f38a9027442a81021c, Position=(115, 15, 15), Rotation=(15, 115, 227), Velocity=(3955, -7330, -22816)
-Found villager entity: ID=2116, UUID=0b7379c873c24c5f920f530baf0b1edb, Position=(11, 16, 16), Rotation=(16, 11, 115), Velocity=(4107, 29561, -14221)
-Found villager entity: ID=2128, UUID=81d939ad8d7b4e0093c4e7d987863f0d, Position=(945281, 7385, 945281), Rotation=(217, 57, 173), Velocity=(-32295, 14765, -29317)
-Found villager entity: ID=2129, UUID=22d8867f61824e4082bb6c5844e91534, Position=(34, 16, 16), Rotation=(16, 34, 216), Velocity=(8920, -31105, 24962)
-Found villager entity: ID=2132, UUID=2f05206b91bd48d9a0cb92b9d909a6a2, Position=(47, 16, 16), Rotation=(16, 47, 5), Velocity=(4143, 1312, 27537)
-Found villager entity: ID=2133, UUID=a7fa048ec80e4650ba0516b481f487c0, Position=(81191, 634, 81191), Rotation=(250, 4, 142), Velocity=(-22534, 1166, -14322)
-Found villager entity: ID=2135, UUID=d5ab5661986a4e02ada2247cf2571de1, Position=(1414613, 11051, 1414613), Rotation=(171, 86, 97), Velocity=(-10837, 22113, -26518)
-Found villager entity: ID=2180, UUID=10482296c54e4b05836690e6c2c05909, Position=(16, 17, 17), Rotation=(17, 16, 72), Velocity=(4368, 18466, -26939)
-Found villager entity: ID=2181, UUID=744a536355ac4c9285900c374a76ef3b, Position=(116, 17, 17), Rotation=(17, 116, 74), Velocity=(4468, 19027, 25429)
-Found villager entity: ID=2182, UUID=7686449d937847dab37d33f9271e5c3a, Position=(118, 17, 17), Rotation=(17, 118, 134), Velocity=(4470, -31164, -25197)
-Found villager entity: ID=2207, UUID=0a97c68344874991b27e2f086d092024, Position=(10, 17, 17), Rotation=(17, 10, 151), Velocity=(-26682, -31932, -30903)
-Found villager entity: ID=2208, UUID=0437bab79e0f47d6afcc1625a970f462, Position=(4, 17, 17), Rotation=(17, 4, 55), Velocity=(-17737, -25073, 18390)
-Found villager entity: ID=2209, UUID=ff9b3a13201640d58ccda7895a411175, Position=(953855, 7451, 953855), Rotation=(155, 58, 19), Velocity=(4607, -25798, 4896)
-Found villager entity: ID=2210, UUID=25cdd97a0be94126a31a30124cf4a255, Position=(37, 17, 17), Rotation=(17, 37, 205), Velocity=(9677, -9862, 3049)
-Found villager entity: ID=2211, UUID=984003786416417f9e1de2b35149993a, Position=(8216, 8216, 8216), Rotation=(152, 64, 3), Velocity=(4504, 16387, 30820)
-Found villager entity: ID=2212, UUID=81baf0c07a604ddc829c301eac9446d2, Position=(32885185793, 15680, 32885185793), Rotation=(192, 122, 96), Velocity=(4481, -17680, -16262)
-Found villager entity: ID=2229, UUID=bba191fd688d4b7e851cb7293811bc0f, Position=(28179714235, 13437, 28179714235), Rotation=(253, 104, 141), Velocity=(4539, -24175, -664)
-Found villager entity: ID=2931, UUID=c6c975741b9c4faf8f93459ce64e71c4, Position=(1926342, 15049, 1926342), Rotation=(201, 117, 116), Velocity=(5830, -13963, 29723)
-Found villager entity: ID=3303, UUID=75f5d674845d4dfda532e2326938c110, Position=(117, 25, 25), Rotation=(25, 117, 245), Velocity=(30197, -10636, -31651)
-Found villager entity: ID=3837, UUID=aa3586fc837544cd82bac8221a8f9fa4, Position=(6826, 6826, 6826), Rotation=(170, 53, 134), Velocity=(13702, -893, 30020)
-Found villager entity: ID=3875, UUID=5a6d7a17e9ae4cc18cb3ca79811d9187, Position=(90, 30, 30), Rotation=(30, 90, 109), Velocity=(7770, 28026, 6121)
-Found villager entity: ID=4058, UUID=1a58a5d94bc243a199de3490c5b3ba0f, Position=(26, 31, 31), Rotation=(31, 26, 88), Velocity=(22693, -9909, -15805)
-Found villager entity: ID=4275, UUID=ec321c58ac6a42479ff91292f8817d2c, Position=(6508, 6508, 6508), Rotation=(236, 50, 28), Velocity=(8684, 12828, 22700)
-Found villager entity: ID=4642, UUID=677ce2fb72ad4932a33142ac9d48ad5c, Position=(103, 36, 36), Rotation=(36, 103, 124), Velocity=(31970, -1166, -21175)
+Found villager entity: ID=1637, UUID=69f564f0fe5346c6a4ee897acaa6ec19, Position=(82.5, 128.0, 5.5), Rotation=(0, 70, 70), Velocity=(0, 0, 0)
+Found villager entity: ID=1638, UUID=7e68a42acbf14c318f124225c90c5f40, Position=(83.5, 128.0, 5.5), Rotation=(0, 79, 79), Velocity=(0, 0, 0)
+Found villager entity: ID=1639, UUID=66614587aab14760a8f70ad7cf4219b7, Position=(84.5, 128.0, 5.5), Rotation=(0, 56, 56), Velocity=(0, 0, 0)
+Found villager entity: ID=1640, UUID=6c5a50aa29354ae4bf22a3b24b513934, Position=(85.5, 128.0, 5.5), Rotation=(0, -46, -46), Velocity=(0, 0, 0)
+Found villager entity: ID=1641, UUID=cc0995314ccd4946b9f1ebcbdb330c91, Position=(86.5, 128.0, 5.5), Rotation=(0, 33, 33), Velocity=(0, 0, 0)
+Found villager entity: ID=1642, UUID=57d75f45955b4776aa2f1a279bf4df77, Position=(87.5, 128.0, 5.5), Rotation=(0, 39, 39), Velocity=(0, 0, 0)
+Found villager entity: ID=1643, UUID=de1cbae6a00c46ccbecf26be504a926b, Position=(88.5, 128.0, 5.5), Rotation=(0, -30, -30), Velocity=(0, 0, 0)
+Found villager entity: ID=1644, UUID=faff95bd97a44f639de1632ec2cb6077, Position=(89.5, 128.0, 5.5), Rotation=(0, 58, 58), Velocity=(0, 0, 0)
+Found villager entity: ID=1645, UUID=7e749328741241b0a6cefdc554a54dd9, Position=(90.5, 128.0, 5.5), Rotation=(0, -46, -46), Velocity=(0, 0, 0)
+Found villager entity: ID=1646, UUID=fbcdbb73a1fe4b22a1612faa9c228c07, Position=(91.5, 128.0, 5.5), Rotation=(0, 28, 28), Velocity=(0, 0, 0)
+Found villager entity: ID=1647, UUID=12f98dd4001344aea136927e11a8168b, Position=(92.5, 128.0, 5.5), Rotation=(0, 48, 48), Velocity=(0, 0, 0)
+Found villager entity: ID=1648, UUID=abcfcf8393c040f7ae6cfe3777696e07, Position=(93.5, 128.0, 5.5), Rotation=(0, -91, -91), Velocity=(0, 0, 0)
+Found villager entity: ID=1649, UUID=af326bfe16bf4f0694636aefe89e0573, Position=(94.5, 128.0, 5.5), Rotation=(0, 84, 84), Velocity=(0, 0, 0)
+Found villager entity: ID=1650, UUID=f05eabf11c8749bfa3e67817301539a4, Position=(95.5, 128.0, 5.5), Rotation=(0, -103, -103), Velocity=(0, 0, 0)
+Found villager entity: ID=2000, UUID=6ca44b92b6d146c68060bd177016a563, Position=(97.5, 128.0, 5.5), Rotation=(0, 76, 76), Velocity=(0, 0, 0)
+Found villager entity: ID=2001, UUID=5df42e2d2aa54cb09b6dd37955a9e377, Position=(98.5, 128.0, 5.5), Rotation=(0, 99, 99), Velocity=(0, 0, 0)
+Found villager entity: ID=2002, UUID=73e35ea6e0b044f38a9027442a81021c, Position=(99.5, 128.0, 5.5), Rotation=(0, -121, -121), Velocity=(0, 0, 0)
+Found villager entity: ID=2116, UUID=0b7379c873c24c5f920f530baf0b1edb, Position=(99.5, 128.0, 4.5), Rotation=(0, 5, 5), Velocity=(0, 0, 0)
+Found villager entity: ID=2128, UUID=81d939ad8d7b4e0093c4e7d987863f0d, Position=(100.5, 128.0, 4.5), Rotation=(0, -78, -78), Velocity=(0, 0, 0)
+Found villager entity: ID=2129, UUID=22d8867f61824e4082bb6c5844e91534, Position=(101.5, 128.0, 4.5), Rotation=(0, -119, -119), Velocity=(0, 0, 0)
+Found villager entity: ID=2132, UUID=2f05206b91bd48d9a0cb92b9d909a6a2, Position=(102.5, 128.0, 4.5), Rotation=(0, 67, 67), Velocity=(0, 0, 0)
+Found villager entity: ID=2133, UUID=a7fa048ec80e4650ba0516b481f487c0, Position=(103.5, 128.0, 4.5), Rotation=(0, -68, -68), Velocity=(0, 0, 0)
+Found villager entity: ID=2135, UUID=d5ab5661986a4e02ada2247cf2571de1, Position=(104.5, 128.0, 4.5), Rotation=(0, -80, -80), Velocity=(0, 0, 0)
+Found villager entity: ID=2180, UUID=10482296c54e4b05836690e6c2c05909, Position=(101.5, 128.0, -1.5), Rotation=(0, 108, 108), Velocity=(0, 0, 0)
+Found villager entity: ID=2181, UUID=744a536355ac4c9285900c374a76ef3b, Position=(103.5, 128.0, -1.5), Rotation=(0, 42, 42), Velocity=(0, 0, 0)
+Found villager entity: ID=2182, UUID=7686449d937847dab37d33f9271e5c3a, Position=(103.5, 128.0, -2.5), Rotation=(0, -97, -97), Velocity=(0, 0, 0)
+Found villager entity: ID=2207, UUID=0a97c68344874991b27e2f086d092024, Position=(102.5, 128.0, -0.5), Rotation=(0, 90, 90), Velocity=(0, 0, 0)
+Found villager entity: ID=2208, UUID=0437bab79e0f47d6afcc1625a970f462, Position=(103.5, 128.0, -1.5), Rotation=(0, 43, 43), Velocity=(0, 0, 0)
+Found villager entity: ID=2209, UUID=ff9b3a13201640d58ccda7895a411175, Position=(105.5, 128.0, 1.5), Rotation=(0, -114, -114), Velocity=(0, 0, 0)
+Found villager entity: ID=2210, UUID=25cdd97a0be94126a31a30124cf4a255, Position=(101.5, 128.0, 1.5), Rotation=(0, -36, -36), Velocity=(0, 0, 0)
+Found villager entity: ID=2211, UUID=984003786416417f9e1de2b35149993a, Position=(102.5, 128.0, 1.5), Rotation=(0, 24, 24), Velocity=(0, 0, 0)
+Found villager entity: ID=2212, UUID=81baf0c07a604ddc829c301eac9446d2, Position=(103.5, 128.0, 1.5), Rotation=(0, 84, 84), Velocity=(0, 0, 0)
+Found villager entity: ID=2229, UUID=bba191fd688d4b7e851cb7293811bc0f, Position=(85.5, 128.0, 1.5), Rotation=(0, 26, 26), Velocity=(0, 0, 0)
+Found villager entity: ID=2931, UUID=c6c975741b9c4faf8f93459ce64e71c4, Position=(94.5, 128.0, 1.5), Rotation=(0, -34, -34), Velocity=(0, 0, 0)
+Found villager entity: ID=3303, UUID=75f5d674845d4dfda532e2326938c110, Position=(104.5, 128.0, 4.5), Rotation=(0, -60, -60), Velocity=(0, 0, 0)
+Found villager entity: ID=3837, UUID=aa3586fc837544cd82bac8221a8f9fa4, Position=(85.5, 128.0, 1.5), Rotation=(0, -26, -26), Velocity=(0, 0, 0)
+Found villager entity: ID=3875, UUID=5a6d7a17e9ae4cc18cb3ca79811d9187, Position=(85.5, 128.0, 1.5), Rotation=(0, 14, 14), Velocity=(0, 0, 0)
+Found villager entity: ID=4058, UUID=1a58a5d94bc243a199de3490c5b3ba0f, Position=(87.5, 128.0, 1.5), Rotation=(0, -52, -52), Velocity=(0, 0, 0)
+Found villager entity: ID=4275, UUID=ec321c58ac6a42479ff91292f8817d2c, Position=(106.5, 128.0, 4.5), Rotation=(0, 57, 57), Velocity=(0, 0, 0)
+Found villager entity: ID=4642, UUID=677ce2fb72ad4932a33142ac9d48ad5c, Position=(105.5, 128.0, 1.5), Rotation=(0, -30, -30), Velocity=(0, 0, 0)
 ```
 
 ### Extracting Villager Metadata
@@ -472,27 +379,9 @@ def parse_packet(packet: bytes):
 
     # print(f'Packet ID: {packet_id}, Length: {len(data)}')
 
-    if packet_id == 0x01:  # add_entity
-        entity_id, offset = read_varint(data, 0)
-        
-        entity_uuid = data[offset:offset + 16]
-        offset += 16
-
-        entity_type, offset = read_varint(data, offset)
-
-        if entity_type == 134:  # minecraft:villager
-            x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
-            pitch, yaw, head_yaw = data[offset + 12:offset + 15]
-            data_length, offset = read_varint(data, offset + 3)
-            velocity_x, velocity_y, velocity_z = struct.unpack('>hhh', data[offset:offset + 6])
-
-            villager_entities.append((entity_id, entity_uuid, x, y, z, pitch, yaw, head_yaw, velocity_x, velocity_y, velocity_z, ''))
-            
-            print(f'Found villager entity: ID={entity_id}, UUID={entity_uuid.hex()}, Position=({x}, {y}, {z}), '
-                  f'Rotation=({pitch}, {yaw}, {head_yaw}), Velocity=({velocity_x}, {velocity_y}, {velocity_z})')
+    ...
 
     if packet_id == 0x5C:  # set_entity_data
-        # Read unsigned byte for entity ID (dont use read_varint)
         entity_id, offset = read_varint(data, 0)
         metadata_index = struct.unpack('>B', data[offset:offset + 1])[0]
         offset += 1
@@ -555,29 +444,9 @@ def parse_packet(packet: bytes):
     packet_id, size = read_varint(packet, 0)
     data = packet[size:]
 
-    # print(f'Packet ID: {packet_id}, Length: {len(data)}')
-
-    if packet_id == 0x01:  # add_entity
-        entity_id, offset = read_varint(data, 0)
-        
-        entity_uuid = data[offset:offset + 16]
-        offset += 16
-
-        entity_type, offset = read_varint(data, offset)
-
-        if entity_type == 134:  # minecraft:villager
-            x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
-            pitch, yaw, head_yaw = data[offset + 12:offset + 15]
-            data_length, offset = read_varint(data, offset + 3)
-            velocity_x, velocity_y, velocity_z = struct.unpack('>hhh', data[offset:offset + 6])
-
-            villager_entities.append((entity_id, entity_uuid, x, y, z, pitch, yaw, head_yaw, velocity_x, velocity_y, velocity_z, ''))
-            
-            print(f'Found villager entity: ID={entity_id}, UUID={entity_uuid.hex()}, Position=({x}, {y}, {z}), '
-                  f'Rotation=({pitch}, {yaw}, {head_yaw}), Velocity=({velocity_x}, {velocity_y}, {velocity_z})')
+    ...
 
     if packet_id == 0x5C:  # set_entity_data
-        # Read unsigned byte for entity ID (dont use read_varint)
         entity_id, offset = read_varint(data, 0)
         metadata_index = struct.unpack('>B', data[offset:offset + 1])[0]
         offset += 1
@@ -647,54 +516,7 @@ def parse_packet(packet: bytes):
     packet_id, size = read_varint(packet, 0)
     data = packet[size:]
 
-    # print(f'Packet ID: {packet_id}, Length: {len(data)}')
-
-    if packet_id == 0x01:  # add_entity
-        entity_id, offset = read_varint(data, 0)
-        
-        entity_uuid = data[offset:offset + 16]
-        offset += 16
-
-        entity_type, offset = read_varint(data, offset)
-
-        if entity_type == 134:  # minecraft:villager
-            x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
-            pitch, yaw, head_yaw = data[offset + 12:offset + 15]
-            data_length, offset = read_varint(data, offset + 3)
-            velocity_x, velocity_y, velocity_z = struct.unpack('>hhh', data[offset:offset + 6])
-
-            villager_entities.append((entity_id, entity_uuid, x, y, z, pitch, yaw, head_yaw, velocity_x, velocity_y, velocity_z, ''))
-            
-            print(f'Found villager entity: ID={entity_id}, UUID={entity_uuid.hex()}, Position=({x}, {y}, {z}), '
-                  f'Rotation=({pitch}, {yaw}, {head_yaw}), Velocity=({velocity_x}, {velocity_y}, {velocity_z})')
-
-    if packet_id == 0x5C:  # set_entity_data
-        # Read unsigned byte for entity ID (dont use read_varint)
-        entity_id, offset = read_varint(data, 0)
-        metadata_index = struct.unpack('>B', data[offset:offset + 1])[0]
-        offset += 1
-        
-        metadata = data[offset:]
-        metadata_type, offset = read_varint(metadata, 0)
-
-        metadata = metadata[offset:]
-        offset = 0
-
-        if entity_id in [ent[0] for ent in villager_entities]:
-            # print(f'Found villager metadata for ID={entity_id}, Metadata Index={metadata_index}, Metadata Type={metadata_type}')
-            if metadata_type == 6:  # Optional Text Component
-                has_text = struct.unpack('b', metadata[offset:offset + 1])
-                offset += 1
-
-                if has_text:
-                    nbt_tag = struct.unpack('b', metadata[offset:offset + 1])[0]
-                    _ = struct.unpack('b', metadata[offset + 1:offset + 2])[0]
-                    string_length = struct.unpack('b', metadata[offset + 2:offset + 3])[0]
-                    string_value = metadata[offset + 3:offset + 3 + string_length].decode('utf-8')
-                    # print(f'Found villager metadata for ID={entity_id}, NBT Tag={nbt_tag}, String Length={string_length}, String Value={string_value}')
-                    for i, ent in enumerate(villager_entities):
-                        if ent[0] == entity_id:
-                            villager_entities[i] = (ent[0], ent[1], ent[2], ent[3], ent[4], ent[5], ent[6], ent[7], ent[8], ent[9], ent[10], string_value)
+    ...
 
     if packet_id == 0x1F:  # entity_position_sync
         entity_id, offset = read_varint(data, 0)
@@ -868,12 +690,19 @@ def parse_packet(packet: bytes):
         entity_uuid = data[offset:offset + 16]
         offset += 16
 
-        entity_type, offset = read_varint(data, offset)
+        data = data[offset:]
+        offset = 0
+
+        entity_type, offset = read_varint(data, 0)
 
         if entity_type == 134:  # minecraft:villager
             x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
-            pitch, yaw, head_yaw = data[offset + 12:offset + 15]
-            data_length, offset = read_varint(data, offset + 3)
+            pitch, yaw, head_yaw = struct.unpack('bbb', data[offset + 24:offset + 24 + 3])
+
+            data = data[offset + 24 + 3:]
+            offset = 0
+
+            data_length, offset = read_varint(data, 0)
             velocity_x, velocity_y, velocity_z = struct.unpack('>hhh', data[offset:offset + 6])
 
             villager_entities.append((entity_id, entity_uuid, x, y, z, pitch, yaw, head_yaw, velocity_x, velocity_y, velocity_z, ''))
