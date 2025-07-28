@@ -64,11 +64,141 @@ To read Minecraft packets from a PCAP, the correct step is to first reconstruct 
 
 ## Reading the packet
 
-I'll use the `scapy` library to read this pcap file and create a script to read the packets.
+~~I'll use the `scapy` library to read this pcap file and create a script to read the packets.~~ I will use `tshark` to read the pcap file and extract the TCP payloads. The reason for this is that `scapy` doesn't handle TCP stream reconstruction well, and `tshark` is more efficient for this task.
 
 Since we're reading a pcap file, we'll be dealing with TCP frames, not Minecraft packets directly. We need to combine the data from the relevant TCP frames to form a complete stream. I'm using this code [Splitter](https://github.com/PrismarineJS/node-minecraft-protocol/blob/master/src/transforms/framing.js#L27) to help combine or split the stream into appropriate Minecraft packets.
 
 Next, we'll read the Minecraft packets using the format we discussed earlier. We'll read the `Packet Length`, `Data Length`, `Packet ID`, and `Data` from each packet we receive. I use this code [Decompressor](https://github.com/PrismarineJS/node-minecraft-protocol/blob/master/src/transforms/compression.js#L41) to help decompress the packet that we have received if the packet is compressed (threshold &gt;= 256).
+
+So I will convert the `Splitter` and `Decompressor` into Python code. Here's the code to read the packets from the pcap file:
+
+```py
+import subprocess
+import zlib
+# from scapy.all import PcapReader, TCP
+
+SEGMENT_BITS = 0x7F
+CONTINUE_BIT = 0x80
+
+class PartialReadError(Exception):
+    pass
+
+def read_varint(data: bytes, offset: int = 0):
+    value = 0
+    position = 0
+    index = offset
+
+    while True:
+        if index >= len(data):
+            raise PartialReadError('Not enough bytes to read VarInt')
+
+        current_byte = data[index]
+        index += 1
+
+        value |= (current_byte & SEGMENT_BITS) << position
+
+        if (current_byte & CONTINUE_BIT) == 0:
+            break
+
+        position += 7
+        if position >= 32:
+            raise RuntimeError('VarInt is too big')
+
+    return value, index - offset
+
+
+def read_varlong(data: bytes, offset: int = 0):
+    value = 0
+    position = 0
+    index = offset
+
+    while True:
+        if index >= len(data):
+            raise PartialReadError('Not enough bytes to read VarLong')
+
+        current_byte = data[index]
+        index += 1
+
+        value |= (current_byte & SEGMENT_BITS) << position
+
+        if (current_byte & CONTINUE_BIT) == 0:
+            break
+
+        position += 7
+        if position >= 64:
+            raise RuntimeError('VarLong is too big')
+
+    return value, index - offset
+
+class EventEmitter:
+    def __init__(self):
+        self._events = {}
+
+    def on(self, event, handler):
+        self._events.setdefault(event, []).append(handler)
+
+    def emit(self, event, *args, **kwargs):
+        for handler in self._events.get(event, []):
+            handler(*args, **kwargs)
+
+class Splitter(EventEmitter):
+    def __init__(self):
+        super().__init__()
+        self.buffer = bytearray()
+
+    def feed(self, chunk: bytes):
+        self.buffer.extend(chunk)
+
+        offset = 0
+        try:
+            value, size = read_varint(self.buffer, offset)
+        except PartialReadError:
+            return
+
+        while len(self.buffer) >= offset + size + value:
+            packet = bytes(self.buffer[offset + size: offset + size + value])
+            self.emit('packet', packet)
+            offset += size + value
+
+            try:
+                value, size = read_varint(self.buffer, offset)
+            except PartialReadError:
+                break
+
+        self.buffer = self.buffer[offset:]
+
+def parse_packet(packet: bytes):
+    packet_id, size = read_varint(packet, 0)
+    data = packet[size:]
+
+    print(f'Packet ID: {packet_id}, Length: {len(data)}')
+
+splitter = Splitter()
+
+splitter.on('packet', lambda pkt: print(f'Parsed Packet: {pkt.hex()}'))
+
+# scapy make server packet will incorrectly feed to the splitter, dont know why.
+# with PcapReader('challenge.pcap') as pcap_reader:
+#     for pkt in pcap_reader:
+#         if pkt.haslayer(TCP) and pkt[TCP].payload:
+#             data = bytes(pkt[TCP].payload)
+#             splitter.feed(data)
+
+proc = subprocess.Popen(
+    ['tshark', '-r', 'challenge.pcap', '-Y', 'tcp.srcport == 25565',
+     '-T', 'fields', '-e', 'tcp.payload'],
+    stdout=subprocess.PIPE,
+    text=True,
+)
+
+for line in proc.stdout:
+    data = bytes.fromhex(line.strip())
+    splitter.feed(data)
+```
+
+## Parsing the packet
+
+We have got the Minecraft packet from the pcap file, now we need to parse the packet based on the packet format we discussed earlier. 
 
 ```py
 import subprocess
@@ -199,6 +329,8 @@ def parse_packet(packet: bytes):
 
     print(f'Packet ID: {packet_id}, Length: {len(data)}')
 
+    # Here we can parse the packet based on its ID
+
 splitter = Splitter()
 decompressor = Decompressor()
 
@@ -224,23 +356,7 @@ for line in proc.stdout:
     splitter.feed(data)
 ```
 
-Yes, I converted `Splitter` and `Decompressor` into Python code.
-
-## Parsing the packet
-
-We have got the Minecraft packet from the pcap file, now we need to parse the packet.
-
-```py
-def parse_packet(packet: bytes):
-    packet_id, size = read_varint(packet, 0)
-    data = packet[size:]
-
-    print(f'Packet ID: {packet_id}, Length: {len(data)}')
-
-    # Parse the packet data here
-```
-
-We've already got the packet's `Packet ID` and `Data Length`. Now we need to parse the packet's data. You can see the format of each protocol in [Minecraft Protocol](https://minecraft.wiki/w/Java_Edition_protocol/Packets).
+Now we need to parse the packet's data. You can see the format of each protocol in [Minecraft Protocol](https://minecraft.wiki/w/Java_Edition_protocol/Packets).
 
 ## How to solve the challenge?
 
@@ -260,6 +376,8 @@ Some protocols related to entities and villagers are:
 - `0x5C` - set_entity_data
 - `0x6D` - sound_entity
 - And many more...
+
+### Identifying Villager Entities
 
 So we have a few protocols we can use to find the flag. So what's the first step? Well, we need to check the `add_entity` (`0x01`) protocol.
 
@@ -338,6 +456,8 @@ Found villager entity: ID=4058, UUID=1a58a5d94bc243a199de3490c5b3ba0f, Position=
 Found villager entity: ID=4275, UUID=ec321c58ac6a42479ff91292f8817d2c, Position=(6508, 6508, 6508), Rotation=(236, 50, 28), Velocity=(8684, 12828, 22700)
 Found villager entity: ID=4642, UUID=677ce2fb72ad4932a33142ac9d48ad5c, Position=(103, 36, 36), Rotation=(36, 103, 124), Velocity=(31970, -1166, -21175)
 ```
+
+### Extracting Villager Metadata
 
 So, 40 villager entities were found. So where are the flags? Based on my very clever ChatGPT, when I asked about all the protocols related to entities or villagers, one protocol stood out: `set_entity_data` (`0x5C`).
 
@@ -419,6 +539,8 @@ So in this metadata, we will look for the `Optional Text Component` type, which 
 ```
 
 And... we can see that some villager entities have metadata of type `Optional Text Component`, which contains a single-byte of text. It looks like this, combined, would form a flag. But when we try to combine them based on their packet order, the flags look random, so we need to figure out how to combine them.
+
+### Visualizing the Flag from Villager Positions
 
 What if we try rendering the text with the position in `add_entity`?
 
@@ -604,6 +726,8 @@ img.save('villager_text.png')
 And sure enough after we use the last position of `entity_position_sync`, the resulting text looks like a flag.
 
 ![villager_text.png](villager_text.png)
+
+## Final Script
 
 Here's the final script that combines everything:
 
