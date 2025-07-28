@@ -383,7 +383,7 @@ So we have a few protocols we can use to find the flag. So what's the first step
 
 <table><tbody><tr><th>Packet ID</th><th>State</th><th>Bound To</th><th>Field Name</th><th>Field Type</th><th>Notes</th></tr><tr><td rowspan="13"><i>protocol:</i><br><code>0x01</code><br><br><i>resource:</i><br><code>add_entity</code></td><td rowspan="13">Play</td><td rowspan="13">Client</td><td>Entity ID</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:VarInt">VarInt</a></td><td>A unique integer ID mostly used in the protocol to identify the entity.</td></tr><tr><td>Entity UUID</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:UUID">UUID</a></td><td>A unique identifier that is mostly used in persistence and places where the uniqueness matters more.</td></tr><tr><td>Type</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:VarInt">VarInt</a></td><td>ID in the <code>minecraft:entity_type</code> registry (see "type" field in <a href="https://minecraft.wiki/w/Java_Edition_protocol/Entity_metadata#Entities">Entity metadata#Entities</a>).</td></tr><tr><td>X</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Double">Double</a></td><td></td></tr><tr><td>Y</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Double">Double</a></td><td></td></tr><tr><td>Z</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Double">Double</a></td><td></td></tr><tr><td>Pitch</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Angle">Angle</a></td><td>To get the real pitch, you must divide this by (256.0F / 360.0F)</td></tr><tr><td>Yaw</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Angle">Angle</a></td><td>To get the real yaw, you must divide this by (256.0F / 360.0F)</td></tr><tr><td>Head Yaw</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Angle">Angle</a></td><td>Only used by living entities, where the head of the entity may differ from the general body rotation.</td></tr><tr><td>Data</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:VarInt">VarInt</a></td><td>Meaning dependent on the value of the Type field, see <a href="https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Object_Data">Object Data</a> for details.</td></tr><tr><td>Velocity X</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Short">Short</a></td><td rowspan="3">Same units as <a href="https://minecraft.wiki/w/Java_Edition_protocol/#Set_Entity_Velocity">Set Entity Velocity</a>.</td></tr><tr><td>Velocity Y</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Short">Short</a></td></tr><tr><td>Velocity Z</td><td><a href="https://minecraft.wiki/w/Java_Edition_protocol/#Type:Short">Short</a></td></tr></tbody></table>
 
-So, we can see that the `add_entity` packet has several fields that we can use to search for flags. We'll look for packets that have a `Type` that matches villager, which is `minecraft:villager`. We can see a list of entity types in the [Entity Type Registry](https://minecraft.wiki/w/Java_Edition_protocol/Entity_metadata#Entities).
+So, we can see that the `add_entity` packet has several fields. We'll look for packets that have a `Type` that matches villager, which is `minecraft:villager`. We can see a list of entity types in the [Entity Type Registry](https://minecraft.wiki/w/Java_Edition_protocol/Entity_metadata#Entities).
 
 We found that `minecraft:villager` has an ID of `134`. So, we'll look for packets that have a `Type` of `134`.
 
@@ -461,7 +461,7 @@ Found villager entity: ID=4642, UUID=677ce2fb72ad4932a33142ac9d48ad5c, Position=
 
 So, 40 villager entities were found. So where are the flags? Based on my very clever ChatGPT, when I asked about all the protocols related to entities or villagers, one protocol stood out: `set_entity_data` (`0x5C`).
 
-> Before I asked ChatGPT, I searched for different protocols related to entities and villagers, and then I gave up because there were too many protocols. So I asked ChatGPT, and it gave me a list of protocols related to entities and villagers. I was surprised that it gave me the `set_entity_data` protocol, which is the protocol we need.
+> Before I asked ChatGPT, I searched for different protocols related to entities and villagers, and then I gave up because there were too many protocols. So I asked ChatGPT where the flag was spread, and it gave me a list of protocols related to entities and villagers. I was surprised that it gave me the `set_entity_data` protocol, which is the protocol we need.
 
 ```py
 villager_entities = []
@@ -505,7 +505,7 @@ def parse_packet(packet: bytes):
             print(f'Found villager metadata for ID={entity_id}, Metadata Index={metadata_index}, Metadata Type={metadata_type}')
 ```
 
-In this metadata entry, we need to parse it according to the format we discussed earlier. We can see the metadata format in [Entity Metadata](https://minecraft.wiki/w/Java_Edition_protocol/Entity_metadata#Entity_Metadata_Format).
+In this metadata entry, we need to parse it according to the metadata format in [Entity Metadata](https://minecraft.wiki/w/Java_Edition_protocol/Entity_metadata#Entity_Metadata_Format).
 
 ![alt text](image-3.png)
 
@@ -521,7 +521,7 @@ And the format of the `Text Component` is as follows:
 | --- | --- | --- | --- |
 | [Text Component](https://minecraft.wiki/w/Java_Edition_protocol/#Type:Text_Component) | Varies | See [Text component format](https://minecraft.wiki/w/Text_component_format "Text component format") | Encoded as a [NBT Tag](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/NBT "Minecraft Wiki:Projects/wiki.vg merge/NBT"), with the type of tag used depending on the case: - As a [String Tag](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/NBT#Specification:string_tag "Minecraft Wiki:Projects/wiki.vg merge/NBT"): For components only containing text (no styling, no events etc.). - As a [Compound Tag](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/NBT#Specification:compound_tag "Minecraft Wiki:Projects/wiki.vg merge/NBT"): Every other case. |
 
-So in this metadata, we will look for the `Optional Text Component` type, which is `6`. If we find it, we will read the `Boolean` value to check if the text component is present. If it is present, we will read the `NBT Tag` and the `String Value`.
+So in this metadata, we will look for the `Optional Text Component` type, which is `6`. If we find it, we will read the `Boolean` value to check if the text component is present. If it is present, we will read the `NBT Tag` because the text component is encoded as an NBT Tag. The NBT Tag can be either a `String Tag` or a `Compound Tag`, but in this case, we will only look for the `String Tag`.
 
 ```py
         if entity_id in [ent[0] for ent in villager_entities]:
@@ -538,7 +538,7 @@ So in this metadata, we will look for the `Optional Text Component` type, which 
                     print(f'Found villager metadata for ID={entity_id}, NBT Tag={nbt_tag}, String Length={string_length}, String Value={string_value}')
 ```
 
-And... we can see that some villager entities have metadata of type `Optional Text Component`, which contains a single-byte of text. It looks like this, combined, would form a flag. But when we try to combine them based on their packet order, the flags look random, so we need to figure out how to combine them.
+And... we can see that some villager entities have metadata of type `Optional Text Component`, which contains a single-byte of text. But when we try to combine them based on their packet order, the flags look random, so we need to figure out how to combine them.
 
 ### Visualizing the Flag from Villager Positions
 
@@ -959,5 +959,7 @@ img.save('villager_text.png')
 ```
 
 ## Author solution GIF
+
+The author also provided a GIF of their solution, which shows the process of moving the text to the correct positions.
 
 ![w3H20U1.gif](w3H20U1.gif)
