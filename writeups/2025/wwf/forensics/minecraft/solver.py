@@ -136,18 +136,25 @@ def parse_packet(packet: bytes):
         entity_uuid = data[offset:offset + 16]
         offset += 16
 
-        entity_type, offset = read_varint(data, offset)
+        data = data[offset:]
+        offset = 0
+
+        entity_type, offset = read_varint(data, 0)
 
         if entity_type == 134:  # minecraft:villager
             x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
-            pitch, yaw, head_yaw = data[offset + 12:offset + 15]
-            data_length, offset = read_varint(data, offset + 3)
+            pitch, yaw, head_yaw = struct.unpack('bbb', data[offset + 24:offset + 24 + 3])
+
+            data = data[offset + 24 + 3:]
+            offset = 0
+
+            data_length, offset = read_varint(data, 0)
             velocity_x, velocity_y, velocity_z = struct.unpack('>hhh', data[offset:offset + 6])
 
             villager_entities.append((entity_id, entity_uuid, x, y, z, pitch, yaw, head_yaw, velocity_x, velocity_y, velocity_z, ''))
             
-            # print(f'Found villager entity: ID={entity_id}, UUID={entity_uuid.hex()}, Position=({x}, {y}, {z}), '
-            #       f'Rotation=({pitch}, {yaw}, {head_yaw}), Velocity=({velocity_x}, {velocity_y}, {velocity_z})')
+            print(f'Found villager entity: ID={entity_id}, UUID={entity_uuid.hex()}, Position=({x}, {y}, {z}), '
+                  f'Rotation=({pitch}, {yaw}, {head_yaw}), Velocity=({velocity_x}, {velocity_y}, {velocity_z})')
 
     if packet_id == 0x5C:  # set_entity_data
         # Read unsigned byte for entity ID (dont use read_varint)
@@ -177,15 +184,15 @@ def parse_packet(packet: bytes):
                         if ent[0] == entity_id:
                             villager_entities[i] = (ent[0], ent[1], ent[2], ent[3], ent[4], ent[5], ent[6], ent[7], ent[8], ent[9], ent[10], string_value)
 
-    if packet_id == 0x1F:  # entity_position_sync
-        entity_id, offset = read_varint(data, 0)
+    # if packet_id == 0x1F:  # entity_position_sync
+    #     entity_id, offset = read_varint(data, 0)
 
-        if entity_id in [ent[0] for ent in villager_entities]:
-            x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
-            print(f'Entity Position Sync: ID={entity_id}, Position=({x}, {y}, {z})')
-            for i, ent in enumerate(villager_entities):
-                if ent[0] == entity_id:
-                    villager_entities[i] = (ent[0], ent[1], x, y, z, ent[5], ent[6], ent[7], ent[8], ent[9], ent[10], ent[11])
+    #     if entity_id in [ent[0] for ent in villager_entities]:
+    #         x, y, z = struct.unpack('>ddd', data[offset:offset + 24])
+    #         print(f'Entity Position Sync: ID={entity_id}, Position=({x}, {y}, {z})')
+    #         for i, ent in enumerate(villager_entities):
+    #             if ent[0] == entity_id:
+    #                 villager_entities[i] = (ent[0], ent[1], x, y, z, ent[5], ent[6], ent[7], ent[8], ent[9], ent[10], ent[11])
 
 splitter = Splitter()
 decompressor = Decompressor()
