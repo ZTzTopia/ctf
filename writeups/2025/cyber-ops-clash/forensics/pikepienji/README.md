@@ -2,7 +2,7 @@
 title: scap
 category: Forensics
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 500

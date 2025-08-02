@@ -2,7 +2,7 @@
 title: Objectified
 category: Web Exploitation
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 499

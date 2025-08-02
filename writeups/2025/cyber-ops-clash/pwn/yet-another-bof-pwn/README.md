@@ -2,7 +2,7 @@
 title: "yet another bof pwn"
 category: Binary Exploitation
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 100

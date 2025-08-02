@@ -2,7 +2,7 @@
 title: BabyRev
 category: Reverse Engineering
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 100
