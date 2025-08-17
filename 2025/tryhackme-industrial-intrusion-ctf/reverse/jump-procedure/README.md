@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 90
 solves: -1
-flags: flag: THM{REDACTED}
+flags: THM{REDACTED}
 ---
 > ZeroTrace traces erratic branches through a tangle of industrial routines. Each calculated jump peels back another layer of the control logic.
 

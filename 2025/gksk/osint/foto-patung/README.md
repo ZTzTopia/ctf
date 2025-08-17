@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 19
-flags: flag: GKSK#9{F85F+J3}
+flags: GKSK#9{F85F+J3}
 ---
 > Aku Mendapat foto patung dari temanku yang sedang berlibur, tapi aku tidak tau dimana lokasi patung tersebut. Dapatkanlah pluscode dari landmark lokasi patung tersebut.
 >

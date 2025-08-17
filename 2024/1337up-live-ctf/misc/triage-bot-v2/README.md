@@ -4,7 +4,7 @@ categories: Miscellaneous
 tags: 
 completedDuringEvent: true
 submitted: true
-flags: flag: INTIGRITI{4n07h3r_y34r_4n07h3r_7r1463_b07}
+flags: INTIGRITI{4n07h3r_y34r_4n07h3r_7r1463_b07}
 draft: false
 ---
 ## Scenario

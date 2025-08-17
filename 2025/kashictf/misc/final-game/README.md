@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: KashiCTF{Will_This_Be_My_Last_Game_e94fab41}
+flags: KashiCTF{Will_This_Be_My_Last_Game_e94fab41}
 ---
 > We searched his room and found chess pieces thrown here and there ..thankfully someone recorded the entire game
 >

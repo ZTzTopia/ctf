@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: picoCTF{REDACTED}
+flags: picoCTF{REDACTED}
 ---
 > No description.
 

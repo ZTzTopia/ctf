@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flags: flag: picoCTF{REDACTED}
+flags: picoCTF{REDACTED}
 ---
 > I bought this robot to help me locate flags, but the controller is stuck in a demo loop where the robot just goes in circles. Can you exploit the encryption between the controller to navigate the robot to the flag?
 > All connections to the challenge will be made via the browser and/or HTTP requests to the server. You will need to use the functions provided in [radio_interface.py]() to interface with the server. The source code for the robot and controller will be useful as well: [robot.py](); [robotcontroller.py](); [crypto.py]()

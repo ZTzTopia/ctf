@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: bronco{n0th1ng_1s_2oo_h4rd_4_m3!}
+flags: bronco{n0th1ng_1s_2oo_h4rd_4_m3!}
 ---
 > Hey. It's me, Mr. Dehnemy. Remember me from last year?
 >

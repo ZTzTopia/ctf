@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: bronco{I_w@s_pr3p@r1ng_4_ctfs}
+flags: bronco{I_w@s_pr3p@r1ng_4_ctfs}
 ---
 > Do you really want to know where BroncoSec (full of security enthusiasts and influencers) was April 25?
 

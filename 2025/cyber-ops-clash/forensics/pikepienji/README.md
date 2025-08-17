@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 500
 solves: 1
-flags: flag: Meta4Sec{easy_pcap_for_us_all_00efd3a4cc}
+flags: Meta4Sec{easy_pcap_for_us_all_00efd3a4cc}
 ---
 
 > have you ever heard that there is a shark exist in the clouds?

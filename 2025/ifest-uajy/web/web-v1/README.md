@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: IFEST13{4b0a3c7d05927b28970fdfffe803e7fb}
+flags: IFEST13{4b0a3c7d05927b28970fdfffe803e7fb}
 ---
 > This is my first time making a website using Python!!!! :D 
 > http://103.163.139.198:12312

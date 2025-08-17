@@ -4,7 +4,7 @@ categories: Miscellaneous
 tags: Blockchain
 completedDuringEvent: true
 submitted: true
-flags: flag: ARA6{sh0u7_out_70_3ph3me24l_prov1d3r5}
+flags: ARA6{sh0u7_out_70_3ph3me24l_prov1d3r5}
 draft: false
 ---
 ## Scenario

@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 23
-flags: flag: Meta4Sec{e6b760bc7b7f2e252a2c50692c5e4ce3}
+flags: Meta4Sec{e6b760bc7b7f2e252a2c50692c5e4ce3}
 ---
 
 > this is bof

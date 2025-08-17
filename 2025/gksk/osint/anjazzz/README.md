@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 10
-flags: flag: GKSK#9{GIOACCHINO_GAMMINO_ITALIA}
+flags: GKSK#9{GIOACCHINO_GAMMINO_ITALIA}
 ---
 > Aku adalah boss Manuel, tetapi aku dikejar polisi. Sekarang aku menyamar jadi pegawai disebuah toko di pertigaan. Siapakah namaku sebenarnya dan aslinya aku berasal darimana?
 >

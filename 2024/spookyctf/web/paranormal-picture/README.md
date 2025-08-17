@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: NICC{tHe_crYptIds_aRe_waIting_t0_sTrike}
+flags: NICC{tHe_crYptIds_aRe_waIting_t0_sTrike}
 ---
 ## Scenario
 

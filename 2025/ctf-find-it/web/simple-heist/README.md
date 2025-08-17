@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: FindITCTF{BEtEc_1O_&1J!)
+flags: FindITCTF{BEtEc_1O_&1J!)
 ---
 > gampang sekali, tinggal cari kunci dari brankasnya
 >

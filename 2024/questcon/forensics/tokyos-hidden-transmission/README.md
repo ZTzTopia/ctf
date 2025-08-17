@@ -7,7 +7,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: QUESTCON{morsecodeftw}
+flags: QUESTCON{morsecodeftw}
 ---
 ## Scenario
 

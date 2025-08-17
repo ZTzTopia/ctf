@@ -7,7 +7,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CJ{19f43f6db7328114eea9e1b939f40bc453fdb0b69a4e0006575e49e55fc187cc}
+flags: CJ{19f43f6db7328114eea9e1b939f40bc453fdb0b69a4e0006575e49e55fc187cc}
 ---
 ## Scenario
 

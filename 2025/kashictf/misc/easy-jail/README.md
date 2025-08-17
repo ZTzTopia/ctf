@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: KashiCTF{3V4L_41NT_54F3_nwxKfAIK}
+flags: KashiCTF{3V4L_41NT_54F3_nwxKfAIK}
 ---
 > I made this calculator. I have a feeling that it's not safe :(
 

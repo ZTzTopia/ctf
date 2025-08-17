@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flags: flag: FLAG{0xdeadbeef}
+flags: FLAG{0xdeadbeef}
 ---
 ## Scenario
 

@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: PWNME{4baf3723f62a15f22e86d57130bc40c3}
+flags: PWNME{4baf3723f62a15f22e86d57130bc40c3}
 ---
 > Using the provided binary and the encrypted file, find a way to retrieve the flag contained in "flag.enc". Note that the binary would have been run in May 2024. Note: The flag is in the format PWNME{...}
 >

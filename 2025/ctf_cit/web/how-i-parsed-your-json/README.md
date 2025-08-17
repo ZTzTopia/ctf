@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CIT{235da65aa6444e27}
+flags: CIT{235da65aa6444e27}
 ---
 > "This is the story of how I defined your schema."
 >

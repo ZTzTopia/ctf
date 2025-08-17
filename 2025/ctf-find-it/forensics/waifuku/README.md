@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: FindITCTF<s3m4ng4t_P4G1__________h1dup_N4Rut00000>
+flags: FindITCTF<s3m4ng4t_P4G1__________h1dup_N4Rut00000>
 ---
 > pecinta waifu ternyata seorang info stealer? hahh 🥶🥶 bongkar semua kedoknya dia
 >

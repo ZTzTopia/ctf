@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flags: flag: PWNME{R3v3rS1ng_Compil0_C4n_B3_good}
+flags: PWNME{R3v3rS1ng_Compil0_C4n_B3_good}
 ---
 > A new and obscure programming language, MimiLang, has surfaced. It runs on a peculiar interpreter, but something about it feels… off. Dive into its inner workings and figure out what's really going on. Maybe you'll uncover something unexpected.
 >

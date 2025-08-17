@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 90
 solves: -1
-flags: flag: THM{REDACTED}
+flags: THM{REDACTED}
 ---
 > The CRM interface on the plant's internal network was supposed to help operators manage sensor maintenance and schedule firmware patches. Instead, someone turned it into a silent threat vector.
 >

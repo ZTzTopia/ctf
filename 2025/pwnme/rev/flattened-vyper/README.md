@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: PWNME{SuCh_4_M3t4R3veRS3r}
+flags: PWNME{SuCh_4_M3t4R3veRS3r}
 ---
 > I achieve to obtain this smart contract, but I can't understand what it does. Can you help me?
 >

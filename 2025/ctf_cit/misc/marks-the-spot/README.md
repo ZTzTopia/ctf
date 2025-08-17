@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CIT{YBF4Y6M6P}
+flags: CIT{YBF4Y6M6P}
 ---
 > > 3D*=H1,:U?.l&je6W$Z;1,:U?.l&je6V:H?1,:U?.l&je6V&t)1,:U?.l&je6V(<U=>Eu6.p+P66V'461,:U?.l&je6W$?41,:U?.l&j
 >

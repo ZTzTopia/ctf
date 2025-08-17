@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: KashiCTF{b0r1ng_old_c0rp0_l1f3_am_1_r1gh7_IOiUPTqB}
+flags: KashiCTF{b0r1ng_old_c0rp0_l1f3_am_1_r1gh7_IOiUPTqB}
 ---
 > ~
 

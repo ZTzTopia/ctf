@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CIT{zG48r2FBR6Wn}
+flags: CIT{zG48r2FBR6Wn}
 ---
 > Bro what am I hearing rn
 >

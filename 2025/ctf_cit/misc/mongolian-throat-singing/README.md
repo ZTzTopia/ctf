@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CIT{w0lf_t0t3m}
+flags: CIT{w0lf_t0t3m}
 ---
 > Send us a clip of you singing your heart out to The Hu for the flag!
 >

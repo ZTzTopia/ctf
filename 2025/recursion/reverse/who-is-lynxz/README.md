@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: RECURSION{lynxz_w4s_a_gr0wt0p14_hack3r_back_th3n}
+flags: RECURSION{lynxz_w4s_a_gr0wt0p14_hack3r_back_th3n}
 ---
 > I have an online friend from 7 years ago but I didn't know who he was before I met him 7 years ago. I only know that he was a great hacker back then. Can you help me find out who he was?
 >

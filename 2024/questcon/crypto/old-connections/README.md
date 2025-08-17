@@ -6,7 +6,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: QUESTCON{CRYPTOISFUN}
+flags: QUESTCON{CRYPTOISFUN}
 ---
 ## Scenario
 

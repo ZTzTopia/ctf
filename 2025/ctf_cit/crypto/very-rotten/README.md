@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CIT{Y0u_are_s00_ROTT3N_MgOxrNY138DpqxO96rcx}
+flags: CIT{Y0u_are_s00_ROTT3N_MgOxrNY138DpqxO96rcx}
 ---
 > TFJDe0gzeV9ldmlfdzMzX0FYQ0M2V19Wa1hidldINDYxTXR1YlgyOXZnYn0=
 >

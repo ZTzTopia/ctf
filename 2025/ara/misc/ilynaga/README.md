@@ -4,7 +4,7 @@ categories: Miscellaneous
 tags: 
 completedDuringEvent: true
 submitted: true
-flags: flag: ARA6{w4s_1t_h4Rd_0r_N0T_0558d4a}
+flags: ARA6{w4s_1t_h4Rd_0r_N0T_0558d4a}
 draft: false
 ---
 ## Scenario

@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 60
 solves: -1
-flags: flag: THM{REDACTED}
+flags: THM{REDACTED}
 ---
 > The plant’s override relay was blockchain-governed. That is until **Flicker** embedded a sabotage handshake inside the contract’s state logic. Now, the machinery won’t respond unless the hidden sequence is re-executed.
 >

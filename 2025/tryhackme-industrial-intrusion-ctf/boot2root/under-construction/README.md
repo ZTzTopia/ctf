@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flags: flag: THM{REDACTED}
+flags: THM{REDACTED}
 ---
 > ZeroTrace wastes no time: one misstep in the plant’s login routine, and she’s in. Credentials, shells, root, factory systems fall in quick succession.
 

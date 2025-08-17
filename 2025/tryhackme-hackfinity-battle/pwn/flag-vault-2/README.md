@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: THM{REDACTED}
+flags: THM{REDACTED}
 ---
 > No description.
 

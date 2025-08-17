@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: THM{REDACTED}
+flags: THM{REDACTED}
 ---
 > “Great work on uncovering that suspicious subdomain, Hexline. However, your work here isn’t done yet, we believe there is more.”
 

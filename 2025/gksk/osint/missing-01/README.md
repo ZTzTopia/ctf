@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 154
 solves: 9
-flags: flag: GKSK#9{Som3tim3s_S1lent_me4ns_Someth1ng} 
+flags: GKSK#9{Som3tim3s_S1lent_me4ns_Someth1ng} 
 ---
 > Sebuah video berdurasi pendek ditemukan terkunci dalam akun Zoom milik **Eris**—sebuah akun usang yang tak pernah disentuh selama lebih dari tiga tahun. Tidak ada suara. Hanya kilatan cahaya samar, frekuensi visual acak, dan sebuah sensasi aneh yang tak bisa dijelaskan.
 >

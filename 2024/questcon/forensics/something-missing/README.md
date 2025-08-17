@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: QUESTCON{H1dd3n_s0_y0u_can1_s33}
+flags: QUESTCON{H1dd3n_s0_y0u_can1_s33}
 ---
 ## Scenario
 

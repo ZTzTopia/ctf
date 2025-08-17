@@ -4,7 +4,7 @@ categories: Miscellaneous
 tags: 
 completedDuringEvent: true
 submitted: true
-flags: flag: INTIGRITI{ninja_kiwi_games}
+flags: INTIGRITI{ninja_kiwi_games}
 draft: false
 ---
 ## Scenario

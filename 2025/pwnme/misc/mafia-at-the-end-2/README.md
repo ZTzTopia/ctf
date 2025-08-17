@@ -5,7 +5,7 @@ tags: Blockchain
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: PWNME{th3_H0us3_41way5_w1n_bu7_sh0uld_be_4fr41d_0f_7h3_ul7im4te_g4m8l3r!}
+flags: PWNME{th3_H0us3_41way5_w1n_bu7_sh0uld_be_4fr41d_0f_7h3_ul7im4te_g4m8l3r!}
 ---
 > You're in the final step before catching them lacking. Prove yourself by winning at the casino and access the VIP room !
 >

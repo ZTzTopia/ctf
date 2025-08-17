@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flags: flag: picoCTF{REDACTED}
+flags: picoCTF{REDACTED}
 ---
 > Dear Threat Intelligence Analyst,
 > Quick heads up - we stumbled upon a shady executable file on one of our employee's Windows PCs. Good news: the employee didn't take the bait and flagged it to our InfoSec crew.

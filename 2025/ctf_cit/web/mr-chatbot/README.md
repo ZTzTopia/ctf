@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CIT{18a7fbedb4f3548f}
+flags: CIT{18a7fbedb4f3548f}
 ---
 > "What's your prompt?"
 >

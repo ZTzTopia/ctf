@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 16
-flags: flag: GKSK#9{enjoy_the_game_guys!}
+flags: GKSK#9{enjoy_the_game_guys!}
 ---
 > Dr. **Eris Nugroho**, seorang pakar IT, kriptografi, dan sistem terdistribusi global, menghilang tanpa jejak tepat satu hari setelah menyampaikan bahwa ia “nyaris menemukan sesuatu yang seharusnya tak boleh ditemukan.”
 >

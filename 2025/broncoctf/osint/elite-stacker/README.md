@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: bronco{The Laboratory 1,015.8m}
+flags: bronco{The Laboratory 1,015.8m}
 ---
 > YOOOO check out this new personal best in sprint that my bestie yoshie just got! He truly is the elitest elite stacker of all time! (p.s. not really. he needs *waaaay* more T-Spins.)
 >

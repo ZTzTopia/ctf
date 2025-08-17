@@ -7,7 +7,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: QUESTCON{BERLIN_HAD_SECRETS_BENEATH_HIS_CHARM}
+flags: QUESTCON{BERLIN_HAD_SECRETS_BENEATH_HIS_CHARM}
 ---
 ## Scenario
 

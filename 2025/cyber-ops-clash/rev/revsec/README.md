@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 333
 solves: 11
-flags: flag: Meta4Sec{Secondary_CH4ll_Reverse_34sY}
+flags: Meta4Sec{Secondary_CH4ll_Reverse_34sY}
 ---
 
 > Just basic Reverse Engineering

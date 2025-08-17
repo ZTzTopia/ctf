@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 120
 solves: -1
-flags: flag: THM{REDACTED}
+flags: THM{REDACTED}
 ---
 > Virelia bought another Mechacore piece of junk. It's now an inventory system for their manufactured parts. Why a water company needs to create robot parts escapes me completely. Maybe we can access the server and clear our doubts.
 

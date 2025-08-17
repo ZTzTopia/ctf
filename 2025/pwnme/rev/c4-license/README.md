@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flags: flag: PWNME{8d0f21d2a2989b739673732d8155022b}
+flags: PWNME{8d0f21d2a2989b739673732d8155022b}
 ---
 > Using the license of 'Noa' and the provided binary, develop a keygen to create a valid license for the 100 requested users.
 >

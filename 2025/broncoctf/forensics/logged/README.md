@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: bronco{l0gg1ng_ftw}
+flags: bronco{l0gg1ng_ftw}
 ---
 > We managed to get a keylogger on a notorious hacker's computer. 
 >

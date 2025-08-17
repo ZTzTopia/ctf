@@ -6,7 +6,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: RECURSION{redefined.coconuts.stack}
+flags: RECURSION{redefined.coconuts.stack}
 ---
 > I came across this photo in my gallery from a visit on February 1, 2025, but I can't recall where I took it. Can you help me figure it out?
 >

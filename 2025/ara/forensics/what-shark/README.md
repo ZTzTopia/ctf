@@ -4,7 +4,7 @@ categories: Forensics
 tags: 
 completedDuringEvent: true
 submitted: true
-flags: flag: ARA6{1ntr0duc710n_70_5tra7o5h4rk}
+flags: ARA6{1ntr0duc710n_70_5tra7o5h4rk}
 draft: false
 ---
 ## Scenario

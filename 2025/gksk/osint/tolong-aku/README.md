@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 16
-flags: flag: GKSK#9{4KU_H4CKER_B4N9}
+flags: GKSK#9{4KU_H4CKER_B4N9}
 ---
 > milevaahrgrvs berisi tentang seseorang yang lupa dengan password akun e banking bertanda kali.
 

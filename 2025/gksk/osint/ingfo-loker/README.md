@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 154
 solves: 5
-flags: flag: GKSK#9{NAWASTA_JOB}
+flags: GKSK#9{NAWASTA_JOB}
 ---
 > Nawasta sudah lama berkerja dan sudah lelah dengan gaji umr. Bantu dia berbicara dengan HRD untuk kenaikan gaji!!
 >

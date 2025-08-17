@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: bronco{n0t_s0_1mp0551bl3_4ft3r_411_w0w!}
+flags: bronco{n0t_s0_1mp0551bl3_4ft3r_411_w0w!}
 ---
 > Bucky swears this obby (obstacle course) is IMPOSSIBLE. But he also says his obby has a flag for us in an alternate universe. What gives?
 > [https://www.roblox.com/games/131965012415321/BUCKYS-IMPOSSIBLE-OBBY](https://www.roblox.com/games/131965012415321/BUCKYS-IMPOSSIBLE-OBBY)

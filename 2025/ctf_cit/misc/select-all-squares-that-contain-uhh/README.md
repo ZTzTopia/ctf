@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: CIT{th1s_a1nt_m4lw4r3_d0nt_w0rry}
+flags: CIT{th1s_a1nt_m4lw4r3_d0nt_w0rry}
 ---
 > These captchas seem to get more difficult day by day...
 >

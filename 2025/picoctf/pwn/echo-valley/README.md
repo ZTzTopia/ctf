@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: picoCTF{REDACTED}
+flags: picoCTF{REDACTED}
 ---
 > The echo valley is a simple function that echoes back whatever you say to it.
 > But how do you make it respond with something more interesting, like a flag?

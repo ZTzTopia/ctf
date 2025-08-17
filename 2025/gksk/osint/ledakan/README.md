@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 14
-flags: flag: GKSK#9{IRAK_BAGHDAD_27/08/2006_VBIED}
+flags: GKSK#9{IRAK_BAGHDAD_27/08/2006_VBIED}
 ---
 > Seorang jurnalis dengan 140 ribu followers di X mengunggah foto mobil yang hancur dan mengeluarkan asap yang banyak dan api, dengan tweet menyatakan : “BREAKING: TTP carried out a suicide attack on a police post in Khyber city of Pakistan that killed three Pakistani police officers.“ pada January 19, 2023.
 >

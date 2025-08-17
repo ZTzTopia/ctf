@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flags: flag: FindITCTF{g0L4nG_4lL0wS_p4th_Tr4V3rs4L???}
+flags: FindITCTF{g0L4nG_4lL0wS_p4th_Tr4V3rs4L???}
 ---
 > I'm a consultant, but my client is using a new technology I'm not familiar with. Can I outsource this whitebox pentest project to you?
 
