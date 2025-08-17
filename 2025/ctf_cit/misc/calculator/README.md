@@ -1,6 +1,6 @@
 ---
 title: Calculator
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

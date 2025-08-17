@@ -1,6 +1,6 @@
 ---
 title: "Void Execution"
-category: Binary Exploitation
+categories: Binary Exploitation
 tags: 
 draft: false
 completedDuringEvent: true

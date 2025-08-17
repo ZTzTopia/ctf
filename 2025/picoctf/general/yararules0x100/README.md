@@ -1,6 +1,6 @@
 ---
 title: "YaraRules0x100"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: true
 completedDuringEvent: true

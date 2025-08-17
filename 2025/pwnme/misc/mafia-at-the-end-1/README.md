@@ -1,6 +1,6 @@
 ---
 title: "Mafia at the end 1"
-category: Miscellaneous
+categories: Miscellaneous
 tags: Blockchain
 draft: false
 completedDuringEvent: true

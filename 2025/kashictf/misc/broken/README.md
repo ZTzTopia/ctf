@@ -1,6 +1,6 @@
 ---
 title: "Broken?"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: true
 completedDuringEvent: false

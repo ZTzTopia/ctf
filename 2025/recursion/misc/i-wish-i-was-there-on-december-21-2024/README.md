@@ -1,6 +1,6 @@
 ---
 title: "I wish I was there on December 21, 2024"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
   - OSINT
 draft: false

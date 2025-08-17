@@ -1,6 +1,6 @@
 ---
 title: "Corporate Life 1"
-category: Web Exploitation
+categories: Web Exploitation
 tags: 
 draft: false
 completedDuringEvent: true

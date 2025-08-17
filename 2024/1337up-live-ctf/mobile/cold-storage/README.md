@@ -1,6 +1,6 @@
 ---
 title: "Cold Storage"
-category: 
+categories: 
   - Mobile
   - "Reverse Engineering"
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: "Tokyo's Hidden Transmission"
-category: Forensics
+categories: Forensics
 tags: 
   - audio
   - morse-code

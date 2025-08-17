@@ -1,6 +1,6 @@
 ---
 title: "Tolong Aku"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

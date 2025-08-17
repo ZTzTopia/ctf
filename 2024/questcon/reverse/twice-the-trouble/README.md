@@ -1,6 +1,6 @@
 ---
 title: "Twice the Trouble"
-category: "Reverse Engineering"
+categories: "Reverse Engineering"
 tags: 
 draft: true
 completedDuringEvent: true

@@ -1,6 +1,6 @@
 ---
 title: "Super secure network"
-category: Reverse Engineering
+categories: Reverse Engineering
 tags: 
 draft: true
 completedDuringEvent: true

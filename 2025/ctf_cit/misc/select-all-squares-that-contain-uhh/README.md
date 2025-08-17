@@ -1,6 +1,6 @@
 ---
 title: "Select all squares that contain uhh..."
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

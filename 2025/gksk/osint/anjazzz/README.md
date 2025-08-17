@@ -1,6 +1,6 @@
 ---
 title: Anjazzz
-category: OSINT
+categories: OSINT
 tags: 
 draft: true
 completedDuringEvent: true

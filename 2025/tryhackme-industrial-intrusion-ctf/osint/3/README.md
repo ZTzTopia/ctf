@@ -1,6 +1,6 @@
 ---
 title: OSINT 3
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

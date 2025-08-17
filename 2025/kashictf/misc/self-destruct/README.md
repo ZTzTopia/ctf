@@ -1,6 +1,6 @@
 ---
 title: "Self Destruct"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: true
 completedDuringEvent: true

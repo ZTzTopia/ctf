@@ -1,6 +1,6 @@
 ---
 title: set-your-intentions-right
-category: Steganography
+categories: Steganography
 tags: 
   - audio
   - spectrogram

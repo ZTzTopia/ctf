@@ -1,6 +1,6 @@
 ---
 title: "Triage Bot v2"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 completedDuringEvent: true
 submitted: true

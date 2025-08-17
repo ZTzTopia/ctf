@@ -1,6 +1,6 @@
 ---
 title: Ledakan!
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

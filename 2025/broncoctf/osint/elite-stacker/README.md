@@ -1,6 +1,6 @@
 ---
 title: "Elite Stacker"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

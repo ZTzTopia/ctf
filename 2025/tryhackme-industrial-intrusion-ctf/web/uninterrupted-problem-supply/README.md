@@ -1,6 +1,6 @@
 ---
 title: "Uninterrupted Problem Supply"
-category: Web Exploitation
+categories: Web Exploitation
 tags: 
 draft: true
 completedDuringEvent: true

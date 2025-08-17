@@ -1,6 +1,6 @@
 ---
 title: "Ingfo Loker"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

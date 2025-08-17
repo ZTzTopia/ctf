@@ -1,6 +1,6 @@
 ---
 title: "Easy Jail"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

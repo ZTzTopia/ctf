@@ -1,6 +1,6 @@
 ---
 title: "SNOWy Evening"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

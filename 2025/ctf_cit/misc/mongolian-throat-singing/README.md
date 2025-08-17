@@ -1,6 +1,6 @@
 ---
 title: "Mongolian throat singing"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

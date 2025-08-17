@@ -1,6 +1,6 @@
 ---
 title: "Bucky's Impossible Obby"
-category: Forensics
+categories: Forensics
 tags: 
 draft: false
 completedDuringEvent: true

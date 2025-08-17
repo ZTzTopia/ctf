@@ -1,6 +1,6 @@
 ---
 title: "Extremely Hard Challenge"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

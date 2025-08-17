@@ -1,6 +1,6 @@
 ---
 title: Obscurity
-category: Blockchain
+categories: Blockchain
 tags: 
 draft: false
 completedDuringEvent: true

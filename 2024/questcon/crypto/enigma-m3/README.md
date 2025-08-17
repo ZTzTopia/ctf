@@ -1,6 +1,6 @@
 ---
 title: "ENIGMA M3"
-category: Cryptography
+categories: Cryptography
 tags: 
   - enigma
   - enigma-m3

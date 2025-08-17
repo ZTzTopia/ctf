@@ -1,6 +1,6 @@
 ---
 title: "Kolektor Komik"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

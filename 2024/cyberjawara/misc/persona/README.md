@@ -1,6 +1,6 @@
 ---
 title: Persona
-category: 
+categories: 
   - Miscellaneous
   - OSINT
 tags: 

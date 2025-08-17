@@ -1,6 +1,6 @@
 ---
 title: "The Bank Of Spain"
-category: Steganography
+categories: Steganography
 tags: 
 draft: true
 completedDuringEvent: true

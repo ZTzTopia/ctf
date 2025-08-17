@@ -1,6 +1,6 @@
 ---
 title: scap
-category: Forensics
+categories: Forensics
 tags: 
 draft: false
 completedDuringEvent: true

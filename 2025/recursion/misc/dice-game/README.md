@@ -1,6 +1,6 @@
 ---
 title: "Dice Game"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
   - Blockchain
 draft: false

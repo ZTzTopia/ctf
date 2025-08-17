@@ -1,6 +1,6 @@
 ---
 title: "Long way to go"
-category: Steganography
+categories: Steganography
 tags: 
 draft: true
 completedDuringEvent: true

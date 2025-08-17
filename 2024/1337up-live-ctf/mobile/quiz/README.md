@@ -1,6 +1,6 @@
 ---
 title: Quiz
-category: 
+categories: 
   - Mobile
   - "Reverse Engineering"
 tags: 

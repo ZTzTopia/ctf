@@ -1,6 +1,6 @@
 ---
 title: "Rigged Slot Machine 1"
-category: 
+categories: 
   - Miscellaneous
   - "Binary Exploitation"
 tags: 

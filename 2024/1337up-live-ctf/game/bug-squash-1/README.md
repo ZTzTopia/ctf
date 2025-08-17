@@ -1,6 +1,6 @@
 ---
 title: "Bug Squash (part 1)"
-category: 
+categories: 
   - Game
   - Reverse Engineering
 tags: 

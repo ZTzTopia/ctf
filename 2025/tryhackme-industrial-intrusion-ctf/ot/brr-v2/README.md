@@ -1,6 +1,6 @@
 ---
 title: "Brr v2"
-category: OT
+categories: OT
 tags: 
 draft: true
 completedDuringEvent: true

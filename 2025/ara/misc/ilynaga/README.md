@@ -1,6 +1,6 @@
 ---
 title: ilynaga
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 completedDuringEvent: true
 submitted: true

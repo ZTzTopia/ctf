@@ -1,6 +1,6 @@
 ---
 title: "Batu Besar"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

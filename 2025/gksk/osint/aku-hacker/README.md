@@ -1,6 +1,6 @@
 ---
 title: "Aku Hacker"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

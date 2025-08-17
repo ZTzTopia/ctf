@@ -1,6 +1,6 @@
 ---
 title: "Old Connections?"
-category: Cryptography
+categories: Cryptography
 tags: 
   - vigenere
 draft: false

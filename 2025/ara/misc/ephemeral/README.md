@@ -1,6 +1,6 @@
 ---
 title: ephemeral
-category: Miscellaneous
+categories: Miscellaneous
 tags: Blockchain
 completedDuringEvent: true
 submitted: true

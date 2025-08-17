@@ -1,6 +1,6 @@
 ---
 title: Kaboom
-category: OT
+categories: OT
 tags: 
 draft: true
 completedDuringEvent: true

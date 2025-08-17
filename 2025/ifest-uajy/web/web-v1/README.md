@@ -1,6 +1,6 @@
 ---
 title: "Web V1"
-category: Web Exploitation
+categories: Web Exploitation
 tags: 
 draft: false
 completedDuringEvent: true

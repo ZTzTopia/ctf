@@ -1,6 +1,6 @@
 ---
 title: "Unlock the Safe"
-category: "Reverse Engineering"
+categories: "Reverse Engineering"
 tags: 
 draft: false
 completedDuringEvent: true

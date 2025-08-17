@@ -1,6 +1,6 @@
 ---
 title: new-waifu
-category: Forensics
+categories: Forensics
 tags: 
 draft: true
 completedDuringEvent: true

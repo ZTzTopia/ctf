@@ -1,6 +1,6 @@
 ---
 title: BabyFlow
-category: 
+categories: 
   - Miscellaneous
   - "Binary Exploitation"
 tags: 

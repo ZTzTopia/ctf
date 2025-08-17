@@ -1,6 +1,6 @@
 ---
 title: "MISSING 00"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

@@ -1,6 +1,6 @@
 ---
 title: Simple Math
-category: Reverse Engineering
+categories: Reverse Engineering
 tags: 
 completedDuringEvent: true
 submitted: true

@@ -1,6 +1,6 @@
 ---
 title: Direction
-category: "Web Exploitation"
+categories: "Web Exploitation"
 tags: 
   - misdirection
   - robots.txt

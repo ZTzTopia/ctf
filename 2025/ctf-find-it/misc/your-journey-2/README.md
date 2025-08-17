@@ -1,6 +1,6 @@
 ---
 title: your-journey-2
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

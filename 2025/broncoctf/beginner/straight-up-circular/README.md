@@ -1,6 +1,6 @@
 ---
 title: "Straight Up Circular"
-category: Beginner
+categories: Beginner
 tags: 
 draft: false
 completedDuringEvent: true

@@ -1,6 +1,6 @@
 ---
 title: "Decode Runner"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

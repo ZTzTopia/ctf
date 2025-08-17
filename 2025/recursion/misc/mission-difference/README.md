@@ -1,6 +1,6 @@
 ---
 title: "Mission Difference"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
   - OSINT
 draft: false

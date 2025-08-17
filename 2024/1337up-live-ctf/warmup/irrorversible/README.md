@@ -1,6 +1,6 @@
 ---
 title: IrrORversible
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 completedDuringEvent: true
 submitted: true

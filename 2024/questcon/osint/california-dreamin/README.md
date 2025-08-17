@@ -1,6 +1,6 @@
 ---
 title: "California Dreamin'"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

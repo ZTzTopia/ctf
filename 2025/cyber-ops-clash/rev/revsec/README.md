@@ -1,6 +1,6 @@
 ---
 title: RevSec
-category: Reverse Engineering
+categories: Reverse Engineering
 tags: 
 draft: false
 completedDuringEvent: true

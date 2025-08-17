@@ -1,6 +1,6 @@
 ---
 title: "April 25"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

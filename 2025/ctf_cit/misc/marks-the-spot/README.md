@@ -1,6 +1,6 @@
 ---
 title: "Marks the Spot"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

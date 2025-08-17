@@ -1,6 +1,6 @@
 ---
 title: Socials
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 completedDuringEvent: true
 submitted: true

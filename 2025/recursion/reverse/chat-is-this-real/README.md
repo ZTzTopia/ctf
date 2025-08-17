@@ -1,6 +1,6 @@
 ---
 title: "Chat Is This Real?"
-category: Reverse Engineering
+categories: Reverse Engineering
 tags: 
 draft: false
 completedDuringEvent: true

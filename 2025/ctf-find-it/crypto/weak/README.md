@@ -1,6 +1,6 @@
 ---
 title: Weak
-category: Cryptography
+categories: Cryptography
 tags: 
 draft: true
 completedDuringEvent: true

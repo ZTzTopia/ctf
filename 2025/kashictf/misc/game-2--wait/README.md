@@ -1,6 +1,6 @@
 ---
 title: "Game 2 - Wait"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
 draft: false
 completedDuringEvent: true

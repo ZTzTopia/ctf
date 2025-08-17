@@ -1,6 +1,6 @@
 ---
 title: "Small House"
-category: Miscellaneous
+categories: Miscellaneous
 tags: 
   - Minecraft
 draft: false

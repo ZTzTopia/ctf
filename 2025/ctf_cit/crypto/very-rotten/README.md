@@ -1,6 +1,6 @@
 ---
 title: "Very Rotten"
-category: Cryptography
+categories: Cryptography
 tags: 
 draft: false
 completedDuringEvent: true

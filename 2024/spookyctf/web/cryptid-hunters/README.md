@@ -1,6 +1,6 @@
 ---
 title: cryptid-hunters
-category: "Web Exploitation"
+categories: "Web Exploitation"
 tags: 
   - sqli
 draft: false

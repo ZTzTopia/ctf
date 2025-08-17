@@ -1,6 +1,6 @@
 ---
 title: Temp
-category: "Web Exploitation"
+categories: "Web Exploitation"
 tags: 
   - SSRF
 draft: true

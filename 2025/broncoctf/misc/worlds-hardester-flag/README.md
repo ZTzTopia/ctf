@@ -1,6 +1,6 @@
 ---
 title: "World's Hardester Flag"
-category: Misclellaneous
+categories: Misclellaneous
 tags: 
 draft: false
 completedDuringEvent: true

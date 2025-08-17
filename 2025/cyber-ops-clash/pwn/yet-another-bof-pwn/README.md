@@ -1,6 +1,6 @@
 ---
 title: "yet another bof pwn"
-category: Binary Exploitation
+categories: Binary Exploitation
 tags: 
 draft: false
 completedDuringEvent: true

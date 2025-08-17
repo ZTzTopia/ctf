@@ -1,6 +1,6 @@
 ---
 title: "Visual Heist"
-category: Cryptography
+categories: Cryptography
 tags: 
 draft: false
 completedDuringEvent: true

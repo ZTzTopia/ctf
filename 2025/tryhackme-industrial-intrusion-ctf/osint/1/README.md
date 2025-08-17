@@ -1,6 +1,6 @@
 ---
 title: OSINT 1
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

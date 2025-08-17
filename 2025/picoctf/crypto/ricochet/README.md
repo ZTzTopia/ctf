@@ -1,6 +1,6 @@
 ---
 title: Ricochet
-category: Web Exploitation
+categories: Web Exploitation
 tags: 
 draft: true
 completedDuringEvent: true

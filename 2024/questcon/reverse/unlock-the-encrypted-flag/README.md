@@ -1,6 +1,6 @@
 ---
 title: "Unlock the Encrypted Flag"
-category: "Reverse Engineering"
+categories: "Reverse Engineering"
 tags: 
 draft: false
 completedDuringEvent: true

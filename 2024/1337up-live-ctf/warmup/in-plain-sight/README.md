@@ -1,6 +1,6 @@
 ---
 title: "In Plain Sight"
-category: 
+categories: 
   - Miscellaneous
   - Forensics
 tags: 

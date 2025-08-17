@@ -1,6 +1,6 @@
 ---
 title: "Foto Patung"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true

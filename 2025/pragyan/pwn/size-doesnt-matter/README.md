@@ -1,6 +1,6 @@
 ---
 title: Size Doesn't Matter
-category: Binary Exploitation
+categories: Binary Exploitation
 tags: 
 completedDuringEvent: true
 submitted: true

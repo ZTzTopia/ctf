@@ -1,6 +1,6 @@
 ---
 title: "The Big Fish"
-category: OSINT
+categories: OSINT
 tags: 
 draft: false
 completedDuringEvent: true
