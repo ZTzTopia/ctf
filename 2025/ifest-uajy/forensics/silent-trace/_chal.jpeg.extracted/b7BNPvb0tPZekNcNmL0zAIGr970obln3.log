@@ -1,0 +1,54 @@
+#Software: Microsoft Internet Information Services 10.0
+#Version: 1.0
+#Date: 2023-05-09 14:37:00
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+2023-05-09 14:37:01 10.0.0.1 GET /index.html - 80 - 192.168.1.100 Mozilla/5.0+CFNetwork - 200 0 0 15
+2023-05-09 14:37:02 10.0.0.1 GET /images/logo.png - 80 - 192.168.1.100 Mozilla/5.0+CFNetwork http://example.com/index.html 200 0 0 30
+2023-05-09 14:37:03 10.0.0.1 POST /api/login - 80 user1 192.168.1.101 CustomApp/1.0 - 401 1 2148074254 45
+2023-05-09 14:37:04 10.0.0.1 POST /api/login - 80 user1 192.168.1.101 CustomApp/1.0 - 200 0 0 150
+2023-05-09 14:37:05 10.0.0.1 GET /admin/dashboard.aspx - 80 admin 192.168.1.50 IE/11.0 http://example.com/admin/login 403 4 0 60
+2023-05-09 14:37:06 10.0.0.1 GET /files/document.pdf - 80 - 203.0.113.20 Chrome/90.0 - 200 0 0 2500
+2023-05-09 14:37:07 10.0.0.1 HEAD /check_status - 80 - 198.51.100.5 HealthChecker/1.0 - 200 0 0 5
+2023-05-09 14:37:08 10.0.0.1 GET /nonexistent.html - 80 - 192.168.1.102 Safari/14.0 - 404 0 2 22
+2023-05-09 14:37:09 10.0.0.1 GET /scripts/main.js - 80 - 192.168.1.100 Mozilla/5.0+CFNetwork http://example.com/index.html 304 0 0 10
+2023-05-09 14:37:10 10.0.0.1 POST /api/submit_form - 443 user2 192.168.1.103 Firefox/88.0 https://example.com/form 500 0 0 500
+2023-05-09 14:37:11 10.0.0.1 GET /api/data?id=123 - 80 - 172.16.0.10 Python-urllib/3.8 - 200 0 0 75
+2023-05-09 14:37:12 10.0.0.1 PUT /api/resource/456 - 80 admin_api 10.0.0.200 Go-http-client/1.1 - 200 0 0 120
+2023-05-09 14:37:13 10.0.0.1 DELETE /api/items/789 - 80 service_account 10.0.0.201 curl/7.68.0 - 204 0 0 35
+2023-05-09 14:37:14 10.0.0.1 GET /robots.txt - 80 - 66.249.66.1 Googlebot/2.1 - 200 0 0 8
+2023-05-09 14:37:15 10.0.0.1 GET /favicon.ico - 80 - 192.168.1.104 Edge/90.0 - 200 0 0 12
+2023-05-09 14:37:16 10.0.0.1 GET /downloads/archive.zip - 80 - 203.0.113.21 Wget/1.20.3 - 206 0 0 15000
+2023-05-09 14:37:17 10.0.0.1 POST /rpc/service - 80 - 198.51.100.6 Java/11.0.11 - 503 0 0 3000
+2023-05-09 14:37:18 10.0.0.1 GET /old_page.asp - 80 - 192.168.1.105 Opera/75.0 - 301 0 0 18
+2023-05-09 14:37:19 10.0.0.1 GET /new_page - 80 - 192.168.1.105 Opera/75.0 http://example.com/old_page.asp 200 0 0 25
+2023-05-09 14:37:20 10.0.0.1 GET /search?query=test - 80 - 172.16.0.11 Bingbot/2.0 - 200 0 0 90
+2023-05-09 14:37:21 10.0.0.1 PROPFIND /dav/ - 80 DAVClient/1.0 10.0.0.202 - 207 0 0 40
+2023-05-09 14:37:22 10.0.0.1 OPTIONS /api/ - 80 - 192.168.1.106 axios/0.21.1 - 200 0 0 3
+2023-05-09 14:37:23 10.0.0.1 GET /restricted_area/ - 80 - 203.0.113.22 Nmap Scripting Engine - 401 2 5 20
+2023-05-09 14:37:24 10.0.0.1 GET /restricted_area/ - 80 user3 203.0.113.22 Nmap Scripting Engine - 200 0 0 50
+2023-05-09 14:37:25 10.0.0.1 GET /error_page.aspx - 80 - 198.51.100.7 CustomBot/0.1 - 500 100 0 70
+2023-05-09 14:37:26 10.0.0.1 POST /upload.php - 80 - 192.168.1.107 PHPFPM/7.4 - 405 0 0 28
+2023-05-09 14:37:27 10.0.0.1 GET /styles/theme.css - 80 - 172.16.0.12 Chrome/90.0 http://example.com/index.html 304 0 0 9
+2023-05-09 14:37:28 10.0.0.1 TRACE /debug - 80 - 10.0.0.203 Netcat - 403 16 0 2
+2023-05-09 14:37:29 10.0.0.1 GET /long_request?param=very_long_value_that_exceeds_limits - 80 - 203.0.113.23 BadActor/1.0 - 414 0 0 5
+2023-05-09 14:37:30 10.0.0.1 GET /assets/font.woff2 - 80 - 198.51.100.8 Firefox/88.0 http://example.com/styles/theme.css 200 0 0 45
+2023-05-09 14:37:31 10.0.0.1 POST /api/v2/users - 443 - 192.168.1.108 AndroidApp/2.1 - 201 0 0 180
+2023-05-09 14:37:32 10.0.0.1 GET /api/health - 80 - 10.0.0.1 Kube-probe/1.20 - 200 0 0 1
+2023-05-09 14:37:33 10.0.0.1 GET /test.aspx?script=<script>alert(1)</script> - 80 - 172.16.0.13 EvilScanner/3.0 - 400 0 0 6
+2023-05-09 14:37:34 10.0.0.1 LOCK /webdav/file.txt - 80 user_dav 10.0.0.204 WinSCP/5.17.9 - 200 0 0 33
+2023-05-09 14:37:35 10.0.0.1 UNLOCK /webdav/file.txt - 80 user_dav 10.0.0.204 WinSCP/5.17.9 - 204 0 0 29
+2023-05-09 14:37:36 10.0.0.1 GET /owa/auth/logon.aspx - 443 - 203.0.113.24 ExchScanner/1.2 - 302 0 0 40
+2023-05-09 14:37:37 10.0.0.1 GET /ecp/Current/exporttool/microsoft.exchange.ediscovery.exporttool.application - 443 - 198.51.100.9 AttackScript/CVE-XXXX - 404 0 2 15
+2023-05-09 14:37:38 10.0.0.1 GET /autodiscover/autodiscover.xml - 80 - 192.168.1.109 Outlook/16.0 - 200 0 0 60
+2023-05-09 14:37:39 10.0.0.1 POST /_vti_bin/shtml.dll/_vti_rpc - 80 - 172.16.0.14 MSFrontPage/4.0 - 501 0 0 7
+2023-05-09 14:37:40 10.0.0.1 GET /legacy_script.cgi?param=../../../etc/passwd - 80 - 10.0.0.205 Perl/5.26 - 403 502 0 10
+2023-05-09 14:37:41 10.0.0.1 GET /backup/config.bak - 80 - 203.0.113.25 CuriousCrawler/1.0 - 404 0 3 13
+2023-05-09 14:37:42 10.0.0.1 POST /api/payment - 443 customer_app 198.51.100.10 PaymentSDK/3.2 - 200 0 0 220
+2023-05-09 14:37:43 10.0.0.1 GET /status/uptime - 80 - 192.168.1.110 Nagios/4.4.6 - 200 0 0 4
+2023-05-09 14:37:44 10.0.0.1 GET /api/users?page=1&limit=10000 - 80 - 172.16.0.15 DataScraper/2.0 - 429 0 0 5000
+2023-05-09 14:37:45 10.0.0.1 MKCOL /dav/new_collection - 80 DAVClient/1.1 10.0.0.206 - 201 0 0 38
+2023-05-09 14:37:46 10.0.0.1 GET /sharepoint/_layouts/15/viewlsts.aspx - 443 - 203.0.113.26 SPScanner/0.8 - 401 0 0 26
+2023-05-09 14:37:47 10.0.0.1 GET /CFIDE/administrator/index.cfm - 80 - 198.51.100.11 CFScan/2.1 - 404 0 2 17
+2023-05-09 14:37:48 10.0.0.1 POST /ws/soap.asmx - 80 - 192.168.1.111 ApacheAxis/1.4 - 500 0 1232 110
+2023-05-09 14:37:49 10.0.0.1 GET /phpmyadmin/index.php - 80 - 172.16.0.16 PhpMyAdminScan/1.0 - 403 0 0 14
+#EndDate: 2023-05-09 14:37:49

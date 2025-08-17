@@ -1,0 +1,15 @@
+init vv = 0;
+init vvv = 1;
+init vvvv = 0;
+
+while vvv < 314159 {
+    if vvvv == 273262 {
+        verifyProof(vvv, vv);
+        rea vvv = 314159;
+        break;
+    } else {
+        rea vvv = vvv + 1;
+        rea vv = 314159 - vvv;
+        rea vvvv = (vvv * vvv + vv * vv * vv - vvv * vv) % 1048573;
+    }
+}

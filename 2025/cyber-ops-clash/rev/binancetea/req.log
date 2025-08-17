@@ -1,0 +1,16 @@
+POST /fvideo/dt/report/web?en=YDS&t=binance&v=2025.01.10 HTTP/2
+Host: accounts.binance.com
+Sec-Ch-Ua: 
+Content-Type: application/json
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.171 Safari/537.36
+Sec-Ch-Ua-Platform: ""
+Accept: */*
+Origin: https://accounts.binance.com
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+
+6lQkx49UUneeKyBzFpc8Tvw4aqQ8DFsz1aE3HxPY/nY51ezvqWsTmQSWiLB3kU4d2EbWZ6HMeqVmJCCJFUfI/N6zPiqFfT0701MykULr1gCyQxWXRvkMf8mndR1Ag9yg6977VYgQPoCs/fMIEtIpGjDfgOiXDOUUyrEGFgEzqQ35WfldgkwV05+d0bdEMfnGpFOPrcdmLvBptv1oP1eoONDT7/kSupUV2qWs8Dst72+wZhb5l6ac/f6phv2Fui+LfDY+DAVrZ7UW+IA5KtJL8L0SfQhHhSXyoXTZrIbqdRtXh+7MmuvZqyLKCf5q02r8VLMSMFWrw4+IeSyR++GEyd7UlvMlX/1/XAR6w1Yy8aqRetlvaG7KvhRUGnL5rbYjSTgR+m5ts02ACQ3r8Ikxu9ufq1/c+4buVayydIsvWeMWmg4YyrSoCxoqnnJ/NZFFav/HYSfXY1DXLNonaCpPKrm1h+1o+hZBZ9sXTF41GYBBPzjXCYAXTz6A6Qm4EjxEpQ0HPHscTCQGBInpw2wEfkYv3/UmoedZRRfFEoHR/ExCvnfaMemIidnqWRIPX3Kd2mEylsfCYV76YRwZDb7uUFzF8XtSWLPw/hn5sBPjsTKYOEvD1I9zYyhgaGwnH2DfHGnfgdHMD5BGp63WasF/SulOTdsX6jtyPGEUWTxqU7B7O97EL6g6GKzyDeWbXb3OAAUNDtFrtKg7vTblQzjRV2vs6pOaPR7/eS7/Xti9DHupRLfjYAMZtrm69yusQAK8VfQQrB8WJGPol29wwQmP0IegfMYeRwvENHz5NLl9FLKiSfDiw/c+LkT/vwGT5uBddBXqBxYp141vgLB/X0B2OQAOWN1z3lWbmzmjcYjivZx2k5giLXgldz+xkzEKhvkXsMUFJP5DfJvZw9iYVdqaej6OdBGOAEnpJCrvT0BNtdhUmKAlWHFmAU97CxhWYf6UrLWruU0qcpF6KDoOCHntdL5WHzLKCpEaG+BccgmW8zcxLwZKtN6j21Zbh8Xw3eE9EtQCmqYf0lEVmoarwGcfM8dKbiJxwP7eVTg8l3t2Xic0LqcxNCHiho5jGd0WmeWgTPcr7LqpO+QfJ9Oi7p8X3xZ6Fr7Hdrgj9nOHE4MHWLAkAk+M0pZD2r1Gqru6vNfTnJHaXJdwavzZs8BUsjYFfXKhoZ1VxVHsS+1x876b

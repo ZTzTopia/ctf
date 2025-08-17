@@ -1,0 +1,50 @@
+[Fri May 09 14:22:01.123456 2025] [mpm_event:notice] [pid 1234:tid 140737353720320] AH00489: Apache/2.4.53 (Ubuntu) configured -- resuming normal operations
+[Fri May 09 14:22:02.234567 2025] [core:error] [pid 1235:tid 140737353720321] [client 192.168.1.10:12345] AH00124: Request exceeded the limit of 10 internal redirects due to probable configuration error. Use 'LimitInternalRecursion' to increase the limit if necessary. Use 'LogLevel debug' to get a backtrace.
+[Fri May 09 14:22:03.345678 2025] [php:error] [pid 1236:tid 140737353720322] [client 192.168.1.11:23456] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /var/www/html/script.php on line 100
+[Fri May 09 14:22:04.456789 2025] [authz_core:error] [pid 1237:tid 140737353720323] [client 192.168.1.12:34567] AH01630: client denied by server configuration: /var/www/html/.htaccess
+[Fri May 09 14:22:05.567890 2025] [cgi:error] [pid 1238:tid 140737353720324] [client 192.168.1.13:45678] End of script output before headers: script.cgi
+[Fri May 09 14:22:06.678901 2025] [rewrite:error] [pid 1239:tid 140737353720325] [client 192.168.1.14:56789] AH00660: mod_rewrite: Options +FollowSymLinks is off in directory /var/www/html/subdir/, stopped processing.
+[Fri May 09 14:22:07.789012 2025] [proxy:error] [pid 1240:tid 140737353720326] (111)Connection refused: AH00957: HTTP: attempt to connect to 127.0.0.1:8081 (localhost) failed
+[Fri May 09 14:22:08.890123 2025] [ssl:error] [pid 1241:tid 140737353720327] AH02039: Certificate Verification: Error (19): self signed certificate in certificate chain
+[Fri May 09 14:22:09.901234 2025] [core:warn] [pid 1234:tid 140737353720328] AH00098: pid file /var/run/apache2/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Fri May 09 14:22:10.012345 2025] [autoindex:error] [pid 1242:tid 140737353720329] [client 192.168.1.15:11223] AH01276: Cannot serve directory /var/www/html/noindex/: No matching DirectoryIndex (index.html,index.cgi,index.pl,index.php,index.xhtml,index.htm) found, and server-generated directory index forbidden by Options directive
+[Fri May 09 14:22:11.123456 2025] [evasive:error] [pid 1243:tid 140737353720330] [client 192.168.1.16:22334] client [192.168.1.16] blocked for 10 seconds by mod_evasive for too many requests to /index.php
+[Fri May 09 14:22:12.234567 2025] [negotiation:error] [pid 1244:tid 140737353720331] [client 192.168.1.17:33445] AH00687: Negotiations not Caching LRU list for /var/www/html/
+[Fri May 09 14:22:13.345678 2025] [fcgid:warn] [pid 1245:tid 140737353720332] [client 192.168.1.18:44556] mod_fcgid: stderr: PHP Warning:  Undefined variable: undefined_var in /var/www/html/app.php on line 50
+[Fri May 09 14:22:14.456789 2025] [proxy_http:error] [pid 1246:tid 140737353720333] [client 192.168.1.19:55667] AH01114: HTTP: failed to make connection to backend: backend.example.com
+[Fri May 09 14:22:15.567890 2025] [slotmem_shm:error] [pid 1234:tid 140737353720334] AH02311: Parent: Unable to create shared memory segment of 1024 bytes for slotmem: (28)No space left on device
+[Fri May 09 14:22:16.678901 2025] [ssl:warn] [pid 1234:tid 140737353720335] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Fri May 09 14:22:17.789012 2025] [alias:warn] [pid 1247:tid 140737353720336] [client 192.168.1.20:10101] AH00667: The Alias directive in /etc/apache2/sites-enabled/000-default.conf at line 10 will probably never match because it overlaps an earlier Alias.
+[Fri May 09 14:22:18.890123 2025] [access_compat:error] [pid 1248:tid 140737353720337] [client 192.168.1.21:20202] AH01797: client denied by server configuration: /var/www/html/forbidden_file.txt
+[Fri May 09 14:22:19.901234 2025] [watchdog:crit] [pid 1230:tid 140737353720338] AH02 watchdog parent dead
+[Fri May 09 14:22:20.012345 2025] [mpm_prefork:notice] [pid 1250:tid 140737353720339] AH00163: Apache/2.4.53 (Ubuntu) mod_fcgid/2.3.9 configured -- resuming normal operations
+[Fri May 09 14:22:21.123456 2025] [core:info] [pid 1250:tid 140737353720340] [client 192.168.1.22:30303] AH00128: File does not exist: /var/www/html/nonexistent.jpg
+[Fri May 09 14:22:22.234567 2025] [php:warn] [pid 1251:tid 140737353720341] [client 192.168.1.23:40404] PHP Warning:  include(missing_file.php): failed to open stream: No such file or directory in /var/www/html/index.php on line 5
+[Fri May 09 14:22:23.345678 2025] [auth_digest:error] [pid 1252:tid 140737353720342] [client 192.168.1.24:50505] AH01778: user testuser: password mismatch
+[Fri May 09 14:22:24.456789 2025] [dav:error] [pid 1253:tid 140737353720343] [client 192.168.1.25:12121] AH00580: Path /dav/resource does not exist
+[Fri May 09 14:22:25.567890 2025] [cgid:error] [pid 1254:tid 140737353720344] (36)File name too long: AH01241: exec of '/var/www/cgi-bin/long_filename_script_...............................................................................................................................................................cgi' failed
+[Fri May 09 14:22:26.678901 2025] [proxy_fcgi:error] [pid 1255:tid 140737353720345] [client 192.168.1.26:23232] AH01071: Got error 'PHP message: PHP Parse error:  syntax error, unexpected end of file in /var/www/html/broken.php on line 10\n'
+[Fri May 09 14:22:27.789012 2025] [ssl:error] [pid 1256:tid 140737353720346] [client 192.168.1.27:34343] AH02261: Re-negotiation handshake failed: Not accepted by client!?
+[Fri May 09 14:22:28.890123 2025] [vhost_alias:warn] [pid 1250:tid 140737353720347] AH00038: Cannot access directory '/var/www/virtual/nonexistent/' for virtual host 'nonexistent.example.com'
+[Fri May 09 14:22:29.901234 2025] [log_config:error] [pid 1250:tid 140737353720348] AH00027: Couldn't YYYY-MM-DD HH:MM:SS /var/log/apache2/other_vhosts_access.log for VHost example.org
+[Fri May 09 14:22:30.012345 2025] [include:error] [pid 1250:tid 140737353720349] AH00131: file /etc/apache2/conf-enabled/non_existent_conf.conf not found
+[Fri May 09 14:22:31.123456 2025] [suexec:notice] [pid 1257:tid 140737353720350] AH01232: suEXEC mechanism enabled (wrapper: /usr/lib/apache2/suexec)
+[Fri May 09 14:22:32.234567 2025] [core:error] [pid 1258:tid 140737353720351] [client 192.168.1.28:45454] AH00037: Symbolic link not allowed or link target not accessible: /var/www/html/symlink_target
+[Fri May 09 14:22:33.345678 2025] [php:error] [pid 1259:tid 140737353720352] [client 192.168.1.29:56565] PHP Parse error:  syntax error, unexpected '<' in /var/www/html/malformed.php on line 1
+[Fri May 09 14:22:34.456789 2025] [authz_host:error] [pid 1260:tid 140737353720353] [client 10.0.0.5:11111] AH01753: client denied by server configuration: /var/www/secret
+[Fri May 09 14:22:35.567890 2025] [cgi:warn] [pid 1261:tid 140737353720354] [client 10.0.0.6:22222] AH01220: Timeout waiting for output from CGI script /var/www/cgi-bin/slow_script.cgi
+[Fri May 09 14:22:36.678901 2025] [rewrite:trace3] [pid 1262:tid 140737353720355] mod_rewrite.c(486): [client 10.0.0.7:33333] 10.0.0.7 - - [example.com/sid#7f1234567890][rid#7f1234567890/initial] [perdir /var/www/html/] addpathinfo KwKw=/path/info
+[Fri May 09 14:22:37.789012 2025] [proxy:warn] [pid 1263:tid 140737353720356] AH01144: No protocol handler was valid for the URL /missing_protocol_handler. If you are using a DSO version of mod_proxy, make sure the proxy submodules are included in the configuration using LoadModule.
+[Fri May 09 14:22:38.890123 2025] [ssl:info] [pid 1250:tid 140737353720357] AH01914: Configuring server example.com:443 for SSL protocol
+[Fri May 09 14:22:39.901234 2025] [core:crit] [pid 1250:tid 140737353720358] (22)Invalid argument: AH00069: make_sock: could not bind to address [::]:8080
+[Fri May 09 14:22:40.012345 2025] [autoindex:error] [pid 1264:tid 140737353720359] [client 10.0.0.8:44444] AH01273: Directory index forbidden by Options directive: /var/www/html/forbidden_index/
+[Fri May 09 14:22:41.123456 2025] [evasive:debug] [pid 1265:tid 140737353720360] client_create: ip=10.0.0.9 page_count=1 time=1715239361
+[Fri May 09 14:22:42.234567 2025] [negotiation:trace4] [pid 1266:tid 140737353720361] mod_negotiation.c(516): [client 10.0.0.10:55555] cache miss for /var/www/html/variant
+[Fri May 09 14:22:43.345678 2025] [fcgid:info] [pid 1267:tid 140737353720362] mod_fcgid: Process manager 1268 started
+[Fri May 09 14:22:44.456789 2025] [proxy_http:debug] [pid 1268:tid 140737353720363] mod_proxy_http.c(62): AH01115: Service connection header for backend.example.com routed to http://backend.example.com:80
+[Fri May 09 14:22:45.567890 2025] [slotmem_plain:debug] [pid 1250:tid 140737353720364] mod_slotmem_plain.c(111): AH02353: create called with provider slotmem_plain
+[Fri May 09 14:22:46.678901 2025] [ssl:debug] [pid 1250:tid 140737353720365] ssl_engine_kernel.c(1916): [client 10.0.0.11:12321] OpenSSL: Loop: SSLv3/TLS write client hello
+[Fri May 09 14:22:47.789012 2025] [alias:debug] [pid 1269:tid 140737353720366] mod_alias.c(203): [client 10.0.0.12:23432] AH00675: Alias '/icons/' -> '/usr/share/apache2/icons/' matched for uri '/icons/apache_pb.gif'
+[Fri May 09 14:22:48.890123 2025] [access_compat:trace6] [pid 1270:tid 140737353720367] mod_access_compat.c(343): [client 10.0.0.13:34543] AH01791: require group: 'developers' (positive)
+[Fri May 09 14:22:49.901234 2025] [socache_shmcb:error] [pid 1250:tid 140737353720368] AH00822: Init: SHMCB_init (102400 bytes) failed
+[Fri May 09 14:22:50.012345 2025] [mpm_worker:error] [pid 12345:tid 140737353720369] AH00287: server is within MinSpareThreads of MaxRequestWorkers, consider raising MaxRequestWorkers

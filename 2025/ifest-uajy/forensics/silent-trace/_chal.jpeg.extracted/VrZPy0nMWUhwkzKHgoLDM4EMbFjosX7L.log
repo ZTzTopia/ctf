@@ -1,0 +1,50 @@
+time="2023-05-09T14:35:01.123456789Z" level=info msg="Starting up"
+time="2023-05-09T14:35:01.223456789Z" level=info msg="libcontainerd: new containerd process, pid: 1234"
+time="2023-05-09T14:35:01.323456789Z" level=info msg="Graph migration to content-addressability took 0.xx seconds"
+time="2023-05-09T14:35:01.423456789Z" level=warning msg="Your kernel does not support cgroup memory limit"
+time="2023-05-09T14:35:01.523456789Z" level=info msg="Loading containers: start."
+time="2023-05-09T14:35:02.123456789Z" level=info msg="Loading containers: done."
+time="2023-05-09T14:35:02.223456789Z" level=info msg="Docker daemon" commit=abcdef123 graphdriver(s)=overlay2 version=20.10.7
+time="2023-05-09T14:35:02.323456789Z" level=info msg="Daemon has completed initialization"
+time="2023-05-09T14:35:02.423456789Z" level=info msg="API listen on /var/run/docker.sock"
+time="2023-05-09T14:35:05.123Z" level=info msg="Pulling fs layer" image="nginx:latest" layer=a1b2c3d4
+time="2023-05-09T14:35:06.234Z" level=info msg="Downloading" image="nginx:latest" layer=a1b2c3d4 progress="20MB/50MB"
+time="2023-05-09T14:35:07.345Z" level=info msg="Verifying Checksum" image="nginx:latest" layer=a1b2c3d4
+time="2023-05-09T14:35:08.456Z" level=info msg="Download complete" image="nginx:latest" layer=a1b2c3d4
+time="2023-05-09T14:35:09.567Z" level=info msg="Extracting" image="nginx:latest" layer=a1b2c3d4
+time="2023-05-09T14:35:10.678Z" level=info msg="Pull complete" image="nginx:latest"
+time="2023-05-09T14:35:11.789Z" level=info msg="Container eb001a2b3c created" name=my_nginx
+time="2023-05-09T14:35:12.890Z" level=info msg="Container eb001a2b3c started" name=my_nginx
+time="2023-05-09T14:35:15.111Z" level=error msg="Error response from daemon: container already stopped" container=my_busybox
+time="2023-05-09T14:35:16.222Z" level=info msg="Container my_busybox removed"
+time="2023-05-09T14:35:18.333Z" level=warning msg="Health check for container my_web_app failed: exit code 1"
+time="2023-05-09T14:35:20.444Z" level=info msg="Network my_net created"
+time="2023-05-09T14:35:21.555Z" level=info msg="Attaching to container my_service_db"
+time="2023-05-09T14:35:22.666Z" level=info msg="Volume my_data created"
+time="2023-05-09T14:35:23.777Z" level=info msg="Building image my_custom_app:v1"
+time="2023-05-09T14:35:24.888Z" level=info msg="Step 1/3 : FROM ubuntu:latest"
+time="2023-05-09T14:35:25.999Z" level=info msg=" ---> abcdef012345"
+time="2023-05-09T14:35:26.101Z" level=info msg="Step 2/3 : RUN apt-get update && apt-get install -y vim"
+time="2023-05-09T14:35:28.202Z" level=info msg=" ---> Running in fedcba987654"
+time="2023-05-09T14:35:30.303Z" level=info msg=" ---> Removing intermediate container fedcba987654"
+time="2023-05-09T14:35:30.404Z" level=info msg=" ---> 12345abcde"
+time="2023-05-09T14:35:30.505Z" level=info msg="Step 3/3 : CMD [\"bash\"]"
+time="2023-05-09T14:35:30.606Z" level=info msg=" ---> Running in 54321edcba"
+time="2023-05-09T14:35:30.707Z" level=info msg=" ---> Removing intermediate container 54321edcba"
+time="2023-05-09T14:35:30.808Z" level=info msg=" ---> 67890fghij"
+time="2023-05-09T14:35:30.909Z" level=info msg="Successfully built 67890fghij"
+time="2023-05-09T14:35:31.010Z" level=info msg="Successfully tagged my_custom_app:v1"
+time="2023-05-09T14:35:32.112Z" level=info msg="Pushing image my_custom_app:v1 to registry.example.com"
+time="2023-05-09T14:35:33.213Z" level=info msg="The push refers to repository [registry.example.com/my_custom_app]"
+time="2023-05-09T14:35:34.314Z" level=info msg="Preparing" layer=a1b2c3d4 image=my_custom_app:v1
+time="2023-05-09T14:35:35.415Z" level=info msg="Waiting" layer=a1b2c3d4 image=my_custom_app:v1
+time="2023-05-09T14:35:36.516Z" level=info msg="Layer already exists" layer=a1b2c3d4 image=my_custom_app:v1
+time="2023-05-09T14:35:37.617Z" level=info msg="Pushing" layer=b2c3d4e5 image=my_custom_app:v1 progress="10MB/20MB"
+time="2023-05-09T14:35:38.718Z" level=info msg="Pushed" layer=b2c3d4e5 image=my_custom_app:v1
+time="2023-05-09T14:35:39.819Z" level=info msg="Image my_custom_app:v1 pushed to registry.example.com"
+time="2023-05-09T14:35:40.920Z" level=info msg="Cleaning up old containers"
+time="2023-05-09T14:35:41.021Z" level=info msg="Pruning networks"
+time="2023-05-09T14:35:42.122Z" level=info msg="Pruning volumes"
+time="2023-05-09T14:35:43.223Z" level=info msg="Pruning images"
+time="2023-05-09T14:35:44.324Z" level=info msg="Total reclaimed space: 1.2GB"
+time="2023-05-09T14:35:45.425Z" level=info msg="Daemon shutdown initiated"

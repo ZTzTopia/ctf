@@ -1,0 +1,50 @@
+2023-05-09 14:36:01.123 UTC [12345] LOG:  database system is ready to accept connections
+2023-05-09 14:36:05.456 UTC [12347] user@db LOG:  connection received: host=192.168.1.100 port=54321
+2023-05-09 14:36:05.567 UTC [12347] user@db LOG:  connection authorized: user=user database=db
+2023-05-09 14:36:06.100 UTC [12347] user@db LOG:  statement: SELECT version();
+2023-05-09 14:36:07.200 UTC [12347] user@db LOG:  duration: 1.234 ms statement: SELECT * FROM users WHERE id = 1;
+2023-05-09 14:36:08.300 UTC [12348] another_user@db LOG:  connection received: host=localhost port=12345
+2023-05-09 14:36:08.400 UTC [12348] another_user@db LOG:  connection authorized: user=another_user database=db
+2023-05-09 14:36:09.500 UTC [12348] another_user@db LOG:  statement: INSERT INTO products (name, price) VALUES ('New Product', 99.99);
+2023-05-09 14:36:09.600 UTC [12348] another_user@db LOG:  duration: 5.678 ms statement: INSERT INTO products (name, price) VALUES ('New Product', 99.99);
+2023-05-09 14:36:10.700 UTC [12347] user@db LOG:  statement: UPDATE users SET last_login = NOW() WHERE id = 1;
+2023-05-09 14:36:10.800 UTC [12347] user@db LOG:  duration: 2.345 ms statement: UPDATE users SET last_login = NOW() WHERE id = 1;
+2023-05-09 14:36:11.900 UTC [12349] app_service@db LOG:  connection received: host=::1 port=54322
+2023-05-09 14:36:12.000 UTC [12349] app_service@db LOG:  connection authorized: user=app_service database=db
+2023-05-09 14:36:12.100 UTC [12349] app_service@db LOG:  statement: BEGIN;
+2023-05-09 14:36:12.200 UTC [12349] app_service@db LOG:  statement: SELECT * FROM orders WHERE customer_id = 123 FOR UPDATE;
+2023-05-09 14:36:12.300 UTC [12349] app_service@db LOG:  duration: 10.111 ms statement: SELECT * FROM orders WHERE customer_id = 123 FOR UPDATE;
+2023-05-09 14:36:12.400 UTC [12349] app_service@db LOG:  statement: UPDATE order_items SET quantity = 2 WHERE order_id = 456 AND product_id = 789;
+2023-05-09 14:36:12.500 UTC [12349] app_service@db LOG:  duration: 3.444 ms statement: UPDATE order_items SET quantity = 2 WHERE order_id = 456 AND product_id = 789;
+2023-05-09 14:36:12.600 UTC [12349] app_service@db LOG:  statement: COMMIT;
+2023-05-09 14:36:13.700 UTC [12347] user@db LOG:  statement: DELETE FROM logs WHERE timestamp < NOW() - INTERVAL '7 days';
+2023-05-09 14:36:13.800 UTC [12347] user@db LOG:  duration: 150.222 ms statement: DELETE FROM logs WHERE timestamp < NOW() - INTERVAL '7 days';
+2023-05-09 14:36:15.000 UTC [12350] admin@db LOG:  connection received: host=192.168.1.101 port=54323
+2023-05-09 14:36:15.100 UTC [12350] admin@db LOG:  connection authorized: user=admin database=postgres
+2023-05-09 14:36:15.200 UTC [12350] admin@db LOG:  statement: CREATE TABLE new_feature_table (id SERIAL PRIMARY KEY, data TEXT);
+2023-05-09 14:36:15.300 UTC [12350] admin@db LOG:  duration: 25.333 ms statement: CREATE TABLE new_feature_table (id SERIAL PRIMARY KEY, data TEXT);
+2023-05-09 14:36:16.400 UTC [12348] another_user@db LOG:  statement: SELECT COUNT(*) FROM customers;
+2023-05-09 14:36:16.500 UTC [12348] another_user@db LOG:  duration: 0.987 ms statement: SELECT COUNT(*) FROM customers;
+2023-05-09 14:36:17.600 UTC [12347] user@db LOG:  disconnection: session time: 0:00:12.345 user=user database=db host=192.168.1.100 port=54321
+2023-05-09 14:36:18.700 UTC [12351] replication_user@db LOG:  connection received: host=192.168.1.200 port=54324
+2023-05-09 14:36:18.800 UTC [12351] replication_user@db LOG:  connection authorized: user=replication_user database=replication
+2023-05-09 14:36:18.900 UTC [12351] replication_user@db LOG:  statement: START_REPLICATION SLOT slot_name LOGICAL 0/12345678 (proto_version '1', publication_names 'my_publication')
+2023-05-09 14:36:20.000 UTC [12348] another_user@db LOG:  statement: ROLLBACK;
+2023-05-09 14:36:20.100 UTC [12348] another_user@db LOG:  duration: 0.500 ms statement: ROLLBACK;
+2023-05-09 14:36:21.200 UTC [12350] admin@db LOG:  statement: ALTER TABLE old_table RENAME TO archived_table;
+2023-05-09 14:36:21.300 UTC [12350] admin@db LOG:  duration: 12.444 ms statement: ALTER TABLE old_table RENAME TO archived_table;
+2023-05-09 14:36:22.400 UTC [12349] app_service@db LOG:  statement: SELECT data FROM cache WHERE key = 'user:123:profile';
+2023-05-09 14:36:22.500 UTC [12349] app_service@db LOG:  duration: 0.800 ms statement: SELECT data FROM cache WHERE key = 'user:123:profile';
+2023-05-09 14:36:23.600 UTC [12350] admin@db LOG:  statement: DROP TABLE temp_data;
+2023-05-09 14:36:23.700 UTC [12350] admin@db LOG:  duration: 8.777 ms statement: DROP TABLE temp_data;
+2023-05-09 14:36:25.000 UTC [12352] monitor@db LOG:  connection received: host=127.0.0.1 port=54325
+2023-05-09 14:36:25.100 UTC [12352] monitor@db LOG:  connection authorized: user=monitor database=postgres
+2023-05-09 14:36:25.200 UTC [12352] monitor@db LOG:  statement: SELECT pg_stat_activity.query FROM pg_stat_activity;
+2023-05-09 14:36:25.300 UTC [12352] monitor@db LOG:  duration: 2.111 ms statement: SELECT pg_stat_activity.query FROM pg_stat_activity;
+2023-05-09 14:36:26.400 UTC [12348] another_user@db LOG:  disconnection: session time: 0:00:18.000 user=another_user database=db host=localhost port=12345
+2023-05-09 14:36:27.500 UTC [12353] backup_user@db LOG:  connection received: host=192.168.1.102 port=54326
+2023-05-09 14:36:27.600 UTC [12353] backup_user@db LOG:  connection authorized: user=backup_user database=postgres
+2023-05-09 14:36:27.700 UTC [12353] backup_user@db LOG:  statement: pg_dumpall > backup.sql
+2023-05-09 14:36:28.800 UTC [12353] backup_user@db LOG:  checkpoint starting: force wait
+2023-05-09 14:36:29.900 UTC [12353] backup_user@db LOG:  checkpoint complete: wrote 1000 buffers (5.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=1.234 s, sync=0.123 s, total=1.500 s; sync files=10, longest=0.100 s, average=0.050 s; distance=5000 kB, estimate=5000 kB
+2023-05-09 14:36:30.000 UTC [12353] backup_user@db LOG:  disconnection: session time: 0:00:02.500 user=backup_user database=postgres host=192.168.1.102 port=54326

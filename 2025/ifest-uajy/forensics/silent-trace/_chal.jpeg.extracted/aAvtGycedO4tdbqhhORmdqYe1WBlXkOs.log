@@ -1,0 +1,50 @@
+May 09 14:20:01 server1 openvpn[1101]: user1_vpn/192.0.2.100:54321 SENT CONTROL [user1_vpn]: 'PUSH_REPLY,route 10.10.10.0 255.255.255.0,ping 10,ping-restart 60,ifconfig 10.8.0.2 10.8.0.1' (status=1)
+May 09 14:20:02 server1 openvpn[1101]: user1_vpn/192.0.2.100:54321 MULTI_sva: pool returned IPv4=10.8.0.2, IPv6=(Not enabled)
+May 09 14:20:03 server1 charon: 01[NET] received packet: from 198.51.100.50[4500] to 172.16.1.1[4500] (76 bytes)
+May 09 14:20:04 server1 charon: 01[ENC] parsed IKE_SA_INIT request 0 [ SA KE No N(NATD_S_IP) N(NATD_D_IP) ]
+May 09 14:20:05 server1 charon: 01[IKE] 198.51.100.50 is initiating an IKE_SA
+May 09 14:20:06 server1 openvpn[1102]: 203.0.113.20:1194 TLS Error: TLS key negotiation failed to occur within 60 seconds (check your network connectivity)
+May 09 14:20:07 server1 openvpn[1102]: 203.0.113.20:1194 TLS Error: TLS handshake failed
+May 09 14:20:08 server1 charon: 02[NET] sending packet: from 172.16.1.1[500] to 198.51.100.50[500] (304 bytes)
+May 09 14:20:09 server1 charon: 02[ENC] generating IKE_SA_INIT response 0 [ SA KE No N(NATD_S_IP) N(NATD_D_IP) N(MULT_AUTH) ]
+May 09 14:20:10 server1 openvpn[1101]: user2_vpn/192.0.2.101:12345 Connection initiated
+May 09 14:20:11 server1 openvpn[1101]: user2_vpn/192.0.2.101:12345 Peer Connection Initiated with [AF_INET]192.0.2.101:12345
+May 09 14:20:12 server1 charon: 03[IKE] IKE_SA (unnamed)[1] state change: CREATED => CONNECTING
+May 09 14:20:13 server1 openvpn[1101]: user2_vpn/192.0.2.101:12345 AUTH: Received control message: AUTH_FAILED
+May 09 14:20:14 server1 openvpn[1101]: user2_vpn/192.0.2.101:12345 SIGUSR1[soft,auth-failure] received, client-instance restarting
+May 09 14:20:15 server1 charon: 04[NET] received packet: from 198.51.100.50[4500] to 172.16.1.1[4500] (300 bytes)
+May 09 14:20:16 server1 charon: 04[ENC] parsed IKE_AUTH request 1 [ IDi N(INIT_CONTACT) AUTH SA TSi TSr N(ESP_TFC_PAD_N) N(NON_FIRST_FRAG) ]
+May 09 14:20:17 server1 charon: 04[IKE] authentication of 'client_id_ikev2' with pre-shared key successful
+May 09 14:20:18 server1 charon: 04[IKE] IKE_SA client_id_ikev2[1] established between 172.16.1.1[server_id_ikev2]...198.51.100.50[client_id_ikev2]
+May 09 14:20:19 server1 charon: 04[IKE] scheduling reauthentication in 10044s
+May 09 14:20:20 server1 charon: 04[IKE] maximum IKE_SA lifetime 10584s
+May 09 14:20:21 server1 openvpn[1103]: MANAGEMENT: Client connected from /var/run/openvpn_client.sock
+May 09 14:20:22 server1 openvpn[1103]: MANAGEMENT: CMD 'status'
+May 09 14:20:23 server1 charon: 05[CHD] up-down: add connection 'conn_ikev2' IPsec interface (up)
+May 09 14:20:24 server1 charon: 05[CHD] up-down: add connection 'conn_ikev2' VTI interface (up)
+May 09 14:20:25 server1 charon: 05[IKE] CHILD_SA conn_ikev2{1} established with SPIs c1234567_i 0c765432_o and TS 10.1.0.0/24 === 10.2.0.0/24
+May 09 14:20:26 server1 openvpn[1101]: user3_vpn/203.0.113.30:1194 New connection
+May 09 14:20:27 server1 openvpn[1101]: user3_vpn/203.0.113.30:1194 VERIFY OK: depth=1, CN=MyCA
+May 09 14:20:28 server1 openvpn[1101]: user3_vpn/203.0.113.30:1194 VERIFY OK: depth=0, CN=user3_vpn_cert
+May 09 14:20:29 server1 openvpn[1101]: user3_vpn/203.0.113.30:1194 peer info: IV_VER=2.5.1 IV_PLAT=linux IV_PROTO=2 IV_NCP=2 IV_CIPHERS=AES-256-GCM:AES-128-GCM
+May 09 14:20:30 server1 charon: 06[KNL] querying policy 0.0.0.0/0 === 0.0.0.0/0 in failed, not found
+May 09 14:20:31 server1 charon: 06[KNL] querying policy 0.0.0.0/0 === 0.0.0.0/0 out failed, not found
+May 09 14:20:32 server1 openvpn[1101]: user1_vpn/192.0.2.100:54321 PUSH: Received control message: 'PUSH_REQUEST'
+May 09 14:20:33 server1 openvpn[1101]: user1_vpn/192.0.2.100:54321 send PUSH_REPLY
+May 09 14:20:34 server1 charon: 07[IKE] deleting IKE_SA client_id_ikev2_old[2] between 172.16.1.1[server_id_ikev2]...198.51.100.55[client_id_ikev2_old]
+May 09 14:20:35 server1 charon: 07[IKE] deleting IKE_SA failed, duplicate REREQUEST found, state CONNECTING, ignored
+May 09 14:20:36 server1 openvpn[1104]: 198.51.100.70:34567 Re-using SSL/TLS context
+May 09 14:20:37 server1 openvpn[1104]: 198.51.100.70:34567 LZO LZO_STUB_INPUT_RAW LZO_STUB_OUTPUT_RAW LZO compression initializing
+May 09 14:20:38 server1 charon: 08[NET] received packet: from 203.0.113.80[500] to 172.16.1.1[500] (56 bytes)
+May 09 14:20:39 server1 charon: 08[ENC] parsed INFORMATIONAL_V1 request 102345 [ N(NO_PROP) ]
+May 09 14:20:40 server1 charon: 08[IKE] received NO_PROPOSAL_CHOSEN error notify
+May 09 14:20:41 server1 openvpn[1101]: bad_actor/203.0.113.40:1194 TLS Error: Auth Username/Password verification failed for peer
+May 09 14:20:42 server1 openvpn[1101]: bad_actor/203.0.113.40:1194 WARNING: Failed running command (--auth-user-pass-verify): external program exited with error status: 1
+May 09 14:20:43 server1 charon-nm: Connected successfully, setting up IPsec interface.
+May 09 14:20:44 server1 charon-nm: Adding DNS server 8.8.8.8 to /etc/resolv.conf.
+May 09 14:20:45 server1 openvpn[1105]: client_disconnect_script: user='user1_vpn' ip=192.0.2.100 reason='client-disconnect'
+May 09 14:20:46 server1 openvpn[1101]: user1_vpn/192.0.2.100:54321 Connection reset, restarting [0]
+May 09 14:20:47 server1 openvpn[1101]: user1_vpn/192.0.2.100:54321 SIGUSR1[soft,connection-reset] received, client-instance restarting
+May 09 14:20:48 server1 charon: 09[MGR] checkin IKE_SA client_id_ikev2[1] active
+May 09 14:20:49 server1 charon: 09[MGR] checkin CHILD_SA conn_ikev2{1} active
+May 09 14:20:50 server1 openvpn[1106]: MANAGEMENT: CMD 'client-kill 10.8.0.2'

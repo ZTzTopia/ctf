@@ -1,0 +1,50 @@
+2025-05-09T14:05:01.123Z 100 [Note] Aborted connection 100 to db: 'user_db' user: 'app_user' host: 'localhost' (Got timeout reading communication packets)
+2025-05-09T14:05:02.456Z 101 [Note] Access denied for user 'root'@'localhost' (using password: YES)
+2025-05-09T14:05:03.789Z - [Query] SELECT * FROM products WHERE category = 'electronics' ORDER BY price DESC LIMIT 10;
+2025-05-09T14:05:04.012Z - [Slow Query] /* User: report_user, Host: 10.0.1.5 */ SELECT customer_id, COUNT(order_id) AS total_orders FROM orders GROUP BY customer_id HAVING total_orders > 5; (Execution Time: 5.2s)
+2025-05-09T14:05:05.345Z 102 [Note] /usr/sbin/mysqld: Normal shutdown
+2025-05-09T14:05:06.678Z - [Query] INSERT INTO users (username, email, password_hash) VALUES ('new_user', 'new@example.com', 'xxxxxxxx');
+2025-05-09T14:05:07.901Z - [Error] Table 'main_db.sessions' doesn't exist
+2025-05-09T14:05:08.234Z 103 [Warning] InnoDB: Difficult to find free blocks in the buffer pool (21 search iterations)! Consider increasing the buffer pool size.
+2025-05-09T14:05:09.567Z - [Query] UPDATE inventory SET stock_quantity = stock_quantity - 1 WHERE product_id = 12345 AND stock_quantity > 0;
+2025-05-09T14:05:10.890Z - [Audit] USER_LOGIN: User 'admin_user' logged in from '192.168.1.10'.
+2025-05-09T14:05:11.123Z - [Query] DELETE FROM logs WHERE timestamp < '2025-04-01';
+2025-05-09T14:05:12.456Z 104 [Note] Replication slave I/O thread: connected to master 'master-db@10.0.0.100:3306',replication started in log 'mysql-bin.000123' at position 4567
+2025-05-09T14:05:13.789Z - [Slow Query] SELECT p.name, c.name as category_name FROM products p JOIN categories c ON p.category_id = c.id WHERE p.description LIKE '%special offer%'; (Execution Time: 2.8s)
+2025-05-09T14:05:14.012Z - [Query] CREATE INDEX idx_email ON customers (email);
+2025-05-09T14:05:15.345Z 105 [Error] Lost connection to MySQL server during query
+2025-05-09T14:05:16.678Z - [Query] SELECT AVG(rating) FROM reviews WHERE product_id = 54321;
+2025-05-09T14:05:17.901Z - [Audit] TABLE_MODIFIED: User 'etl_script' dropped table 'temp_staging_data'.
+2025-05-09T14:05:18.234Z 106 [Note] mysqld: ready for connections. Version: '8.0.32'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2025-05-09T14:05:19.567Z - [Query] START TRANSACTION;
+2025-05-09T14:05:20.890Z - [Query] UPDATE accounts SET balance = balance - 100 WHERE account_id = 'A123';
+2025-05-09T14:05:21.123Z - [Query] UPDATE accounts SET balance = balance + 100 WHERE account_id = 'B456';
+2025-05-09T14:05:22.456Z - [Query] COMMIT;
+2025-05-09T14:05:23.789Z 107 [Warning] Deadlock found when trying to get lock; try restarting transaction (User: 'batch_process', Query: UPDATE ...)
+2025-05-09T14:05:24.012Z - [Query] SELECT DISTINCT country FROM suppliers;
+2025-05-09T14:05:25.345Z - [Audit] BACKUP_STARTED: Full database backup initiated by 'backup_service'.
+2025-05-09T14:05:26.678Z 108 [Note] Event Scheduler: Loaded 5 events.
+2025-05-09T14:05:27.901Z - [Query] ALTER TABLE employees ADD COLUMN hire_date DATE;
+2025-05-09T14:05:28.234Z - [Slow Query] /* Dashboard Query */ SELECT DATE(created_at), SUM(amount) FROM sales WHERE created_at >= CURDATE() - INTERVAL 30 DAY GROUP BY DATE(created_at); (Execution Time: 7.1s)
+2025-05-09T14:05:29.567Z 109 [Error] Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (111)
+2025-05-09T14:05:30.890Z - [Query] SHOW GLOBAL STATUS LIKE 'Uptime';
+2025-05-09T14:05:31.123Z - [Audit] USER_PERMISSION_REVOKED: User 'temp_user' access revoked by 'security_admin'.
+2025-05-09T14:05:32.456Z 110 [Note] InnoDB: Starting shutdown...
+2025-05-09T14:05:33.789Z - [Query] EXPLAIN SELECT * FROM orders WHERE order_date BETWEEN '2025-01-01' AND '2025-03-31';
+2025-05-09T14:05:34.012Z 111 [Warning] Disk is full. (Disk Full Tally: 100)
+2025-05-09T14:05:35.345Z - [Query] SELECT COUNT(*) FROM large_table; /* This might take a while */
+2025-05-09T14:05:36.678Z - [Audit] SCHEMA_CHANGE: Column 'price' in table 'products' was changed from DECIMAL(10,2) to DECIMAL(12,2) by 'dba_user'.
+2025-05-09T14:05:37.901Z 112 [Note] Successfully reconfigured master host to 'new-master-db@10.0.0.110:3306' from old master 'master-db@10.0.0.100:3306' at log mysql-bin.000125 pos 1234.
+2025-05-09T14:05:38.234Z - [Query] LOCK TABLES articles WRITE;
+2025-05-09T14:05:39.567Z - [Slow Query] SELECT u.username, COUNT(c.id) FROM users u LEFT JOIN comments c ON u.id = c.user_id GROUP BY u.username ORDER BY COUNT(c.id) DESC; (Execution Time: 3.5s)
+2025-05-09T14:05:40.890Z - [Query] UNLOCK TABLES;
+2025-05-09T14:05:41.123Z 113 [Error] Incorrect string value: '\xF0\x9F\x98\x8A' for column 'comment_text' at row 1
+2025-05-09T14:05:42.456Z - [Audit] FAILED_LOGIN_ATTEMPT: User 'unknown_user' from '10.50.0.20'.
+2025-05-09T14:05:43.789Z - [Query] SET GLOBAL max_connections = 200;
+2025-05-09T14:05:44.012Z 114 [Note] Binlog end
+2025-05-09T14:05:45.345Z - [Query] SELECT version();
+2025-05-09T14:05:46.678Z - [Audit] CONFIG_CHANGE: Parameter 'innodb_buffer_pool_size' changed from 1G to 2G by 'dba_manager'.
+2025-05-09T14:05:47.901Z 115 [Warning] Client 'web_app_server' from host '192.168.2.30' exceeded max_user_connections limit.
+2025-05-09T14:05:48.234Z - [Query] ANALYZE TABLE user_activity;
+2025-05-09T14:05:49.567Z - [Slow Query] SELECT * FROM audit_log WHERE timestamp > DATE_SUB(NOW(), INTERVAL 1 YEAR) AND details LIKE '%CRITICAL%'; (Execution Time: 10.5s)
+2025-05-09T14:05:50.890Z - [Query] FLUSH LOGS;

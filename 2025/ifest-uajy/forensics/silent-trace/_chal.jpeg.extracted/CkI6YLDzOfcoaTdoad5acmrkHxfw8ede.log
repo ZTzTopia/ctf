@@ -1,0 +1,50 @@
+May 09 14:24:01 server2 sshd[2021]: Accepted publickey for user_connect from 192.168.1.100 port 54321 ssh2: RSA SHA256:xyzabc123
+May 09 14:24:02 server2 kernel: [Hardware Error]: Corrected error, no action required.
+May 09 14:24:03 server2 auditd[801]: USER_AUTH pid=2025 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:authentication acct="root" exe="/usr/sbin/sshd" hostname=192.168.1.101 addr=192.168.1.101 terminal=ssh res=failed'
+May 09 14:24:04 server2 sudo:    testuser : TTY=pts/0 ; PWD=/home/testuser ; USER=root ; COMMAND=/usr/bin/apt update
+May 09 14:24:05 server2 kernel: [UFW BLOCK] IN=eth0 OUT= MAC=01:02:03:04:05:06:0a:0b:0c:0d:0e:0f SRC=203.0.113.10 DST=172.16.0.5 LEN=40 TOS=0x00 PREC=0x00 TTL=245 ID=12345 PROTO=TCP SPT=12345 DPT=22 WINDOW=1024 RES=0x00 SYN URGP=0
+May 09 14:24:06 server2 systemd[1]: Starting Clean php session files...
+May 09 14:24:07 server2 CRON[2030]: (root) CMD (   test -x /usr/sbin/aide && /usr/sbin/aide --check)
+May 09 14:24:08 server2 sshd[2035]: Failed password for invalid user attempt_user from 198.51.100.20 port 11223 ssh2
+May 09 14:24:09 server2 kernel: [   75.123456] audit: type=1400 audit(1652100249.123:45): apparmor="DENIED" operation="open" profile="/usr/sbin/ntpd" name="/etc/ntp.conf.bak" pid=900 comm="ntpd" requested_mask="r" denied_mask="r" fsuid=0 ouid=0
+May 09 14:24:10 server2 auth: pam_unix(sshd:session): session opened for user another_user by (uid=0)
+May 09 14:24:11 server2 kernel: [Hardware Error]: CPU:0 Machine Check: 0 Bank:6 MACA:0x0000000000000000 MCSC:0x0000000000000000 APICID:0
+May 09 14:24:12 server2 auditd[801]: SYSCALL arch=c000003e syscall=257 success=yes exit=3 a0=ffffff9c a1=7ffc00000000 a2=90800 a3=0 items=1 ppid=2040 pid=2041 auid=1001 uid=1001 gid=1001 euid=1001 suid=1001 fsuid=1001 egid=1001 sgid=1001 fsgid=1001 tty=pts1 ses=3 comm="cat" exe="/bin/cat" key="sensitive_file_access"
+May 09 14:24:13 server2 sudo: pam_unix(sudo:session): session opened for user root by testuser(uid=0)
+May 09 14:24:14 server2 kernel: [UFW ALLOW] IN=eth1 OUT= MAC=... SRC=10.0.0.5 DST=10.0.0.1 LEN=52 TOS=0x00 PREC=0x00 TTL=64 ID=1234 DF PROTO=TCP SPT=54321 DPT=80 WINDOW=65535 RES=0x00 SYN URGP=0
+May 09 14:24:15 server2 systemd-logind[789]: New session c2 of user some_user.
+May 09 14:24:16 server2 CRON[2050]: (backup_user) CMD (/opt/scripts/backup_script.sh)
+May 09 14:24:17 server2 sshd[2055]: Disconnected from user user_connect 192.168.1.100 port 54321
+May 09 14:24:18 server2 kernel: [  150.789012] SELinux: initialized (dev proc, type proc), uses genfs_contexts
+May 09 14:24:19 server2 auth: pam_faillock(login:auth): User unknown_login from 127.0.0.1 is locked out
+May 09 14:24:20 server2 kernel: [Firmware Bug]: ACPI(PEGP): Queried _OSC, received incorrect UUID length (0)
+May 09 14:24:21 server2 auditd[801]: SERVICE_START pid=1 uid=0 auid=4294967295 ses=4294967295 msg='unit=example_service comm="systemd" exe="/usr/lib/systemd/systemd" hostname=? addr=? terminal=? res=success'
+May 09 14:24:22 server2 sudo:    root : TTY=unknown ; PWD=/root ; USER=service_runner ; COMMAND=/usr/local/bin/run_service
+May 09 14:24:23 server2 kernel: [NETFILTER LOG] IN=docker0 OUT= PHYSIN=veth123abc MAC=... SRC=172.17.0.2 DST=172.17.0.1 LEN=60 TOS=0x00 PREC=0x00 TTL=64 ID=54321 DF PROTO=TCP SPT=45678 DPT=2375 WINDOW=64240 RES=0x00 SYN URGP=0
+May 09 14:24:24 server2 systemd[1]: Started User Manager for UID 1002.
+May 09 14:24:25 server2 CRON[2060]: (www-data) CMD (php /var/www/html/cron.php)
+May 09 14:24:26 server2 sshd[2065]: Received disconnect from 198.51.100.21 port 33445:11: Bye Bye [preauth]
+May 09 14:24:27 server2 kernel: [  300.112233] usb 1-1: new high-speed USB device number 3 using xhci_hcd
+May 09 14:24:28 server2 auth: pam_unix(cron:session): session closed for user root
+May 09 14:24:29 server2 kernel: [LSM] AppArmor: event_log: op="mount" info="failed" error=-13 name="/dev/sdb1" pid=2070 comm="mount"
+May 09 14:24:30 server2 auditd[801]: USER_ACCT pid=2075 uid=0 auid=4294967295 ses=4294967295 msg='op=PAM:accounting acct="admin_user" exe="/usr/bin/login" hostname=tty1 addr=? terminal=tty1 res=success'
+May 09 14:24:31 server2 sudo: pam_unix(sudo:session): session closed for user root
+May 09 14:24:32 server2 kernel: [  450.987654] CPU1: Core temperature above threshold, cpu clock throttled (total events = 1)
+May 09 14:24:33 server2 systemd-logind[789]: Session c2 logged out. Waiting for processes to exit.
+May 09 14:24:34 server2 CRON[2080]: (root) CMD ( /usr/local/sbin/update_certs.sh )
+May 09 14:24:35 server2 sshd[2085]: Connection closed by authenticating user good_user 172.16.5.5 port 12345 [preauth]
+May 09 14:24:36 server2 kernel: [  600.555555] xfs (sda1): Mounting V5 Filesystem
+May 09 14:24:37 server2 auth: pam_sss(sshd:account): Access denied for user no_access_user: 6 (Permission denied)
+May 09 14:24:38 server2 kernel: [IOCTL] dev=loop0, cmd=0x4c08, arg=0x0, ret=0, proc=modprobe
+May 09 14:24:39 server2 auditd[801]: DAEMON_START resid=0 old_uid=0 new_uid=0 old_gid=0 new_gid=0 old_ses=0 new_ses=0 old_comm="(null)" new_comm="mydaemon" res=success
+May 09 14:24:40 server2 sudo: bad_user : user NOT in sudoers ; TTY=pts/2 ; PWD=/home/bad_user ; USER=root ; COMMAND=/bin/ls /
+May 09 14:24:41 server2 kernel: [  750.121212] EXT4-fs (sdb1): mounted filesystem with ordered data mode. Opts: (null)
+May 09 14:24:42 server2 systemd[1]: session-c3.scope: Succeeded.
+May 09 14:24:43 server2 CRON[2090]: (sync_user) CMD (/home/sync_user/bin/sync_data.py)
+May 09 14:24:44 server2 sshd[2095]: error: kex_exchange_identification: Connection closed by remote host
+May 09 14:24:45 server2 kernel: [  900.343434] Firewall: *TCP_IN Blocked* IN=eth0 OUT= MAC=... SRC=10.1.2.3 DST=172.16.0.5 LEN=44 TOS=0x00 PREC=0x00 TTL=55 ID=11111 PROTO=TCP SPT=55555 DPT=443 WINDOW=1024 RES=0x00 SYN URGP=0
+May 09 14:24:46 server2 auth: groupadd[2100]: group 'new_group' added to /etc/group
+May 09 14:24:47 server2 kernel: [WATCHDOG] Softdog soft_panic: WDT timeout
+May 09 14:24:48 server2 auditd[801]: USER_ROLE_CHANGE pid=2105 uid=0 auid=1000 ses=4 msg='pam_acct_mgmt: PAM: accounting successful, acct="targetuser" new_role="admin" exe="/usr/sbin/usermod" hostname=? addr=? terminal=pts/3 res=success'
+May 09 14:24:49 server2 sudo: user_admin : TTY=console ; PWD=/ ; USER=root ; ENV= ; COMMAND=/sbin/reboot
+May 09 14:24:50 server2 kernel: [ 1050.777888] systemd-shutdow: 52 output lines suppressed due to ratelimiting

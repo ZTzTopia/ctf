@@ -1,0 +1,337 @@
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:01.1234567Z"/>
+    <EventRecordID>1001</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4321"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:01.123</Data>
+    <Data Name="ProcessGuid">{A1B2C3D4-E5F6-G7H8-I9J0-K1L2M3N4O5P6}</Data>
+    <Data Name="ProcessId">5678</Data>
+    <Data Name="Image">C:\Windows\System32\notepad.exe</Data>
+    <Data Name="FileVersion">10.0.19041.1</Data>
+    <Data Name="Description">Notepad</Data>
+    <Data Name="Product">Microsoft® Windows® Operating System</Data>
+    <Data Name="Company">Microsoft Corporation</Data>
+    <Data Name="OriginalFileName">NOTEPAD.EXE</Data>
+    <Data Name="CommandLine">"notepad.exe" "C:\Users\CTFUser\Desktop\secret.txt"</Data>
+    <Data Name="CurrentDirectory">C:\Users\CTFUser\</Data>
+    <Data Name="User">DESKTOP-CTF\CTFUser</Data>
+    <Data Name="LogonGuid">{B2C3D4E5-F6G7-H8I9-J0K1-L2M3N4O5P6Q7}</Data>
+    <Data Name="LogonId">0x12345</Data>
+    <Data Name="TerminalSessionId">1</Data>
+    <Data Name="IntegrityLevel">Medium</Data>
+    <Data Name="Hashes">SHA1=ABCDEF0123456789ABCDEF0123456789ABCDEF01,MD5=0123456789ABCDEF0123456789ABCDEF,SHA256=FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210FEDCBA9876543210,IMPHASH=1234567890ABCDEF1234567890ABCDEF</Data>
+    <Data Name="ParentProcessGuid">{C3D4E5F6-G7H8-I9J0-K1L2-M3N4O5P6Q7R8}</Data>
+    <Data Name="ParentProcessId">1234</Data>
+    <Data Name="ParentImage">C:\Windows\explorer.exe</Data>
+    <Data Name="ParentCommandLine">C:\Windows\explorer.exe</Data>
+    <Data Name="ParentUser">DESKTOP-CTF\CTFUser</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>3</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>3</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:02.2345678Z"/>
+    <EventRecordID>1002</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4322"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">Network connection to RDP</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:02.234</Data>
+    <Data Name="ProcessGuid">{D4E5F6G7-H8I9-J0K1-L2M3-N4O5P6Q7R8S9}</Data>
+    <Data Name="ProcessId">6789</Data>
+    <Data Name="Image">C:\Windows\System32\mstsc.exe</Data>
+    <Data Name="User">DESKTOP-CTF\Administrator</Data>
+    <Data Name="Protocol">tcp</Data>
+    <Data Name="Initiated">true</Data>
+    <Data Name="SourceIsIpv6">false</Data>
+    <Data Name="SourceIp">192.168.1.150</Data>
+    <Data Name="SourceHostname">DESKTOP-CTF</Data>
+    <Data Name="SourcePort">51234</Data>
+    <Data Name="SourcePortName">-</Data>
+    <Data Name="DestinationIsIpv6">false</Data>
+    <Data Name="DestinationIp">10.0.0.80</Data>
+    <Data Name="DestinationHostname">TARGET-SERVER</Data>
+    <Data Name="DestinationPort">3389</Data>
+    <Data Name="DestinationPortName">ms-wbt-server</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>11</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>11</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:03.3456789Z"/>
+    <EventRecordID>1003</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4323"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">Suspicious file created in Temp</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:03.345</Data>
+    <Data Name="ProcessGuid">{E5F6G7H8-I9J0-K1L2-M3N4-O5P6Q7R8S9T0}</Data>
+    <Data Name="ProcessId">7890</Data>
+    <Data Name="Image">C:\Windows\System32\powershell.exe</Data>
+    <Data Name="TargetFilename">C:\Users\CTFUser\AppData\Local\Temp\malicious.ps1</Data>
+    <Data Name="CreationUtcTime">2025-05-09 07:27:03.345</Data>
+    <Data Name="User">DESKTOP-CTF\CTFUser</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>5</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>5</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:04.4567890Z"/>
+    <EventRecordID>1004</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4324"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">-</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:04.456</Data>
+    <Data Name="ProcessGuid">{E5F6G7H8-I9J0-K1L2-M3N4-O5P6Q7R8S9T0}</Data>
+    <Data Name="ProcessId">7890</Data>
+    <Data Name="Image">C:\Windows\System32\powershell.exe</Data>
+    <Data Name="User">DESKTOP-CTF\CTFUser</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>22</EventID>
+    <Version>4</Version>
+    <Level>4</Level>
+    <Task>22</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:05.5678901Z"/>
+    <EventRecordID>1005</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4325"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">DNS Query to suspicious domain</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:05.567</Data>
+    <Data Name="ProcessGuid">{F6G7H8I9-J0K1-L2M3-N4O5-P6Q7R8S9T0U1}</Data>
+    <Data Name="ProcessId">8901</Data>
+    <Data Name="Image">C:\Program Files\Mozilla Firefox\firefox.exe</Data>
+    <Data Name="QueryName">evil-domain.com</Data>
+    <Data Name="QueryStatus">0</Data>
+    <Data Name="QueryResults">192.0.2.100;::ffff:192.0.2.100</Data>
+    <Data Name="User">DESKTOP-CTF\CTFUser</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>7</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>7</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:06.6789012Z"/>
+    <EventRecordID>1006</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4326"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">ImageLoad by Office Product</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:06.678</Data>
+    <Data Name="ProcessGuid">{G7H8I9J0-K1L2-M3N4-O5P6-Q7R8S9T0U1V2}</Data>
+    <Data Name="ProcessId">9012</Data>
+    <Data Name="Image">C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE</Data>
+    <Data Name="ImageLoaded">C:\Windows\System32\suspicious.dll</Data>
+    <Data Name="FileVersion">1.0.0.1</Data>
+    <Data Name="Description">Suspicious Library</Data>
+    <Data Name="Product">N/A</Data>
+    <Data Name="Company">Unknown</Data>
+    <Data Name="OriginalFileName">suspicious.dll</Data>
+    <Data Name="Hashes">SHA1=0123456789ABCDEF0123456789ABCDEF01234567,MD5=FEDCBA9876543210FEDCBA9876543210,SHA256=ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789,IMPHASH=9876543210FEDCBA9876543210FEDCBA</Data>
+    <Data Name="Signed">false</Data>
+    <Data Name="Signature">-</Data>
+    <Data Name="SignatureStatus">Unavailable</Data>
+    <Data Name="User">DESKTOP-CTF\CTFUser</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>13</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>13</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:07.7890123Z"/>
+    <EventRecordID>1007</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4327"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">Registry modification for persistence</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:07.789</Data>
+    <Data Name="EventType">SetValue</Data>
+    <Data Name="ProcessGuid">{H8I9J0K1-L2M3-N4O5-P6Q7-R8S9T0U1V2W3}</Data>
+    <Data Name="ProcessId">123</Data>
+    <Data Name="Image">C:\Users\CTFUser\AppData\Local\Temp\evil.exe</Data>
+    <Data Name="TargetObject">HKCU\Software\Microsoft\Windows\CurrentVersion\Run\EvilApp</Data>
+    <Data Name="Details">C:\Users\CTFUser\AppData\Local\Temp\evil.exe</Data>
+    <Data Name="User">DESKTOP-CTF\CTFUser</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>1</EventID>
+    <Version>5</Version>
+    <Level>4</Level>
+    <Task>1</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:08.8901234Z"/>
+    <EventRecordID>1008</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4328"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">PsExec execution</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:08.890</Data>
+    <Data Name="ProcessGuid">{I9J0K1L2-M3N4-O5P6-Q7R8-S9T0U1V2W3X4}</Data>
+    <Data Name="ProcessId">2345</Data>
+    <Data Name="Image">C:\PSTools\PsExec.exe</Data>
+    <Data Name="FileVersion">2.2</Data>
+    <Data Name="Description">Execute processes remotely</Data>
+    <Data Name="Product">Sysinternals PsExec</Data>
+    <Data Name="Company">Sysinternals - www.sysinternals.com</Data>
+    <Data Name="OriginalFileName">PsExec.exe</Data>
+    <Data Name="CommandLine">psexec.exe \\REMOTE-PC -u Domain\Admin -p Password cmd.exe /c "whoami"</Data>
+    <Data Name="CurrentDirectory">C:\PSTools\</Data>
+    <Data Name="User">DESKTOP-CTF\Administrator</Data>
+    <Data Name="LogonGuid">{J0K1L2M3-N4O5-P6Q7-R8S9-T0U1V2W3X4Y5}</Data>
+    <Data Name="LogonId">0x54321</Data>
+    <Data Name="TerminalSessionId">2</Data>
+    <Data Name="IntegrityLevel">High</Data>
+    <Data Name="Hashes">SHA1=A1B2C3D4E5F6A1B2C3D4E5F6A1B2C3D4E5F6A1B2,MD5=A1B2C3D4E5F6A1B2C3D4E5F6A1B2C3D4,SHA256=A1B2C3D4E5F6A1B2C3D4E5F6A1B2C3D4E5F6A1B2C3D4E5F6A1B2C3D4E5F6A1B2,IMPHASH=A1B2C3D4E5F6A1B2C3D4E5F6A1B2C3D4</Data>
+    <Data Name="ParentProcessGuid">{K1L2M3N4-O5P6-Q7R8-S9T0-U1V2W3X4Y5Z6}</Data>
+    <Data Name="ParentProcessId">3456</Data>
+    <Data Name="ParentImage">C:\Windows\System32\cmd.exe</Data>
+    <Data Name="ParentCommandLine">"C:\Windows\System32\cmd.exe" </Data>
+    <Data Name="ParentUser">DESKTOP-CTF\Administrator</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>8</EventID>
+    <Version>2</Version>
+    <Level>4</Level>
+    <Task>8</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:09.9012345Z"/>
+    <EventRecordID>1009</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4329"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">Remote thread injection</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:09.901</Data>
+    <Data Name="SourceProcessGuid">{I9J0K1L2-M3N4-O5P6-Q7R8-S9T0U1V2W3X4}</Data>
+    <Data Name="SourceProcessId">2345</Data>
+    <Data Name="SourceImage">C:\PSTools\PsExec.exe</Data>
+    <Data Name="TargetProcessGuid">{L2M3N4O5-P6Q7-R8S9-T0U1-V2W3X4Y5Z6A7}</Data>
+    <Data Name="TargetProcessId">9876</Data>
+    <Data Name="TargetImage">C:\Windows\System32\lsass.exe</Data>
+    <Data Name="NewThreadId">5432</Data>
+    <Data Name="StartAddress">0x7FF912345678</Data>
+    <Data Name="StartModule">kernelbase.dll</Data>
+    <Data Name="StartFunction">CreateRemoteThread</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+  </EventData>
+</Event>
+<Event xmlns="http://schemas.microsoft.com/win/2004/08/events/event">
+  <System>
+    <Provider Name="Microsoft-Windows-Sysmon" Guid="{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"/>
+    <EventID>10</EventID>
+    <Version>3</Version>
+    <Level>4</Level>
+    <Task>10</Task>
+    <Opcode>0</Opcode>
+    <Keywords>0x8000000000000000</Keywords>
+    <TimeCreated SystemTime="2025-05-09T07:27:10.0123456Z"/>
+    <EventRecordID>1010</EventRecordID>
+    <Correlation/>
+    <Execution ProcessID="3210" ThreadID="4330"/>
+    <Channel>Microsoft-Windows-Sysmon/Operational</Channel>
+    <Computer>DESKTOP-CTF</Computer>
+    <Security UserID="S-1-5-18"/>
+  </System>
+  <EventData>
+    <Data Name="RuleName">LSASS Access</Data>
+    <Data Name="UtcTime">2025-05-09 07:27:10.012</Data>
+    <Data Name="SourceProcessGUID">{I9J0K1L2-M3N4-O5P6-Q7R8-S9T0U1V2W3X4}</Data>
+    <Data Name="SourceProcessId">2345</Data>
+    <Data Name="SourceThreadId">5432</Data>
+    <Data Name="SourceImage">C:\PSTools\PsExec.exe</Data>
+    <Data Name="TargetProcessGUID">{L2M3N4O5-P6Q7-R8S9-T0U1-V2W3X4Y5Z6A7}</Data>
+    <Data Name="TargetProcessId">9876</Data>
+    <Data Name="TargetImage">C:\Windows\System32\lsass.exe</Data>
+    <Data Name="GrantedAccess">0x1010</Data>
+    <Data Name="CallTrace">C:\WINDOWS\SYSTEM32\ntdll.dll+a1b2c|C:\WINDOWS\System32\KERNELBASE.dll+d3e4f|C:\WINDOWS\System32\KERNEL32.DLL+g5h6i</Data>
+    <Data Name="User">NT AUTHORITY\SYSTEM</Data>
+  </EventData>
+</Event>
