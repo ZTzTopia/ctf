@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 17
-flag: GKSK#9{You_Found_My_Comment}
+flags: flag: GKSK#9{You_Found_My_Comment}
 ---
 > Ok Ok. Bentar, ini apaan? Eh ini temanku ngirim foto, tapi aku gatau ini tuh foto konser kah atau foto apaan… Coba Kalian cari ini tuh konser atau apa (kayaknya sih konser live di salah satu platform streaming atau video). Nah, Di salah satu video konser tuh ada komen, nah coba check in aja dah. Makasih!
 >

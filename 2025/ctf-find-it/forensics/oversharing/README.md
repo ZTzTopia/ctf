@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: FindITCTF{CVE-2023-21036_Hk3MQu1gR3}
+flags: flag: FindITCTF{CVE-2023-21036_Hk3MQu1gR3}
 ---
 > Yo man wassup,
 >

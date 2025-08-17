@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > “Hexline, we need your help investigating the phishing attack from 3 months ago. We believe the threat actor managed to hijack our domain `virielia-water.it.com` and used it to host some of their infrastructure at the time. Use your OSINT skills to find information about the infrastructure they used during their campaign.”
 

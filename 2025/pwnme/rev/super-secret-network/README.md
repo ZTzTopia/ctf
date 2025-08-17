@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flag: PWNME{Crypt0_&_B4ndwidth_m4k3s_m3_f33l_UN83474813!!!}
+flags: flag: PWNME{Crypt0_&_B4ndwidth_m4k3s_m3_f33l_UN83474813!!!}
 ---
 > The target is hiding hisself in a small hotel of the town. One of our agents managed to capture the communications from the parking lot... Unfortunately, the target seems to use software on his phone to protect himself, reading the data exchanged with the server is impossible ! You have the captured trace and the recovered software. It's up to you.
 >

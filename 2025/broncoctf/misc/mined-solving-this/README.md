@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: bronco{m1n3d}
+flags: flag: bronco{m1n3d}
 ---
 > I used to think Minecraft was just a silly game. I woold play it for hours and accomplish nothing. Making this challenge gave me perspective though!
 

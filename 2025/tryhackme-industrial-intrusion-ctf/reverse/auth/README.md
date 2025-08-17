@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 30
 solves: -1
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > ZeroTrace intercepts a stripped-down authentication module running on a remote industrial gateway. Assembly scrolls across glowing monitors as she unpacks the logic behind the plant’s digital checkpoint.
 

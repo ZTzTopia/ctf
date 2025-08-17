@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: CIT{hft4bT0415Lb}
+flags: flag: CIT{hft4bT0415Lb}
 ---
 > Find the flag.
 >

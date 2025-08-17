@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 18
-flag: GKSK#9{MorenoSuprapto}
+flags: flag: GKSK#9{MorenoSuprapto}
 ---
 > Sebuah file misterius ditemukan dalam repositori proyek internal perusahaan. Tidak ada yang tahu siapa yang menyisipkan pesan rahasia, tetapi ada desas-desus bahwa "namanya bukan sembarang nama." Dapatkah kamu menemukan siapa yang menyisipkan flag ke dalam repositori ini?
 

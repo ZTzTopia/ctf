@@ -4,7 +4,7 @@ categories: Binary Exploitation
 tags: 
 completedDuringEvent: true
 submitted: true
-flag: p_ctf{t1n¥_c0d3_bu+_str0ng_3n0ugh!}
+flags: flag: p_ctf{t1n¥_c0d3_bu+_str0ng_3n0ugh!}
 draft: false
 ---
 It would be a good idea to start by identifying the given binary type.

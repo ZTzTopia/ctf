@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: IFEST13{Th3_ch41n_1s_str0ng_but_1t_br34ks_wh3r3_th3_hum4n_st4nds_6el28mws}
+flags: flag: IFEST13{Th3_ch41n_1s_str0ng_but_1t_br34ks_wh3r3_th3_hum4n_st4nds_6el28mws}
 ---
 > Hey it's me Mr. Shock, I’ve got a question, totally not for me, of course. It’s for a friend. So here’s the situation, this friend just lost about 1 million USDT. Yeah... brutal. He’s kind of in panic mode right now, and I think he really needs that money back.
 >

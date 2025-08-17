@@ -6,7 +6,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: RECURSION{4h_i_th0ught_you_w4nt3d_t0_g1ve_m3_som3_ETH}
+flags: flag: RECURSION{4h_i_th0ught_you_w4nt3d_t0_g1ve_m3_som3_ETH}
 ---
 > I want to use **Mission Difference 674** name but it's already taken :(.
 >

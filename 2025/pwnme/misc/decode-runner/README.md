@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: PWNME{d4m_y0U_4r3_F4st!_4nd_y0u_kn0w_y0ur_c1ph3rs!}
+flags: flag: PWNME{d4m_y0U_4r3_F4st!_4nd_y0u_kn0w_y0ur_c1ph3rs!}
 ---
 > Welcome to Decode Runner ! You will receive 100 encoded words. Your goal is to decode them and send back the decoded word. You have 3 seconds to respond to each word. Good luck!
 >

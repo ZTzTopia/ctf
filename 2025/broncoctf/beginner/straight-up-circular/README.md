@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: bronco{tr4n5p0sit1on_my_bel0v3d}
+flags: flag: bronco{tr4n5p0sit1on_my_bel0v3d}
 ---
 > Someone's been spreading weird messages around campus...
 >

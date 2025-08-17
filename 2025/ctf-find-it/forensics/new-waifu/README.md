@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flag: FindITCTF{jean_arlecchino_skirk_chizuru_hutao}
+flags: flag: FindITCTF{jean_arlecchino_skirk_chizuru_hutao}
 ---
 > pecinta waifu ternyata kurang puas sama stealer dia sebelumnya, sekarang dia bikin info stealer baru
 >

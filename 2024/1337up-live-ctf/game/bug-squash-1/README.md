@@ -6,7 +6,7 @@ categories:
 tags: 
 completedDuringEvent: true
 submitted: true
-flag: INTIGRITI{game_hacking_is_fun!}
+flags: flag: INTIGRITI{game_hacking_is_fun!}
 draft: false
 ---
 ## Scenario

@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 30
 solves: -1
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > ZeroTrace intercepts a suspicious HMI login module on the plant floor. Reverse the binary logic to reveal the access key and slip past digital defences.
 

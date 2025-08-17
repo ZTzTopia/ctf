@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 15
-flag: GKSK#9{s0lv3d}
+flags: flag: GKSK#9{s0lv3d}
 ---
 > Hari minggu siang, aku mengajak pacarku jalan-jalan ke mall setelah seminggu sibuk dengan kuliah dan pekerjaan. Kami memulai dengan makan siang di food court favorit, lalu berjalan-jalan sambil melihat sebuah aquarium yang berisi dengan ikan-ikan cantik. Kalian tau ga aku jalan jalan sama pacarku di mall mana?
 >

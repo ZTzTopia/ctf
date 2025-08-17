@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 30
 solves: -1
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > A forgotten HMI node deep in Virelia’s wastewater control loop still runs an outdated instance, forked from an old Mango M2M stack. 
 

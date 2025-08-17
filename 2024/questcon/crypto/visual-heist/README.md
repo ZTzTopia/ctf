@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: QUESTCON{CRYPT70N}
+flags: flag: QUESTCON{CRYPT70N}
 ---
 ## Scenario
 

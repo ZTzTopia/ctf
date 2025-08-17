@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: FindITCTF{k0n0h4_m4ju_m4sy4r4k4t_m4kmur}
+flags: flag: FindITCTF{k0n0h4_m4ju_m4sy4r4k4t_m4kmur}
 ---
 > perjalananmu berlanjut, tahun lalu masih adem sekarang tidak. kalau berhenti sekarang ntar malah ga sampe sampe, mending gas aja terus
 

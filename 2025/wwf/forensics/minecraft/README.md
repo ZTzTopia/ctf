@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 500
 solves: 1
-flag: wwf{f0r_7h3_5un_w1ll_4lw4y5_r153_4641n}
+flags: flag: wwf{f0r_7h3_5un_w1ll_4lw4y5_r153_4641n}
 ---
 
 > I speedran minecraft!

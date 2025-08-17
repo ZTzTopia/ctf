@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 18
-flag: GKSK#9{F1nal_F4nt4s1}
+flags: flag: GKSK#9{F1nal_F4nt4s1}
 ---
 > Ayoo tunjukkan bakat kalian! Kunjungi alamat web https://gimforce.github.io/
 > kalau kalian jago hacking

@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 500
 solves: 1
-flag: Meta4Sec{is_cool_right?_analyzing_and_reversing_antibot_system_and_using_xxtea}
+flags: flag: Meta4Sec{is_cool_right?_analyzing_and_reversing_antibot_system_and_using_xxtea}
 ---
 
 > Not into novel reverse challenges? Want something more real-world? Here you go . just keep it ethical

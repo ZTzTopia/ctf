@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: QUESTCON{3ncrypt3d_fl4g_r3v34l}
+flags: flag: QUESTCON{3ncrypt3d_fl4g_r3v34l}
 ---
 ## Scenario
 

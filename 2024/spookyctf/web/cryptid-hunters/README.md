@@ -6,7 +6,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: NICC{1N_PuRSu1T_0F_4LL13S}
+flags: flag: NICC{1N_PuRSu1T_0F_4LL13S}
 ---
 ## Scenario
 

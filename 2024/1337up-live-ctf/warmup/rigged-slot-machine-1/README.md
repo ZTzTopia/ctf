@@ -6,7 +6,7 @@ categories:
 tags: 
 completedDuringEvent: true
 submitted: true
-flag: INTIGRITI{ju57_l1k3_7h47_y0u_4r3_4_m1ll10n41r3!}
+flags: flag: INTIGRITI{ju57_l1k3_7h47_y0u_4r3_4_m1ll10n41r3!}
 draft: true
 ---
 ## Scenario

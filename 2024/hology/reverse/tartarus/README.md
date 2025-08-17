@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: false
-flag: HOLOGY7{m455_d3struction_10MAR2O1O}
+flags: flag: HOLOGY7{m455_d3struction_10MAR2O1O}
 ---
 ## Scenario
 

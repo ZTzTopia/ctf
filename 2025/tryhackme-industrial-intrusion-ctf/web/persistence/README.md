@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 60
 solves: -1
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > After the notorious malware strike on the Virelia Water Control Facility, phantom alerts and erratic sensor readings plague a system that was supposed to be fully remediated.
 >

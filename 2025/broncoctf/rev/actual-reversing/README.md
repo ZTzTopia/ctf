@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: bronco{r3v3r5ed_3n0ugh?}
+flags: flag: bronco{r3v3r5ed_3n0ugh?}
 ---
 > Here is something reversible. :)
 

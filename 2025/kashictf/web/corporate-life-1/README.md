@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: KashiCTF{s4m3_old_c0rp0_l1f3_T9Y6x1Se}
+flags: flag: KashiCTF{s4m3_old_c0rp0_l1f3_T9Y6x1Se}
 ---
 > The Request Management App is used to view all pending requests for each user. It’s a pretty basic website, though I heard they were working on something new.
 >

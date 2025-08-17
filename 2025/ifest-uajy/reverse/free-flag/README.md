@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: IFEST13{w3ll_n07h1n9_1z_fr33_1n_l1f3_s0_7h15_1z_n07_s0_fr33_4f73r_4ll}
+flags: flag: IFEST13{w3ll_n07h1n9_1z_fr33_1n_l1f3_s0_7h15_1z_n07_s0_fr33_4f73r_4ll}
 ---
 > Mr. Shock is feeling generous today, so here's an attached program that will give you the flag. [Just in case you don't know who this generous person is.](https://streetcat.wiki/index.php/Mr._Shock)
 

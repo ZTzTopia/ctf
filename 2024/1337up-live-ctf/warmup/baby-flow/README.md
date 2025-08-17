@@ -6,7 +6,7 @@ categories:
 tags: 
 completedDuringEvent: true
 submitted: true
-flag: INTIGRITI{b4bypwn_9cdfb439c7876e703e307864c9167a15}
+flags: flag: INTIGRITI{b4bypwn_9cdfb439c7876e703e307864c9167a15}
 draft: false
 ---
 ## Scenario

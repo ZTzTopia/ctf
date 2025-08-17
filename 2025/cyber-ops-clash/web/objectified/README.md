@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 499
 solves: 2
-flag: Meta4Sec{Objectified.__proto__=[];for(let i=0;i<Objectified;i++){console.log(1);}console.log('__proto__canoverwritetypes,attributes,functions,andevenitcanoverwriteitself.');}
+flags: flag: Meta4Sec{Objectified.__proto__=[];for(let i=0;i<Objectified;i++){console.log(1);}console.log('__proto__canoverwritetypes,attributes,functions,andevenitcanoverwriteitself.');}
 ---
 
 > What is rate limiting, and why do people rely on libraries just to implement it? You don’t need fancy middleware when you have `Objectified`, a custom data structure similar to JSON, but using `#` as its field identifier.

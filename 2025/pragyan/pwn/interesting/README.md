@@ -4,7 +4,7 @@ categories: Binary Exploitation
 tags: 
 completedDuringEvent: true
 submitted: true
-flag: p_ctf{!_am_v3ry_!nt3r3st1ng_!nd33d}
+flags: flag: p_ctf{!_am_v3ry_!nt3r3st1ng_!nd33d}
 draft: true
 ---
 First, let's check the binary.

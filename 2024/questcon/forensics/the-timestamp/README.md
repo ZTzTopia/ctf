@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: QUESTCON{2023-01-17_09:30:45}
+flags: flag: QUESTCON{2023-01-17_09:30:45}
 ---
 ## Scenario
 

@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flag: KashiCTF{Love_Hurts_5734b5f}
+flags: flag: KashiCTF{Love_Hurts_5734b5f}
 ---
 > Explore the virtual machine and you might just find the flag. Or a surprise. Maybe....
 >

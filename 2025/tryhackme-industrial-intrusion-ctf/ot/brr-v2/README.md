@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > The Virelia facility’s legacy tank-control panel was marked “clean” during the remediation. But engineers still report inconsistent fill levels and sporadic valve toggling during non-operational hours.
 >

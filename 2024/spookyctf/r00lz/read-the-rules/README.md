@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: NICC{I_will_behave_now_let_me_in}
+flags: flag: NICC{I_will_behave_now_let_me_in}
 ---
 ## Scenario
 

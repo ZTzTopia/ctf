@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: IFEST13{345Y_P34SY_L3M0N_5QU332Y}
+flags: flag: IFEST13{345Y_P34SY_L3M0N_5QU332Y}
 ---
 > 3 people go to the moon, keep in communication with them
 >

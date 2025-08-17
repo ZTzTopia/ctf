@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: bronco{charge_away}
+flags: flag: bronco{charge_away}
 ---
 > Do you love python? Or at least tolerate it? Then this is the challenge for you!
 >

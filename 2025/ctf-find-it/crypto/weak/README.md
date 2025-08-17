@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: true
 submitted: true
-flag: FindITCTF{W1_w0k_d3_t0k_n0t_0nl1_t0k_d3_t0k}
+flags: flag: FindITCTF{W1_w0k_d3_t0k_n0t_0nl1_t0k_d3_t0k}
 ---
 > Simple login. By the way, I think using a common secret is a bad idea 🗿
 

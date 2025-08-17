@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 90
 solves: -1
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > Amid whirring routers and blinking panel lights, ZeroTrace dissects a custom network protocol linking industrial subsystems. Patterns in the packet flow hint at secrets embedded deep within machine chatter.
 

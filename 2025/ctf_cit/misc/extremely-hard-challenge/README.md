@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: CIT{very_secure}
+flags: flag: CIT{very_secure}
 ---
 > The flag is very secure
 >

@@ -4,7 +4,7 @@ categories: Reverse Engineering
 tags: 
 completedDuringEvent: true
 submitted: true
-flag: ARA6{8yT3_c0d3_W1Th_51MPl3_m4th_15_345Y____R19ht?}
+flags: flag: ARA6{8yT3_c0d3_W1Th_51MPl3_m4th_15_345Y____R19ht?}
 draft: false
 ---
 ## Scenario

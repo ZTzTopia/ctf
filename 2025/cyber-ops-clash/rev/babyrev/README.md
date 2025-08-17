@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 27
-flag: Meta4Sec{Baby_Reverse_Engineering_C0C}
+flags: flag: Meta4Sec{Baby_Reverse_Engineering_C0C}
 ---
 
 > Hanya basic Reverse Engineering aja

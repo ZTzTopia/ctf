@@ -5,7 +5,7 @@ tags:
 draft: true
 completedDuringEvent: false
 submitted: false
-flag: KashiCTF{Close_Yet_Far_oU2XmjfCX}
+flags: flag: KashiCTF{Close_Yet_Far_oU2XmjfCX}
 ---
 > You find his laptop lying there and his futile attempt to read a random file..!
 

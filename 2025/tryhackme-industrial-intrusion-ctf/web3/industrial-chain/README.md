@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 30
 solves: -1
-flag: THM{REDACTED}
+flags: flag: THM{REDACTED}
 ---
 > Flicker has ghosted through your decentralised control logic quietly, reversing override conditions in your smart contract. The main switch appears engaged, but safety locks remain enforced at the contract level.
 >

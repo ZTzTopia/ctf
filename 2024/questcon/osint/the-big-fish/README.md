@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: QUESTCON{cosmos-2018-94}
+flags: flag: QUESTCON{cosmos-2018-94}
 ---
 ## Scenario
 

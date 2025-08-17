@@ -5,7 +5,7 @@ tags: Blockchain
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: PWNME{1ls_0nt_t0vt_Sh4ke_dz8a4q6}
+flags: flag: PWNME{1ls_0nt_t0vt_Sh4ke_dz8a4q6}
 ---
 > You're an agent, your unit recently intercepted a mob discussion about an event that's going to take place on August 8, 2024. You already know the location, though. A password for the event was mentioned. Your job is to find it and return it so that an agent can go to the scene and collect evidence.
 >

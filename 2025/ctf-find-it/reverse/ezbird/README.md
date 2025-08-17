@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: FindITCTF{EZZZZREVERSemPvSS}
+flags: flag: FindITCTF{EZZZZREVERSemPvSS}
 ---
 > Beat my score and I will give you the flag. Don't cheat!
 >

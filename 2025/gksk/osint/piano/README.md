@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 12
-flag: GKSK#9{TROLL'STONGUE_KYGO_STEINWAY&SONS}
+flags: flag: GKSK#9{TROLL'STONGUE_KYGO_STEINWAY&SONS}
 ---
 > Sebuah benda besar diangkat menggunakan helikopter di atas tebing tinggi dengan pemandangan pegunungan bersalju dan danau di bawahnya. Matahari bersinar dari sisi kanan gambar, dan cuaca tampak cerah.
 >

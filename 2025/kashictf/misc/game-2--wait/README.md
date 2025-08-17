@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: KashiCTF{Ch4kr4_Vyuh}
+flags: flag: KashiCTF{Ch4kr4_Vyuh}
 ---
 > We made a game.
 >

@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 488
 solves: 4
-flag: Meta4Sec{shark_on_the_cl0ud_00efd3bbcd}
+flags: flag: Meta4Sec{shark_on_the_cl0ud_00efd3bbcd}
 ---
 
 > have you ever heard that there is a shark exist in the clouds?

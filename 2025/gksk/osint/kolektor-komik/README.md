@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 15
-flag: GKSK#9{29-03-1988}
+flags: flag: GKSK#9{29-03-1988}
 ---
 > kayloovi67 dikenal sebagai kolektor komik langka yang kerap membagikan koleksinya melalui media sosial. Dalam salah satu unggahannya, ia memperlihatkan cuplikan sampul komik, disertai caption: “Komik ini selalu berhasil membuatku tertawa... meski akhirnya begitu gelap. Kalau tau kapan cetakan pertamanya dijual, kamu kolektor sejati.”
 >

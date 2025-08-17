@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: CIT{m6F2nr8RgjYI}
+flags: flag: CIT{m6F2nr8RgjYI}
 ---
 > Beep boop
 >

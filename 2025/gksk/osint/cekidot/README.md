@@ -7,7 +7,7 @@ completedDuringEvent: true
 submitted: true
 points: 100
 solves: 18
-flag: GKSK#9{K4dankM4luK4dankNg4duk}
+flags: flag: GKSK#9{K4dankM4luK4dankNg4duk}
 ---
 > Seorang pembuat batubata membuat flag pada file, namun untungnya sudah dihapus
 

@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: CIT{3aaf345a70fdd27be93d8}
+flags: flag: CIT{3aaf345a70fdd27be93d8}
 ---
 > Find the flag.
 >

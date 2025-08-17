@@ -5,7 +5,7 @@ tags:
 draft: false
 completedDuringEvent: true
 submitted: true
-flag: KashiCTF{C4N_S71LL_CL3AR_8L4CKL15T_u9V7EPk5}
+flags: flag: KashiCTF{C4N_S71LL_CL3AR_8L4CKL15T_u9V7EPk5}
 ---
 > I made a completely secure calculator this time.
 
