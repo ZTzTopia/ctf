@@ -3,7 +3,7 @@ title: Burhansweeper
 categories: "Reverse Engineering"
 authors: AdamRayyan
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 100 

@@ -3,7 +3,7 @@ title: "Fla(g)ppy Bird"
 categories: "Reverse Engineering"
 authors: aimardcr
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 1000

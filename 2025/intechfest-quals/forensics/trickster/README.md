@@ -3,7 +3,7 @@ title: trickster
 categories: Forensics
 authors: musafir
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 504

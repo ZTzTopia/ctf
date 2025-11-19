@@ -3,7 +3,7 @@ title: Phantom-Thieves
 categories: Blockchain
 authors: xymbol
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 100 

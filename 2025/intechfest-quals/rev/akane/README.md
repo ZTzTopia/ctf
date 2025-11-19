@@ -3,7 +3,7 @@ title: Akane
 categories: "Reverse Engineering"
 authors: aimardcr
 tags: 
-draft: true
+draft: false
 completedDuringEvent: true
 submitted: true
 points: 101
@@ -264,9 +264,9 @@ akane::Response::setBody(r, *(const char **)(8*idx + *a1));
 
 Here `a1` is the closure data. Because we captured `argv`, `*a1` is a `char **` pointing to `argv[0]`. Indexing `idx` elements from that base picks the `idx`-th pointer from the **startup vector** laid out by the kernel at process entry: an array of `argc` pointers to `argv[i]`, followed by a NULL, followed by an array of pointers to `envp[i]`, followed by a NULL, then the auxiliary vector. In practice, this means:
 
-* `idx` within `[0, argc-1]` returns actual `argv[i]` strings.
-* `idx == argc` returns NULL (bad body).
-* `idx >= argc+1` starts returning `envp[0]`, `envp[1]`, ... which are strings like `"KEY=value"`.
+- `idx` within `[0, argc-1]` returns actual `argv[i]` strings.
+- `idx == argc` returns NULL (bad body).
+- `idx >= argc+1` starts returning `envp[0]`, `envp[1]`, ... which are strings like `"KEY=value"`.
 
 Because the flag is explicitly stored in an environment variable, walking `idx` upward eventually lands on something like `INTECHFEST{...}`.
 
