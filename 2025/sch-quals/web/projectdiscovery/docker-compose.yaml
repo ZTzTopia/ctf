@@ -1,0 +1,29 @@
+services:
+  web:
+    build: ./app
+    container_name: projectdiscovery_app
+    ports:
+      - "20012:1337"
+    environment:
+      - DATABASE_URL=postgresql://3862661a91097ea6c69b086cbb3313d5:48b9ace67461ad1903a3c4b4286de6bf@db:5432/postgres
+      - PG_HOST=db
+      - PG_USER=3862661a91097ea6c69b086cbb3313d5
+      - PG_PASSWORD=48b9ace67461ad1903a3c4b4286de6bf
+      - PG_DB=postgres
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:1337/"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+
+  db:
+    build: ./db
+    container_name: projectdiscovery_db
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  pgdata:
