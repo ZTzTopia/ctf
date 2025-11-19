@@ -1,0 +1,56 @@
+     [*] Assembly 22: 0xb400007be5ab5f90
+         image: 0xb400007be5ab56e0
+         name: Assembly-CSharp.dll
+         nameNoExt: Assembly-CSharp
+         assemblyName:
+         classCount: 9
+             [*] Class 0: 0xb400007a839ae900 - <Module>
+             [*] Class 1: 0xb400007a83959900 - CryptoUtils
+                 - Method: 0x7b5616a4f4 (RVA 0x6d44f4) EncryptInt (params: 1)
+                 - Method: 0x7b5616a5d4 (RVA 0x6d45d4) DecryptInt (params: 1)
+                 - Method: 0x7b5616a594 (RVA 0x6d4594) F (params: 3)
+                 - Method: 0x7b5616a588 (RVA 0x6d4588) RotateLeft (params: 2)
+                 - Method: 0x7b5616a674 (RVA 0x6d4674) AESEncrypt (params: 2)
+                 - Method: 0x7b5616a944 (RVA 0x6d4944) AESDecrypt (params: 2)
+                 - Method: 0x7b5616ac14 (RVA 0x6d4c14) AESEncryptString (params: 2)
+                 - Method: 0x7b5616acbc (RVA 0x6d4cbc) AESDecryptString (params: 2)
+                 - Method: 0x7b5616ad60 (RVA 0x6d4d60) h (params: 1)
+                 - Method: 0x7b5616aec8 (RVA 0x6d4ec8) GenerateAESKeyFromSeed (params: 2)
+             [*] Class 2: 0xb400007a8392de80 - GameManager
+                 - Method: 0x7b5616af78 (RVA 0x6d4f78) get_Instance (params: 0)
+                 - Method: 0x7b5616afc8 (RVA 0x6d4fc8) set_Instance (params: 1)
+                 - Method: 0x7b5616b01c (RVA 0x6d501c) get_score (params: 0)
+                 - Method: 0x7b5616b024 (RVA 0x6d5024) set_score (params: 1)
+                 - Method: 0x7b5616b02c (RVA 0x6d502c) get_encryptedScore (params: 0)
+                 - Method: 0x7b5616b034 (RVA 0x6d5034) set_encryptedScore (params: 1)
+                 - Method: 0x7b5616b03c (RVA 0x6d503c) Awake (params: 0)
+                 - Method: 0x7b5616b164 (RVA 0x6d5164) OnDestroy (params: 0)
+                 - Method: 0x7b5616b248 (RVA 0x6d5248) Start (params: 0)
+                 - Method: 0x7b5616b24c (RVA 0x6d524c) Pause (params: 0)
+                 - Method: 0x7b5616b288 (RVA 0x6d5288) Play (params: 0)
+                 - Method: 0x7b5616b414 (RVA 0x6d5414) GameOver (params: 0)
+                 - Method: 0x7b5616b460 (RVA 0x6d5460) IncreaseScore (params: 0)
+                 - Method: 0x7b5616b60c (RVA 0x6d560c)  (params: 0)
+             [*] Class 3: 0xb400007a83959780 - Parallax
+                 - Method: 0x7b5616b614 (RVA 0x6d5614) Awake (params: 0)
+                 - Method: 0x7b5616b66c (RVA 0x6d566c) Update (params: 0)
+                 - Method: 0x7b5616b74c (RVA 0x6d574c)  (params: 0)
+             [*] Class 4: 0xb400007a83959600 - Pipes
+                 - Method: 0x7b5616b75c (RVA 0x6d575c) Start (params: 0)
+                 - Method: 0x7b5616b9b0 (RVA 0x6d59b0) Update (params: 0)
+                 - Method: 0x7b5616bb34 (RVA 0x6d5b34)  (params: 0)
+             [*] Class 5: 0xb400007a8392c980 - Player
+                 - Method: 0x7b5616bb48 (RVA 0x6d5b48) Awake (params: 0)
+                 - Method: 0x7b5616bc18 (RVA 0x6d5c18) Start (params: 0)
+                 - Method: 0x7b5616bcb4 (RVA 0x6d5cb4) OnEnable (params: 0)
+                 - Method: 0x7b5616bd74 (RVA 0x6d5d74) Update (params: 0)
+                 - Method: 0x7b5616bfbc (RVA 0x6d5fbc) AnimateSprite (params: 0)
+                 - Method: 0x7b5616c034 (RVA 0x6d6034) OnTriggerEnter2D (params: 1)
+                 - Method: 0x7b5616c1f0 (RVA 0x6d61f0)  (params: 0)
+             [*] Class 6: 0xb400007a8392d100 - Spawner
+                 - Method: 0x7b5616c20c (RVA 0x6d620c) OnEnable (params: 0)
+                 - Method: 0x7b5616c268 (RVA 0x6d6268) OnDisable (params: 0)
+                 - Method: 0x7b5616c2bc (RVA 0x6d62bc) Spawn (params: 0)
+                 - Method: 0x7b5616c490 (RVA 0x6d6490)  (params: 0)
+             [*] Class 7: 0xb400007a8392c800 - <PrivateImplementationDetails>
+             [*] Class 8: 0xb400007a8392c680 - __StaticArrayInitTypeSize=64

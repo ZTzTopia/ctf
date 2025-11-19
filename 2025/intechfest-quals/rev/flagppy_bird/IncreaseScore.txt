@@ -1,0 +1,108 @@
+// Layout guesses from field offsets used here
+struct Obj {
+    uint8_t  flag40;      // +0x40
+    uint32_t counter44;   // +0x44
+    uint32_t state48;     // +0x48
+    void*    listener28;  // +0x28 (vtbl at [listener][0])
+};
+
+// Globals / singletons
+static uint8_t  g_once_flag_9FFAF3;                 // byte_9FFAF3
+static uint32_t *g_init_param_dword_710F00;         // via off_9956A8
+static void    **g_alloc_ctx_qword_A0B1C8;          // via off_99AAE8
+static void    **g_source_ctx_qword_A10A50;         // via off_9A4FA8
+
+// vtbl slots (offsets seen):
+// listener vtbl: +0x5E0 (fn), +0x5E8 (arg2)
+// service  vtbl: +0x320 (fn), +0x328 (arg2)
+
+void sub_6D5460(struct Obj *self)
+{
+    // one-time init
+    if ((g_once_flag_9FFAF3 & 1) == 0) {
+        sub_3151A8(*g_init_param_dword_710F00);
+        g_once_flag_9FFAF3 = 1;
+    }
+
+    // bump counter and emit a formatted thingy (sub_492394)
+    uint32_t cnt = self->counter44 + 1;
+    self->counter44 = cnt;
+
+    uint32_t tmp_on_stack = cnt;
+    // signature looks like sub_492394(&tmp, 0)
+    void *fmt = sub_492394(&tmp_on_stack, /*x1*/0);
+
+    // If listener present, call listener->fn(this, fmt, listener->arg2)
+    if (self->listener28) {
+        void **vtbl = *(void***)self->listener28;
+        void *fn    = *(void **)((uint8_t*)vtbl + 0x5E0);
+        void *arg2  = *(void **)((uint8_t*)vtbl + 0x5E8);
+        // BLR X9 with: X0=this->listener28, X1=fmt, X2=arg2
+        ((void (*)(void*,void*,void*))fn)(self->listener28, fmt, arg2);
+    }
+
+    // normalize / advance state vs threshold
+    const uint32_t THRESH = 0xCC07C8;  // W21
+    uint32_t cur = self->state48;
+    uint32_t norm = sub_6D45D4(cur);
+
+    if (norm <= THRESH) {
+        // step state via table map then re-normalize
+        self->state48 = sub_6D44F4(norm + 1);
+        norm = sub_6D45D4(self->state48);
+    }
+
+    // flag if counter != current normalized value
+    if (self->counter44 != norm)
+        self->flag40 = 1;
+
+    // Below runs only after norm > THRESH
+    if (norm > THRESH) {
+        // allocate ~0x40 bytes from ctx, then bind to a source
+        void *alloc_ctx = *g_alloc_ctx_qword_A0B1C8;
+        void *blob = sub_3151B8(alloc_ctx, /*size*/0x40);
+
+        void *source_ctx = *g_source_ctx_qword_A10A50;
+        blob = sub_536844(blob, source_ctx, /*x2*/0);
+
+        if (!blob) goto cleanup;
+
+        // blob layout: [0x18]=length (W), [0x20..]=data
+        uint32_t len = *(uint32_t *)((uint8_t*)blob + 0x18);
+        if (len >= 1) {
+            uint8_t *p = (uint8_t*)blob + 0x20;
+            for (uint32_t i = 0; i < len; i++)
+                p[i] ^= 0xA0;  // XOR decode
+        }
+
+        // get a service/singleton and submit blob
+        void *svc = sub_574830(0);
+        if (!svc) goto cleanup;
+
+        void **svtbl = *(void***)svc;
+        void *svc_fn = *(void **)((uint8_t*)svtbl + 0x320);
+        void *svc_a2 = *(void **)((uint8_t*)svtbl + 0x328);
+        // returns a handle H:
+        void *H = ((void *(*)(void*,void*,void*))svc_fn)(svc, blob, svc_a2);
+
+        // ---- compute size/selector and CALL sub_6D4CBC ----
+        // W1 = 0x100; X0 = sub_6D45D4(self->state48)
+        uint32_t sel = sub_6D45D4(self->state48);
+        void *sz = sub_6D4EC8(sel, /*0x100*/ 0x100);
+
+        // X0=H, X1=sz
+        void *result = sub_6D4CBC(H, sz);
+
+        // If listener exists: listener->fn(listener, result, listener->arg2)
+        if (self->listener28) {
+            void **lvt = *(void***)self->listener28;
+            void *lfn  = *(void **)((uint8_t*)lvt + 0x5E0);
+            void *la2  = *(void **)((uint8_t*)lvt + 0x5E8);
+            ((void (*)(void*,void*,void*))lfn)(self->listener28, result, la2);
+        }
+    }
+
+cleanup:
+    // both early-outs funnel here
+    sub_315270(); // likely leave/cleanup/log
+}
