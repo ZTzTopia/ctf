@@ -211,6 +211,8 @@ if (!user_to) {
 
 So we can combine these two vulnerabilities to get the flag. First, we register a new user and login. Then we transfer a very large negative amount to a non-existing user to get infinite balance. After that, we call the master endpoint to inject our XSS payload in the locker page. The payload will fetch the confidential file and exfiltrate it by redirecting the document location to our controlled server.
 
+Here is the complete exploit script:
+
 ```py
 import requests
 
@@ -243,6 +245,8 @@ res = s.post(f'{URL}/master', data={
 }, timeout=15)
 print(res.text)
 ```
+
+## Other Exfiltration Methods
 
 We can use other method rather than redirecting the document location to exfiltrate the flag. We can store the flag `firstName` or `lastName` of the registration user or in the search autocomplete history by making a fetch request to `/transactions/search?searchTerm=${flag}`.
 

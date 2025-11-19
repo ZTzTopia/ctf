@@ -1,0 +1,7 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := ztzwashere
+LOCAL_SRC_FILES := main.c plthook_elf.c
+LOCAL_LDLIBS := -llog -ldl
+include $(BUILD_SHARED_LIBRARY)

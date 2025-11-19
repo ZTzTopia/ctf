@@ -105,7 +105,9 @@ router.post('/login', async (req, res) => {
 
 The code passes user-supplied values directly into Mongoose's query: `User.findOne({ email, password })`. If an attacker can send a JSON body (or crafted form fields like `password[$ne]=1`) they can supply MongoDB operators (e.g. `{ "$ne": null }`) and bypass authentication.
 
-To exploit this vulnerability, I registered a new user account with arbitrary details. Then, during the login process, I used the `$ne` (not equal) operator in the password field to bypass the password check for the bankmaster account.
+To exploit this vulnerability, We can register a new user account with arbitrary details. Then, during the login process, We use the `$ne` (not equal) operator in the password field to bypass the password check for the bankmaster account.
+
+Here is a script that demonstrates how to exploit this vulnerability:
 
 ```py
 import requests
