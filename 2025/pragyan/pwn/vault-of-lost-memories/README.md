@@ -1,10 +1,10 @@
 ---
 title: Vault of Lost Memories
-categories: p_ctf{4cqU1r3d_B3y0nd_7h3_M3m0r1es}
+categories: "Binary Exploitation"
 tags: 
 completedDuringEvent: true
 submitted: true
-flags: FLAG{0xdeadbeef}
+flags: p_ctf{4cqU1r3d_B3y0nd_7h3_M3m0r1es}
 draft: true
 ---
 Let's just do a binary analysis using **IDA Pro**.
